@@ -1,22 +1,36 @@
 import { NavLink } from 'react-router-dom'
-import { docsEntries } from '@/content/docs'
+import { docSections, docsEntries } from '@/content/docs'
 
+/**
+ * Sidebar navigation for the docs layout.
+ * Groups entries by section and renders a section header + link list for each.
+ */
 export function DocsSidebar() {
   return (
-    <aside className="docs-sidebar" aria-label="Docs sections">
-      <p className="sidebar-title">Documentation</p>
-      <ul>
-        {docsEntries.map((entry) => (
-          <li key={entry.slug}>
-            <NavLink
-              to={`/docs/${entry.slug}`}
-              className={({ isActive }) => (isActive ? 'active' : '')}
-            >
-              {entry.title}
-            </NavLink>
-          </li>
-        ))}
-      </ul>
+    <aside className="docs-sidebar" aria-label="Docs navigation">
+      {docSections.map((section, sectionIndex) => {
+        const entries = docsEntries.filter((e) => e.section === section.key)
+        if (entries.length === 0) return null
+
+        return (
+          <div key={section.key}>
+            {sectionIndex > 0 && <div className="docs-sidebar-sep" />}
+            <span className="docs-sidebar-section">{section.label}</span>
+            {entries.map((entry) => (
+              <NavLink
+                key={entry.slug}
+                to={`/docs/${entry.slug}`}
+                className={({ isActive }) =>
+                  `docs-sidebar-link${isActive ? ' active' : ''}`
+                }
+              >
+                {entry.title}
+                <span className="docs-sidebar-arrow">→</span>
+              </NavLink>
+            ))}
+          </div>
+        )
+      })}
     </aside>
   )
 }

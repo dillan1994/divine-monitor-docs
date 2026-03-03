@@ -1,27 +1,57 @@
 import { NavLink } from 'react-router-dom'
 import type { PropsWithChildren } from 'react'
+import { ConstellationCanvas } from '@/components/common/ConstellationCanvas'
 
 export function SiteLayout({ children }: PropsWithChildren) {
   return (
-    <div className="shell">
-      <header className="topbar">
-        <div className="brand">
-          <span className="brand-dot" aria-hidden="true" />
-          <span>Divine Monitor</span>
-        </div>
-        <nav className="nav-links" aria-label="Primary">
-          <NavLink to="/" className={({ isActive }) => (isActive ? 'active' : '')} end>
+    <>
+      {/* Fixed ambient glows — rendered once, persist across route changes */}
+      <div className="glows" aria-hidden="true">
+        <div className="g1" />
+        <div className="g2" />
+        <div className="g3" />
+        <div className="g4" />
+      </div>
+
+      {/* Animated dot constellation — fixed full-viewport canvas */}
+      <ConstellationCanvas />
+
+      {/* Fixed top navigation */}
+      <nav className="site-nav" aria-label="Primary">
+        <NavLink to="/" className="nav-brand" end>
+          <span className="nav-brand-name">Divine Monitor</span>
+          <span className="nav-brand-pip" aria-hidden="true" />
+        </NavLink>
+
+        <div className="nav-tabs" role="tablist">
+          <NavLink
+            to="/"
+            className={({ isActive }) => `nav-tab${isActive ? ' active' : ''}`}
+            end
+          >
             Home
           </NavLink>
-          <NavLink to="/docs" className={({ isActive }) => (isActive ? 'active' : '')}>
+          <NavLink
+            to="/docs"
+            className={({ isActive }) => `nav-tab${isActive ? ' active' : ''}`}
+          >
             Docs
           </NavLink>
-          <a href="https://github.com" target="_blank" rel="noreferrer">
-            GitHub
-          </a>
-        </nav>
-      </header>
-      <main className="content">{children}</main>
-    </div>
+          <NavLink
+            to="/changelog"
+            className={({ isActive }) => `nav-tab${isActive ? ' active' : ''}`}
+          >
+            Changelog
+          </NavLink>
+        </div>
+
+        <NavLink to="/docs/quickstart" className="nav-cta">
+          Get Started
+        </NavLink>
+      </nav>
+
+      {/* Page content — each route manages its own layout below the nav */}
+      <div className="site-content">{children}</div>
+    </>
   )
 }
