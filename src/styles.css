@@ -980,6 +980,64 @@ ol, ul {
 }
 
 /* ═══════════════════════════════════════════════════════════════
+   FAQs Page
+   ═══════════════════════════════════════════════════════════════ */
+.faqs-page {
+  min-height: 100vh;
+  padding: calc(var(--nav-h) + 40px) 24px 64px;
+  position: relative;
+  z-index: 1;
+}
+
+.faqs-inner {
+  max-width: 840px;
+  margin: 0 auto;
+}
+
+.faqs-title {
+  font-family: var(--font-serif);
+  font-size: 52px;
+  font-weight: 300;
+  letter-spacing: -1.5px;
+  margin: 16px 0 16px;
+}
+
+.faqs-body {
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--t2);
+  line-height: 1.7;
+  margin-bottom: 28px;
+}
+
+.faqs-list {
+  display: grid;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.faq-card {
+  border: 1px solid var(--b1);
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.faq-card h2 {
+  margin: 0 0 10px;
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--t1);
+}
+
+.faq-card p {
+  margin: 0;
+  font-size: 15px;
+  color: var(--t2);
+  line-height: 1.7;
+}
+
+/* ═══════════════════════════════════════════════════════════════
    Responsive
    ═══════════════════════════════════════════════════════════════ */
 @media (max-width: 1024px) {
