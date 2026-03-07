@@ -910,6 +910,138 @@ ol, ul {
 }
 
 /* ═══════════════════════════════════════════════════════════════
+   Plans & Features Table
+   ═══════════════════════════════════════════════════════════════ */
+.plans-wrap {
+  overflow-x: auto;
+  margin-top: 4px;
+  border-radius: var(--radius-lg);
+}
+
+.plans-table {
+  min-width: 600px;
+  border: 1px solid var(--b1);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  font-size: 13px;
+}
+
+.plans-header {
+  display: grid;
+  grid-template-columns: 1fr repeat(3, 148px);
+  background: var(--s3);
+  border-bottom: 1px solid var(--b2);
+}
+
+.plans-header-feature {
+  padding: 20px 20px;
+}
+
+.plans-header-tier {
+  padding: 18px 14px;
+  text-align: center;
+  border-left: 1px solid var(--b1);
+}
+
+.plans-header-tier--highlight {
+  background: var(--teal-bg);
+  border-left-color: var(--teal-bdr);
+  border-right-color: var(--teal-bdr);
+}
+
+.plans-tier-name {
+  font-family: var(--font-serif);
+  font-size: 17px;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.plans-header-tier--highlight .plans-tier-name {
+  color: var(--teal);
+}
+
+.plans-tier-price {
+  font-family: var(--font-mono);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 2px;
+}
+
+.plans-header-tier--highlight .plans-tier-price {
+  color: var(--teal);
+}
+
+.plans-tier-sub {
+  font-size: 10px;
+  color: var(--t3);
+  letter-spacing: 0.03em;
+}
+
+.plans-group-label {
+  padding: 8px 20px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--t3);
+  background: var(--s1);
+  border-top: 1px solid var(--b1);
+}
+
+.plans-row {
+  display: grid;
+  grid-template-columns: 1fr repeat(3, 148px);
+  border-top: 1px solid var(--b1);
+  transition: background 0.15s;
+}
+
+.plans-row:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.plans-row-label {
+  padding: 11px 20px;
+  font-size: 13px;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+}
+
+.plans-row-cell {
+  padding: 11px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-left: 1px solid var(--b1);
+}
+
+.plans-row-cell--highlight {
+  background: rgba(94, 234, 212, 0.04);
+  border-left-color: var(--teal-bdr);
+  border-right-color: var(--teal-bdr);
+}
+
+.plans-check {
+  color: var(--teal);
+  font-size: 15px;
+  line-height: 1;
+}
+
+.plans-cross {
+  color: var(--t3);
+  font-size: 14px;
+  line-height: 1;
+}
+
+.plans-value {
+  color: var(--teal);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-align: center;
+}
+
+/* ═══════════════════════════════════════════════════════════════
    Footer
    ═══════════════════════════════════════════════════════════════ */
 .site-footer {

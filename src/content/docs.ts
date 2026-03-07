@@ -31,6 +31,79 @@ export const docsEntries: DocsEntry[] = [
     ],
   },
   {
+    slug: 'plans',
+    title: 'Plans & Features',
+    section: 'getting-started',
+    summary: 'Compare what\'s included at each tier. A generous free plan means you can get real value from Divine Monitor before spending a penny.',
+    readTime: '2 min read',
+    kind: 'plans',
+    body: [],
+    planTiers: [
+      { name: 'Free', price: 'Free', sub: 'forever' },
+      { name: 'Plus', price: '£4.99', sub: '+ VAT / month', highlight: true },
+      { name: 'Pro', price: '£9.99', sub: '+ VAT / month' },
+    ],
+    tierGroups: [
+      {
+        label: 'Core Extension & Dashboard',
+        features: [
+          { label: 'Chrome extension & RFY monitoring', free: true, plus: true, pro: true },
+          { label: 'Configurable refresh intervals', free: true, plus: true, pro: true },
+          { label: 'Tile & table view (sort / filter)', free: true, plus: true, pro: true },
+          { label: 'Analytics visualisations (flexible, resizable grid)', free: true, plus: true, pro: true },
+          { label: 'Disable Opt-out button, and reduce visual clutter on Product pages', free: true, plus: true, pro: true },
+        ],
+      },
+      {
+        label: 'Notifications',
+        features: [
+          { label: 'Telegram notifications (RFY, Search, Account)', free: false, plus: true, pro: true },
+          { label: 'Keyword exclusions & quiet hours', free: false, plus: true, pro: true },
+          { label: 'Email notifications', free: false, plus: false, pro: true },
+          { label: 'Browser push notifications', free: false, plus: false, pro: true },
+        ],
+      },
+      {
+        label: 'Search & Account Monitoring',
+        features: [
+          { label: 'Search term monitoring', free: false, plus: true, pro: true },
+          { label: 'Account page analytics & tracking (incl. Review-to-Order Ratio, tier & insightfulness score alerts, evaluation date reminders)', free: false, plus: true, pro: true },
+        ],
+      },
+      {
+        label: 'Review Tracking',
+        features: [
+          { label: 'Daily review summaries & overdue reminders', free: false, plus: false, pro: true },
+          { label: 'Review journey tracking per product', free: false, plus: false, pro: true },
+          { label: 'Rejected review alerts', free: false, plus: false, pro: true },
+          { label: 'Review state & quality distribution over time', free: false, plus: false, pro: true },
+        ],
+      },
+      {
+        label: 'Analytics',
+        features: [
+          { label: 'Analytics history retention', free: '7 days', plus: '1 month', pro: '6 months' },
+          { label: 'Additional analytics: price and value intelligence, heatmaps', free: false, plus: true, pro: true },
+          { label: 'All Item count patterns (15-min intervals)', free: '1 day', plus: '7 days', pro: '30 days' },
+        ],
+      },
+      {
+        label: 'Product History',
+        features: [
+          { label: 'RFY product history retention', free: '7 days', plus: '1 month', pro: '6 months' },
+          { label: 'Maximum view window', free: '1 day', plus: '7 days', pro: '30 days' },
+          { label: 'Search term product history', free: false, plus: '1 month', pro: '6 months' },
+        ],
+      },
+      {
+        label: 'Data Export',
+        features: [
+          { label: 'CSV data export', free: false, plus: false, pro: true },
+        ],
+      },
+    ],
+  },
+  {
     slug: 'notifications-setup',
     title: 'Notifications Setup',
     section: 'getting-started',
