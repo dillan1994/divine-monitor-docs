@@ -52,6 +52,7 @@ export const docsEntries: DocsEntry[] = [
           { label: 'Tile & table view (sort / filter)', free: true, plus: true, pro: true },
           { label: 'Analytics visualisations (flexible, resizable grid)', free: true, plus: true, pro: true },
           { label: 'Disable Opt-out button, and reduce visual clutter on Product pages', free: true, plus: true, pro: true },
+          { label: 'Light theme', free: false, plus: true, pro: true },
         ],
       },
       {

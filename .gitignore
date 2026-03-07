@@ -1,3 +1,9 @@
 node_modules/
 dist/
 .npm-cache/
+/.idea/dbnavigator.xml
+/.idea/divine-monitor-docs.iml
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/inspectionProfiles/profiles_settings.xml
+/.idea/vcs.xml
