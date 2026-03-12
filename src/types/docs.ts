@@ -3,9 +3,18 @@ export type DocSection = {
   label: string
 }
 
+export type DocStepImage = {
+  src?: string
+  alt: string
+  caption?: string
+  placeholder?: string
+  fileHint?: string
+}
+
 export type DocBodyStep = {
   title: string
   description: string
+  images?: DocStepImage[]
 }
 
 export type TierFeatureRow = {
