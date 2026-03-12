@@ -11,11 +11,11 @@ export const faqs: FaqItem[] = [
       Whether it\'s monitoring product drops, staying on top of reviews, tracking changes to your account status, or simply viewing your own \
       historic recommendations, Divine Monitor has been designed to do this all in the most simple, user-friendly way possible.',
   },
-      {
+  {
     question: 'How can I view my data?',
     answer:
       'Divine Monitor includes a rich, modern web-based global dashboard you can access from any browser, on any device, from anywhere. \
-       It’s a core part of what makes Divine Monitor unique, giving you your insights wherever you are.',
+       Concurrent browser sessions are tier-based: Free supports up to 2 browsers, Plus up to 4, and Pro up to 6.',
   },
     {
     question: 'Does it support alerting and notifications?',

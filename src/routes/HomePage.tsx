@@ -61,17 +61,16 @@ export function HomePage() {
     <>
       <section className="hero">
         <div className="hero-eyebrow">Real-time Amazon Vine monitoring</div>
-        <h1 className="hero-l1">Unified, notified,</h1>
-        <h1 className="hero-l2">always in control.</h1>
+        <h1 className="hero-l1">Your Vine data,</h1>
+        <h1 className="hero-l2">historic to real-time, wherever you are.</h1>
         <div className="hero-rule">
           <div className="hero-rule-line" />
           <div className="hero-rule-diamond" />
         </div>
         <p className="hero-body">
-          Monitor your RFY queue and Search terms as they update. Receive instant, rich
-          notifications across email, push, and Telegram - configured in seconds, not hours. Explore
-          deep historic analytics, browse your recommendation history, and track outstanding reviews
-          from one modern web dashboard.
+          Divine Monitor gives you a globally accessible dashboard for real-time updates,
+          long-term history, and rich analytics, with simple but powerful notification controls
+          across email, push, and Telegram, configured in minutes.
         </p>
         <div className="hero-actions">
           <Link to="/docs/quickstart" className="hero-cta-primary">

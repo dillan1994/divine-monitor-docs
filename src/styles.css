@@ -311,22 +311,24 @@ ol, ul {
 
 .hero-l1 {
   font-family: var(--font-serif);
-  font-size: clamp(52px, 7.5vw, 96px);
+  font-size: clamp(44px, 6.4vw, 84px);
   font-weight: 300;
-  letter-spacing: -2.5px;
-  line-height: 0.98;
+  letter-spacing: -2px;
+  line-height: 1;
+  max-width: 16ch;
   opacity: 0;
   animation: hero-up 0.8s ease 0.18s forwards;
 }
 
 .hero-l2 {
   font-family: var(--font-serif);
-  font-size: clamp(52px, 7.5vw, 96px);
+  font-size: clamp(44px, 6.4vw, 84px);
   font-weight: 600;
   font-style: italic;
-  letter-spacing: -2.5px;
-  line-height: 0.98;
-  margin-bottom: 44px;
+  letter-spacing: -2px;
+  line-height: 1;
+  max-width: 18ch;
+  margin-bottom: 38px;
   background: linear-gradient(100deg, var(--teal), #a5f3fc 50%, var(--teal));
   background-size: 200%;
   -webkit-background-clip: text;
@@ -368,8 +370,8 @@ ol, ul {
   font-size: 16.5px;
   font-weight: 300;
   color: var(--t2);
-  max-width: 540px;
-  line-height: 1.78;
+  max-width: 700px;
+  line-height: 1.72;
   margin-bottom: 48px;
   opacity: 0;
   animation: hero-up 0.7s ease 0.52s forwards;
@@ -1190,6 +1192,24 @@ ol, ul {
 
   .hero {
     padding: var(--nav-h) 24px 48px;
+  }
+
+  .hero-l1,
+  .hero-l2 {
+    font-size: clamp(34px, 10vw, 52px);
+    letter-spacing: -1.2px;
+    line-height: 1.03;
+  }
+
+  .hero-l2 {
+    margin-bottom: 30px;
+  }
+
+  .hero-body {
+    font-size: 15.5px;
+    max-width: 100%;
+    line-height: 1.7;
+    margin-bottom: 38px;
   }
 
   .stats-row {
