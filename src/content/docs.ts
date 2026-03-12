@@ -2,6 +2,7 @@ import type { DocSection, DocsEntry } from '@/types/docs'
 
 export const docSections: DocSection[] = [
   { key: 'getting-started', label: 'Getting Started' },
+  { key: 'extensions', label: 'Extension' },
   { key: 'monitoring', label: 'Monitoring' },
   { key: 'settings', label: 'Settings' },
 ]
@@ -49,11 +50,52 @@ export const docsEntries: DocsEntry[] = [
     kind: 'plans',
     body: [],
     planTiers: [
-      { name: 'Free', price: 'Free', sub: 'forever' },
+      { name: 'Free', price: 'Free', sub: '' },
       { name: 'Plus', price: 'GBP 4.99', sub: '+ VAT / month', highlight: true },
       { name: 'Pro', price: 'GBP 9.99', sub: '+ VAT / month' },
     ],
     tierGroups: [
+      {
+        label: 'Extension',
+        features: [
+          { label: 'Chrome extension & RFY monitoring', free: true, plus: true, pro: true },
+          { label: 'Disable Vine opt-out button', free: true, plus: true, pro: true },
+          { label: 'RFY and Search refresh interval', free: 'Locked', plus: 'Configurable', pro: 'Configurable' },
+          {
+            label: 'Space saving mode (hide lower-page ads/history, side order flyer, and RFY/AFA categories)',
+            free: true,
+            plus: true,
+            pro: true,
+          },
+          {
+            label: 'Space saving mode plus (hide deals header, trim vertical space, compact product tiles)',
+            free: false,
+            plus: true,
+            pro: true,
+          },
+        ],
+      },
+      {
+        label: 'Dashboard & Sessions',
+        features: [
+          { label: 'Global web dashboard access (feature availability depends on tier)', free: true, plus: true, pro: true },
+          { label: 'Concurrent web dashboard sessions (active browser connections)', free: '2 browser sessions', plus: '4 browser sessions', pro: '6 browser sessions' },
+          { label: 'Products tab: grid/table views, sorting, and filtering', free: true, plus: true, pro: true },
+          { label: 'RFY analytics layouts (resizable grid)', free: true, plus: true, pro: true },
+          { label: 'Saved analytics layout preferences', free: true, plus: true, pro: true },
+          { label: 'Theme options (Slate default)', free: 'Slate', plus: 'Slate + Light + Dark', pro: 'Slate + Light + Dark' },
+        ],
+      },
+      {
+        label: 'Monitoring Modules',
+        features: [
+          { label: 'RFY monitoring', free: true, plus: true, pro: true },
+          { label: 'Search monitoring', free: false, plus: true, pro: true },
+          { label: 'Account monitoring', free: false, plus: true, pro: true },
+          { label: 'AI (all items) monitoring', free: false, plus: true, pro: true },
+          { label: 'Review monitoring', free: false, plus: false, pro: true },
+        ],
+      },
       {
         label: 'History & Lookbacks',
         features: [
@@ -65,36 +107,14 @@ export const docsEntries: DocsEntry[] = [
       {
         label: 'Notifications',
         features: [
-          { label: 'RFY alerts (recommended feed)', free: true, plus: true, pro: true },
+          { label: 'RFY alerts (recommended feed)', free: false, plus: true, pro: true },
           { label: 'Search alerts (keyword feed)', free: false, plus: true, pro: true },
           { label: 'Account alerts (status + ratios)', free: false, plus: true, pro: true },
-          { label: 'Reviews alerts (daily digest + not-approved)', free: false, plus: false, pro: true },
+          { label: 'Reviews alerts (daily digest + not-approved)', free: false, plus: true, pro: true },
           { label: 'Telegram alerts (delivery channel)', free: false, plus: true, pro: true },
-          { label: 'Email alerts (delivery channel)', free: false, plus: false, pro: true },
-          { label: 'Browser push alerts (delivery channel)', free: false, plus: false, pro: true },
-          { label: 'Exclude title/category filters (noise control)', free: false, plus: false, pro: true },
-        ],
-      },
-      {
-        label: 'Dashboard & Sessions',
-        features: [
-          { label: 'Global web dashboard access (feature availability depends on tier)', free: true, plus: true, pro: true },
-          { label: 'Concurrent web dashboard sessions (active browser connections)', free: '2 browser sessions', plus: '4 browser sessions', pro: '6 browser sessions' },
-          { label: 'Products tab: grid/table views, sorting, and filtering', free: true, plus: true, pro: true },
-          { label: 'RFY analytics layouts (resizable grid)', free: true, plus: true, pro: true },
-          { label: 'Saved analytics layout preferences', free: true, plus: true, pro: true },
-          { label: 'Configurable refresh behavior', free: true, plus: true, pro: true },
-          { label: 'Theme options (Slate default)', free: 'Slate', plus: 'Slate + Light + Dark', pro: 'Slate + Light + Dark' },
-        ],
-      },
-      {
-        label: 'Monitoring Modules',
-        features: [
-          { label: 'Chrome extension & RFY monitoring', free: true, plus: true, pro: true },
-          { label: 'Search monitoring', free: false, plus: true, pro: true },
-          { label: 'Account monitoring analytics', free: false, plus: true, pro: true },
-          { label: 'AI (all items) monitoring', free: false, plus: true, pro: true },
-          { label: 'Review monitoring', free: false, plus: false, pro: true },
+          { label: 'Email alerts (delivery channel)', free: false, plus: true, pro: true },
+          { label: 'Browser push alerts (delivery channel)', free: false, plus: true, pro: true },
+          { label: 'Exclude title/category filters (noise control)', free: false, plus: true, pro: true },
         ],
       },
     ],
@@ -157,6 +177,30 @@ export const docsEntries: DocsEntry[] = [
             alt: 'Products notification info popover open',
           },
         ],
+      },
+    ],
+  },
+  {
+    slug: 'space-saving-mode',
+    title: 'Space Saving Mode',
+    section: 'extensions',
+    summary: 'Extension layout cleanup split into Space Saving Mode (base) and Space Saving Mode Plus (advanced).',
+    readTime: '3 min read',
+    body: [
+      {
+        title: 'Space Saving Mode (base)',
+        description:
+          'On Free, Space Saving Mode hides Amazon ads and browsing history in the lower portion of the page, hides the side order flyer, and hides category sections on RFY and AFA to reclaim horizontal space.',
+      },
+      {
+        title: 'Space Saving Mode Plus',
+        description:
+          'Plus and Pro include everything in Free, and additionally hide the Amazon deals header at the top, reduce extra vertical whitespace, and further compact product tiles to significantly transform the default Vine tab layout.',
+      },
+      {
+        title: 'Vine opt-out protection',
+        description:
+          'The Vine opt-out button is disabled as part of Free functionality (and therefore remains disabled on Plus and Pro).',
       },
     ],
   },
@@ -500,4 +544,3 @@ export const docsEntries: DocsEntry[] = [
     ],
   },
 ]
-
