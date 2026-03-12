@@ -3,63 +3,62 @@ import { ScrollReveal } from '@/components/common/ScrollReveal'
 
 const CAPABILITIES = [
   {
-    icon: '🔔',
+    icon: '\u{1F514}',
     title: 'Rich Notifications',
-    body: 'Email, push, and Telegram — set up in seconds. Granular per-filter rules so you only hear about what matters to you, when it matters.',
+    body: 'RFY alerts are available on all tiers. Search and account alerts are available on Plus and Pro. Reviews alerts (daily digest + not-approved) are available on Pro.',
   },
   {
-    icon: '🛒',
+    icon: '\u{1F6D2}',
     title: 'RFY & Search Tracking',
-    body: 'Monitor your Recommended For You queue and keyword searches in real-time. Items surface the instant they appear on Vine.',
+    body: 'Monitor RFY in real time on all tiers, and add Search monitoring on Plus and Pro.',
   },
   {
-    icon: '📊',
-    title: 'Deep Historic Analytics',
-    body: 'Trend charts and long-term patterns across your full Vine history — with data going as far back as your account allows.',
+    icon: '\u{1F4CA}',
+    title: 'Analytics Insights',
+    body: 'Use analytics with plan-based history windows: 1 week (Free), 1 month (Plus), and 3 months (Pro).',
   },
   {
-    icon: '📋',
-    title: 'Recommendation History',
-    body: 'Every item you were ever recommended — searchable, filterable, and permanently available in your personal dashboard.',
+    icon: '\u{1F4CB}',
+    title: 'Product History',
+    body: 'Browse product history by tier with date navigation and multi-day lookbacks in the Products tab.',
   },
   {
-    icon: '⭐',
-    title: 'Outstanding Reviews',
-    body: 'Clear visibility into pending and overdue reviews at a glance. Stay compliant without the mental overhead.',
+    icon: '\u2B50',
+    title: 'Review Monitoring',
+    body: 'Review monitoring and reviews alerts are available on Pro. Plus and Pro include account monitoring analytics.',
   },
   {
-    icon: '🌐',
-    title: 'Access Anywhere',
-    body: 'A fully responsive web dashboard — your Vine data on any device, any browser, from anywhere in the world.',
+    icon: '\u{1F310}',
+    title: 'Access & Sessions',
+    body: 'Use the web dashboard with tiered concurrent session limits: 2 browser sessions (Free), 4 (Plus), and 6 (Pro).',
   },
 ] as const
 
 const STATS: Array<{ value: string; sup?: string; label: string }> = [
-  { value: 'RFY', label: 'Real-time queue tracking' },
-  { value: '<1', sup: 's', label: 'Alert delivery latency' },
-  { value: '∞', label: 'Historic data retained' },
-  { value: '3', label: 'Notification channels' },
+  { value: 'RFY', label: 'Monitoring on all tiers' },
+  { value: '2/4/6', label: 'Web dashboard sessions (Free/Plus/Pro)' },
+  { value: '3', label: 'Notification channels supported' },
+  { value: '3', sup: 'mo', label: 'Max analytics history (Pro)' },
 ]
 
 const DOCS_PREVIEW_STEPS = [
   {
-    title: 'Create your account & sign in',
-    desc: 'Register at divinemonitor.com and log in to access your personal dashboard.',
+    title: 'Install and sign in',
+    desc: 'Install the Chrome extension, then sign in to your Divine Monitor dashboard.',
   },
   {
-    title: 'Connect your notification channels',
-    desc: 'Head to Settings → Notifications and connect email, push, or Telegram. Each takes under a minute.',
+    title: 'Check your plan features',
+    desc: 'Open Account to confirm your tier and unlocked features (for example Search, AI analytics, and Reviews).',
   },
   {
-    title: 'Set your filters & go live',
-    desc: 'Configure your RFY alert rules and search terms. Dashboard and notifications activate immediately.',
+    title: 'Configure notifications',
+    desc: 'Open Notifications and enable channels and alert rules for the feeds and modules included in your tier.',
   },
-]
+] as const
 
 export function HomePage() {
   return (
     <>
-      {/* ── Hero ──────────────────────────────────────────────── */}
       <section className="hero">
         <div className="hero-eyebrow">Real-time Amazon Vine monitoring</div>
         <h1 className="hero-l1">Unified, notified,</h1>
@@ -69,23 +68,21 @@ export function HomePage() {
           <div className="hero-rule-diamond" />
         </div>
         <p className="hero-body">
-          Monitor your RFY queue and Search terms as they update. Receive{' '}
-          <strong>instant, rich notifications</strong> across email, push, and Telegram —
-          configured in seconds, not hours. Explore deep historic analytics, browse your complete
-          recommendation history, and track outstanding reviews, all from one{' '}
-          <strong>modern web dashboard</strong> accessible from any browser, anywhere.
+          Monitor your RFY queue and Search terms as they update. Receive instant, rich
+          notifications across email, push, and Telegram - configured in seconds, not hours. Explore
+          deep historic analytics, browse your recommendation history, and track outstanding reviews
+          from one modern web dashboard.
         </p>
         <div className="hero-actions">
           <Link to="/docs/quickstart" className="hero-cta-primary">
-            Read the docs →
+            Read the docs &rarr;
           </Link>
           <NavLink to="/changelog" className="hero-cta-secondary">
-            View changelog →
+            View changelog &rarr;
           </NavLink>
         </div>
       </section>
 
-      {/* ── Stats ──────────────────────────────────────────────── */}
       <div className="stats-row" role="list" aria-label="Platform stats">
         {STATS.map((stat, i) => (
           <ScrollReveal key={stat.label} className="stat-cell" delay={i * 100}>
@@ -98,14 +95,13 @@ export function HomePage() {
         ))}
       </div>
 
-      {/* ── Platform Capabilities ──────────────────────────────── */}
       <section className="caps-section" aria-labelledby="caps-heading">
         <ScrollReveal>
           <div className="section-eyebrow">Platform capabilities</div>
         </ScrollReveal>
         <ScrollReveal delay={80}>
           <h2 className="section-heading" id="caps-heading">
-            Unified and notified — built for serious Vine voices.
+            Unified and notified - built for serious Vine voices.
           </h2>
         </ScrollReveal>
         <div className="caps-grid">
@@ -121,7 +117,6 @@ export function HomePage() {
         </div>
       </section>
 
-      {/* ── Docs Preview ───────────────────────────────────────── */}
       <section className="docs-preview-section" aria-labelledby="docs-preview-heading">
         <ScrollReveal>
           <div className="section-eyebrow">Documentation</div>
@@ -133,35 +128,33 @@ export function HomePage() {
         </ScrollReveal>
 
         <ScrollReveal delay={140} className="docs-preview-shell">
-          {/* Sidebar preview */}
           <div className="docs-preview-sidebar" aria-hidden="true">
             <span className="docs-preview-section-label">Getting Started</span>
-            <span className="docs-preview-link docs-preview-link--active">Quickstart →</span>
-            <Link to="/docs/notifications-setup" className="docs-preview-link">
-              Notifications Setup
-            </Link>
-            <Link to="/docs/rfy-filters" className="docs-preview-link">
-              RFY Filters
+            <span className="docs-preview-link docs-preview-link--active">Quickstart &rarr;</span>
+            <Link to="/docs/plans" className="docs-preview-link">
+              Plans & Features
             </Link>
             <div className="docs-preview-sep" />
-            <span className="docs-preview-section-label">Features</span>
-            <Link to="/docs/analytics" className="docs-preview-link">
-              Analytics
+            <span className="docs-preview-section-label">Monitoring</span>
+            <Link to="/docs/products-tab-walkthrough" className="docs-preview-link">
+              Products Tab
             </Link>
-            <Link to="/docs/rec-history" className="docs-preview-link">
-              Rec History
+            <Link to="/docs/analytics-tabs-and-layouts" className="docs-preview-link">
+              Analytics Tabs
             </Link>
-            <Link to="/docs/account-status" className="docs-preview-link">
-              Account Status
+            <Link to="/docs/review-monitoring" className="docs-preview-link">
+              Review Monitoring
             </Link>
             <div className="docs-preview-sep" />
-            <span className="docs-preview-section-label">Reference</span>
-            <Link to="/docs/configuration" className="docs-preview-link">
-              Configuration
+            <span className="docs-preview-section-label">Settings</span>
+            <Link to="/docs/notifications-configuration" className="docs-preview-link">
+              Notifications
+            </Link>
+            <Link to="/docs/account-page" className="docs-preview-link">
+              Account Page
             </Link>
           </div>
 
-          {/* Content preview */}
           <div className="docs-preview-main">
             <div className="docs-breadcrumb">
               <span>Docs</span>
@@ -173,8 +166,7 @@ export function HomePage() {
             <h2 className="docs-preview-title">Quickstart</h2>
             <p className="docs-preview-meta">5 min read</p>
             <p className="docs-preview-lede">
-              Get up and running in minutes. Connect your account, configure your notification
-              channels, and start monitoring your Vine queue.
+              Get from install to first monitored item fast, with only the essentials.
             </p>
             <ol className="docs-steps" aria-label="Quickstart steps">
               {DOCS_PREVIEW_STEPS.map((step, i) => (
@@ -188,13 +180,12 @@ export function HomePage() {
               ))}
             </ol>
             <Link to="/docs/quickstart" className="docs-preview-cta">
-              Open full docs →
+              Open full docs &rarr;
             </Link>
           </div>
         </ScrollReveal>
       </section>
 
-      {/* ── Footer ─────────────────────────────────────────────── */}
       <footer className="site-footer">
         <span className="site-footer-brand">Divine Monitor</span>
         <div className="site-footer-links">
