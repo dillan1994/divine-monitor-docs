@@ -30,13 +30,13 @@ const CAPABILITIES = [
   {
     icon: '\u{1F310}',
     title: 'Access & Sessions',
-    body: 'Use the web dashboard with tiered concurrent session limits: 2 browser sessions (Free), 4 (Plus), and 6 (Pro).',
+    body: 'Use the Divine Monitor Console with tiered concurrent session limits: 2 browser sessions (Free), 4 (Plus), and 6 (Pro).',
   },
 ] as const
 
 const STATS: Array<{ value: string; sup?: string; label: string }> = [
   { value: 'RFY', label: 'Monitoring on all tiers' },
-  { value: '2/4/6', label: 'Web dashboard sessions (Free/Plus/Pro)' },
+  { value: '2/4/6', label: 'Console sessions (Free/Plus/Pro)' },
   { value: '3', label: 'Notification channels supported' },
   { value: '3', sup: 'mo', label: 'Max analytics history (Pro)' },
 ]
@@ -44,7 +44,7 @@ const STATS: Array<{ value: string; sup?: string; label: string }> = [
 const DOCS_PREVIEW_STEPS = [
   {
     title: 'Install and sign in',
-    desc: 'Install the Chrome extension, then sign in to your Divine Monitor dashboard.',
+    desc: 'Install the Chrome extension, then sign in to the Divine Monitor Console.',
   },
   {
     title: 'Check your plan features',
@@ -68,7 +68,7 @@ export function HomePage() {
           <div className="hero-rule-diamond" />
         </div>
         <p className="hero-body">
-          Divine Monitor gives you a globally accessible dashboard for real-time updates,
+          Divine Monitor gives you a globally accessible Console for real-time updates,
           long-term history, and rich analytics, with simple but powerful notification controls
           across email, push, and Telegram, configured in minutes.
         </p>

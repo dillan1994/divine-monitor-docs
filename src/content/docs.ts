@@ -17,7 +17,7 @@ export const docsEntries: DocsEntry[] = [
     body: [
       {
         title: 'Install and sign in',
-        description: 'Install the Chrome extension, then sign in to your Divine Monitor dashboard.',
+        description: 'Install the Chrome extension, then sign in to the Divine Monitor Console.',
       },
       {
         title: 'Check your plan features',
@@ -79,10 +79,10 @@ export const docsEntries: DocsEntry[] = [
         ],
       },
       {
-        label: 'Dashboard & Sessions',
+        label: 'Console & Sessions',
         features: [
-          { label: 'Global web dashboard access (feature availability depends on tier)', free: true, plus: true, pro: true },
-          { label: 'Concurrent web dashboard sessions (active browser connections)', free: '2 browser sessions', plus: '4 browser sessions', pro: '6 browser sessions' },
+          { label: 'Global Divine Monitor Console access (feature availability depends on tier)', free: true, plus: true, pro: true },
+          { label: 'Concurrent Console sessions (active browser connections)', free: '2 browser sessions', plus: '4 browser sessions', pro: '6 browser sessions' },
           { label: 'Products tab: grid/table views, sorting, and filtering', free: true, plus: true, pro: true },
           { label: 'RFY analytics layouts (resizable grid)', free: true, plus: true, pro: true },
           { label: 'Saved analytics layout preferences', free: true, plus: true, pro: true },
@@ -119,6 +119,35 @@ export const docsEntries: DocsEntry[] = [
           { label: 'Browser push alerts (delivery channel)', free: false, plus: true, pro: true },
           { label: 'Exclude title/category filters (noise control)', free: false, plus: true, pro: true },
         ],
+      },
+    ],
+  },
+  {
+    slug: 'marketplace-support',
+    title: 'Marketplace Support',
+    section: 'getting-started',
+    summary: 'Which Amazon Vine marketplaces Divine Monitor supports, how marketplace detection works, and what to expect if a feature is not yet available in your region.',
+    readTime: '3 min read',
+    body: [
+      {
+        title: 'Supported marketplaces',
+        description:
+          'Divine Monitor supports Amazon Vine across 12 marketplaces: US, CA, UK, DE, FR, IT, ES, JP, AU, SG, BR, and MX. The extension and Divine Monitor Console work across all of these.',
+      },
+      {
+        title: 'Automatic marketplace detection',
+        description:
+          'The extension detects your active marketplace automatically from the Amazon page URL — no manual configuration required. If you participate in multiple marketplaces, the extension adjusts to whichever one you are currently browsing.',
+      },
+      {
+        title: 'Feature availability by marketplace',
+        description:
+          'Most features are available across all supported marketplaces. Some features — such as Account monitoring and Review monitoring — are rolling out progressively. If a feature is not yet available in your marketplace, the relevant tab or section in the Divine Monitor Console will display a coming-soon message rather than showing an error.',
+      },
+      {
+        title: 'Primary marketplace',
+        description:
+          'Your account is associated with a primary marketplace, which determines how your data is stored and displayed in the Console. Contact support if you need to change your primary marketplace.',
       },
     ],
   },
@@ -178,6 +207,68 @@ export const docsEntries: DocsEntry[] = [
           {
             src: '/docs-images/products/products-notification-info-popover.png',
             alt: 'Products notification info popover open',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'extension-popup',
+    title: 'Extension Popup Guide',
+    section: 'extensions',
+    summary: 'A walkthrough of every section in the extension popup — the control panel for all monitoring, interval, and alert settings.',
+    readTime: '5 min read',
+    body: [
+      {
+        title: 'Opening the popup',
+        description:
+          'Click the Divine Monitor icon in your Chrome toolbar to open the popup. If the icon is not visible, click the extensions puzzle piece and pin Divine Monitor. The popup is the primary control panel for everything the extension does.',
+      },
+      {
+        title: 'Global enable/disable',
+        description:
+          'The toggle at the top of the popup enables or disables all monitoring globally. When disabled, no feed polling occurs and no data is written to the Console. Per-feed controls are only active when the global toggle is on.',
+      },
+      {
+        title: 'Per-feed status indicators',
+        description:
+          'Below the global toggle, each feed — RFY, Search, Reviews, Account, and AI — shows its current status. A green indicator means the feed is actively polling. A quiet-mode indicator means the feed is running at reduced cadence inside a quiet window. A grey indicator means the feed is paused or unavailable on your tier.',
+      },
+      {
+        title: 'RFY and Search feed sections',
+        description:
+          'Expand the RFY or Search section to access interval controls (Plus/Pro for RFY), mode selection (Search only), quiet window times, and the sound alert toggle (Pro, RFY only). Changes take effect on the next polling cycle.',
+      },
+      {
+        title: 'Managing Search terms',
+        description:
+          'Expand the Search section to add or remove search terms. Plus supports up to 5 terms and Pro supports up to 10. Choose Spread or Burst mode per the Search Monitoring doc. The term list and mode selection persist across browser sessions.',
+      },
+      {
+        title: 'Force-fetch for Reviews and Account',
+        description:
+          'The Reviews and Account feeds run on longer cycles by default. Use the force-fetch buttons in their respective popup sections to trigger an immediate data refresh outside the normal schedule — useful after completing reviews or expecting an account status change.',
+      },
+      {
+        title: 'Screenshot checklist',
+        description:
+          'Capture: popup open with global toggle on; per-feed status row; RFY section expanded with interval control; Search section with terms list; force-fetch buttons for Reviews and Account.',
+        images: [
+          {
+            src: '/docs-images/extension/popup-global-toggle.png',
+            alt: 'Extension popup global enable toggle',
+          },
+          {
+            src: '/docs-images/extension/popup-feed-status-row.png',
+            alt: 'Extension popup per-feed status indicators',
+          },
+          {
+            src: '/docs-images/extension/popup-rfy-section-expanded.png',
+            alt: 'Extension popup RFY section expanded',
+          },
+          {
+            src: '/docs-images/extension/popup-search-terms-list.png',
+            alt: 'Extension popup Search terms list',
           },
         ],
       },
@@ -339,14 +430,19 @@ export const docsEntries: DocsEntry[] = [
           'Use standard windows for RFY/Search/Account/Reviews and dedicated lookback windows for AI monitoring.',
       },
       {
-        title: 'Use RFY views for focused analysis',
+        title: 'Use RFY preset views for focused analysis',
         description:
-          'RFY includes Overview, Price and Value, Timing Patterns, Catalog Mix, and Custom. Use Custom when you want full widget control.',
+          'RFY includes four preset views: Overview (daily/hourly counts, heatmap, subcategories, brands), Price & Value (recommended value, price mix, signal trends), Timing Patterns (date-hour heatmap, weekday-hour heatmap, hourly and day-of-week breakdowns), and Catalog Mix (top categories, subcategories, brands, sellers). Each view is pre-arranged for a specific analytical focus.',
+      },
+      {
+        title: 'Use the Custom view for full widget control',
+        description:
+          'The Custom view gives you a blank canvas populated with all available widgets. Arrange, resize, show, or hide any widget to build your own analysis layout. Use the bookmark icon to set Custom as your default view so it loads first every time you open RFY Analytics.',
       },
       {
         title: 'Resize and save your layout',
         description:
-          'Open layout settings, enter edit mode, drag/resize widgets, then save. You can also set your preferred RFY view as default.',
+          'Open layout settings, enter edit mode, drag/resize widgets, then save. Layout preferences are saved per-view — each preset and the Custom view remembers its own arrangement independently.',
       },
       {
         title: 'Use chart help and expand actions',
@@ -377,6 +473,54 @@ export const docsEntries: DocsEntry[] = [
           {
             src: '/docs-images/analytics/analytics-saved-custom-layout.png',
             alt: 'Analytics custom layout saved state',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'search-analytics',
+    title: 'Search Analytics',
+    section: 'monitoring',
+    summary: 'How to use the Search analytics tab to understand your keyword feed — time windows, the widget grid, and saving layouts.',
+    readTime: '6 min read',
+    body: [
+      {
+        title: 'Open Analytics → Search',
+        description:
+          'The Search analytics tab is available on Plus and Pro. It provides the same draggable, resizable widget grid as RFY analytics, scoped to data from your Search monitoring feed. If you have no search terms configured yet, see the Search Monitoring doc first.',
+      },
+      {
+        title: 'Pick a time window',
+        description:
+          'Use the time window selector to set the lookback period for all widgets on the tab. Available windows follow your plan limits: 1 week on Free, 1 month on Plus, and up to 1 year on Pro.',
+      },
+      {
+        title: 'Read the widget grid',
+        description:
+          'Search analytics widgets include per-term breakdowns, daily and hourly product counts, category and brand distributions, and price analysis — mirroring the RFY analytics structure but filtered to your Search feed data. Widgets only show data for the terms that were active during the selected window.',
+      },
+      {
+        title: 'Customise and save your layout',
+        description:
+          'Enter layout edit mode to drag and resize widgets. Save the layout to persist your arrangement. The Search analytics layout is saved independently from your RFY layout so changes to one do not affect the other.',
+      },
+      {
+        title: 'Screenshot checklist',
+        description:
+          'Capture: Search analytics tab selected; time window selector open; widget grid with at least two widgets visible; layout edit mode active.',
+        images: [
+          {
+            src: '/docs-images/analytics/search-analytics-tab.png',
+            alt: 'Search analytics tab selected',
+          },
+          {
+            src: '/docs-images/analytics/search-analytics-widget-grid.png',
+            alt: 'Search analytics widget grid',
+          },
+          {
+            src: '/docs-images/analytics/search-analytics-layout-edit.png',
+            alt: 'Search analytics layout edit mode',
           },
         ],
       },
@@ -457,9 +601,14 @@ export const docsEntries: DocsEntry[] = [
           'From Reviews and Notifications, set daily digest preferences and not-approved alerts.',
       },
       {
-        title: 'Use Analytics -> Reviews for pressure tracking',
+        title: 'Track due pressure in Analytics → Reviews',
         description:
-          'Watch due buckets (Overdue, Today, Tomorrow, <7 days, Safe) and use journey-board filters to focus work.',
+          'Analytics → Reviews shows due-pressure tiles at the top: Overdue, Due Today, Due Tomorrow, Due within 7 days, and Safe. Click any tile to filter the view below to only reviews in that bucket. KPI cards above the tiles give totals for total reviews, not yet reviewed, pending approval, approval rate, and average final review time.',
+      },
+      {
+        title: 'Use the Review Journey Board',
+        description:
+          'Below the due-pressure tiles, the Journey Board is a kanban-style view of all in-flight reviews across three columns: Not Yet Reviewed, Completed Pending, and Completed Pending Approval. Use it to see exactly where each review sits in its lifecycle at a glance. Combine a due-pressure filter with the board to focus on overdue or at-risk items without losing sight of the full queue.',
       },
       {
         title: 'Know access requirements',
@@ -577,7 +726,12 @@ export const docsEntries: DocsEntry[] = [
       {
         title: 'Validate with Recent Activity',
         description:
-          'Filter by channel and status to confirm sent, skipped, and failed deliveries after any change.',
+          'The Recent Activity tab shows a full delivery history for all notification events. Filter by channel (email, push, Telegram) and by status (sent, skipped, failed) to confirm your setup is working after any configuration change. Each row shows the event type, channel used, delivery status, and timestamp — use this to diagnose missing or unexpected notifications.',
+      },
+      {
+        title: 'Notification replay (Beta)',
+        description:
+          'Failed notifications can be replayed from Recent Activity. This feature is currently in beta and still in active development and testing — availability may vary and behaviour may change in future releases.',
       },
       {
         title: 'Screenshot checklist',
@@ -603,6 +757,98 @@ export const docsEntries: DocsEntry[] = [
           {
             src: '/docs-images/notifications/notifications-recent-activity-table.png',
             alt: 'Notifications recent activity table',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'notification-filters',
+    title: 'Notification Filters',
+    section: 'settings',
+    summary: 'Use keyword and category exclude filters to reduce notification noise and focus alerts on items you actually care about.',
+    readTime: '5 min read',
+    body: [
+      {
+        title: 'What notification filters do',
+        description:
+          'Notification filters let you suppress alerts for products that match patterns you define. Instead of receiving a notification for every new RFY or Search item, filters let you skip items whose titles contain certain keywords or whose categories you are not interested in. Filters apply to outgoing notifications — products still appear in the Divine Monitor Console feed.',
+      },
+      {
+        title: 'Keyword exclude filters',
+        description:
+          'Add keywords or phrases to the title exclude list in Notifications → Channels → Global Preferences. When a new product\'s title contains any of your excluded keywords, its notification is suppressed. Matching is case-insensitive. Use this to block categories of items by name — for example, a brand you never order from or a product type that always shows up but never interests you.',
+      },
+      {
+        title: 'Category exclude filters',
+        description:
+          'Add Amazon Vine category names to the category exclude list in the same Global Preferences panel. Notifications for products in any excluded category are suppressed. Category names are matched against the product\'s detected category at the time of detection.',
+      },
+      {
+        title: 'Pro requirement',
+        description:
+          'Keyword and category exclude filters are available on Pro. On Free and Plus the filter controls are visible but locked. Filters apply across all notification channels — email, push, and Telegram — simultaneously.',
+      },
+      {
+        title: 'Screenshot checklist',
+        description:
+          'Capture: Global Preferences panel with keyword exclude chips added; category exclude chips added; a Pro-locked state (for comparison); filter panel with both lists non-empty.',
+        images: [
+          {
+            src: '/docs-images/notifications/notifications-keyword-exclude-chips.png',
+            alt: 'Notifications keyword exclude chips',
+          },
+          {
+            src: '/docs-images/notifications/notifications-category-exclude-chips.png',
+            alt: 'Notifications category exclude chips',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'notification-devices',
+    title: 'Browser Push & Device Management',
+    section: 'settings',
+    summary: 'How to set up browser push notifications, register devices, and manage your device list on Pro.',
+    readTime: '4 min read',
+    body: [
+      {
+        title: 'What browser push notifications require',
+        description:
+          'Browser push notifications are available on Pro. They deliver alerts directly to your browser on any registered device, even when the Divine Monitor Console tab is not open, as long as the browser is running. Each device you want to receive push alerts on must be registered separately.',
+      },
+      {
+        title: 'Registering a device',
+        description:
+          'Open Notifications → Channels and expand the Browser Push card. Click Enable push on this device to register your current browser. Your browser will prompt you to allow notifications — you must accept for push to work. Once registered, the device appears in your device list.',
+      },
+      {
+        title: 'Device limit',
+        description:
+          'Pro supports up to 3 registered browser push devices. If you reach the limit, you must remove an existing device before adding a new one. The device list shows each registered device with the browser and approximate registration time.',
+      },
+      {
+        title: 'Removing a device',
+        description:
+          'In the device list, click Remove next to any device you no longer want to receive push alerts. The device is deregistered immediately — push notifications to that browser will stop on the next event. You can re-register the same device later if needed.',
+      },
+      {
+        title: 'Screenshot checklist',
+        description:
+          'Capture: Browser Push card with device list showing one registered device; device limit reached state (3 devices); remove button on a device; browser notification permission prompt.',
+        images: [
+          {
+            src: '/docs-images/notifications/push-device-list-one-registered.png',
+            alt: 'Browser push device list with one registered device',
+          },
+          {
+            src: '/docs-images/notifications/push-device-limit-reached.png',
+            alt: 'Browser push device limit reached state',
+          },
+          {
+            src: '/docs-images/notifications/push-device-remove-button.png',
+            alt: 'Browser push device remove button',
           },
         ],
       },
