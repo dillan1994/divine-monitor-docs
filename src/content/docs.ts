@@ -60,7 +60,10 @@ export const docsEntries: DocsEntry[] = [
         features: [
           { label: 'Chrome extension & RFY monitoring', free: true, plus: true, pro: true },
           { label: 'Disable Vine opt-out button', free: true, plus: true, pro: true },
-          { label: 'RFY and Search refresh interval', free: 'Locked', plus: 'Configurable', pro: 'Configurable' },
+          { label: 'RFY refresh interval', free: 'Locked', plus: 'Configurable', pro: 'Configurable' },
+          { label: 'Search refresh interval', free: 'System-managed', plus: 'System-managed', pro: 'System-managed' },
+          { label: 'Sound alerts (browser audio on new RFY items)', free: false, plus: false, pro: true },
+          { label: 'Quiet windows (reduced monitoring cadence during set hours)', free: true, plus: true, pro: true },
           {
             label: 'Space saving mode (hide lower-page ads/history, side order flyer, and RFY/AFA categories)',
             free: true,
@@ -182,25 +185,139 @@ export const docsEntries: DocsEntry[] = [
   },
   {
     slug: 'space-saving-mode',
-    title: 'Space Saving Mode',
+    title: 'Vine Page Enhancements',
     section: 'extensions',
-    summary: 'Extension layout cleanup split into Space Saving Mode (base) and Space Saving Mode Plus (advanced).',
-    readTime: '3 min read',
+    summary: 'Everything the extension does to the Vine page UI — Space Saving Mode, opt-out protection, and layout cleanup.',
+    readTime: '4 min read',
     body: [
+        {
+        title: 'Disable Vine opt-out button',
+        description:
+          'The extension disables the Vine opt-out button on your Amazon Vine pages across all tiers, active from the moment the extension is installed. This prevents accidental opt-out with no configuration required — the button remains visible but cannot be clicked.',
+      },
       {
         title: 'Space Saving Mode (base)',
         description:
-          'On Free, Space Saving Mode hides Amazon ads and browsing history in the lower portion of the page, hides the side order flyer, and hides category sections on RFY and AFA to reclaim horizontal space.',
+          'Available on all tiers. Space Saving Mode hides Amazon ads and browsing history in the lower portion of the page, hides the side order flyer, and removes the category sections on RFY and AFA pages to reclaim horizontal space.',
       },
       {
         title: 'Space Saving Mode Plus',
         description:
-          'Plus and Pro include everything in Free, and additionally hide the Amazon deals header at the top, reduce extra vertical whitespace, and further compact product tiles to significantly transform the default Vine tab layout.',
+          'Available on Plus and Pro. Builds on the base mode by also hiding the Amazon deals header at the top of the page, reducing extra vertical whitespace between elements, and compacting product tiles — significantly transforming the default Vine tab layout.',
+      }
+    ],
+  },
+  {
+    slug: 'rfy-monitoring',
+    title: 'RFY Monitoring',
+    section: 'extensions',
+    summary: 'How the extension monitors the RFY queue in the background, configures refresh intervals, refreshes your open Vine tab, and alerts you instantly with sound on Pro.',
+    readTime: '6 min read',
+    body: [
+      {
+        title: 'Background RFY monitoring',
+        description:
+          'The extension refreshes your RFY feed in the background, with no open Vine tab required. New products are detected and written to the Divine Monitor Console automatically. This is the core monitoring mechanism that runs at all times while the extension is enabled.',
       },
       {
-        title: 'Vine opt-out protection',
+        title: 'Randomized refresh intervals',
         description:
-          'The Vine opt-out button is disabled as part of Free functionality (and therefore remains disabled on Plus and Pro).',
+          'Polling intervals are deliberately randomized within a range rather than fixed to a single value, avoiding predictable request patterns. On Free the range is system-managed and locked. On Plus and Pro you can adjust the interval target via the extension popup — the popup shows your active range so you always know the current cadence.',
+      },
+      {
+        title: 'Visible Vine tab refresh',
+        description:
+          'Optionally, you can opt to have a visible RFY tab refreshing which means you have an up to date RFY page in front of you at all times. Also overlays a timer on the Vine page to indicate when the next refresh and to indicate it is being actively refreshed. Incredibly powerful for an all in one solution without the need for any third party auto-refresh extensions..',
+      },
+      {
+        title: 'Sound alerts (Pro)',
+        description:
+          'On Pro, when a refresh cycle detects new RFY items, you can enbable the extension to play a browser audio alert immediately. Sound alerts are instant — they fire the moment new items are found (faster than push, email, or Telegram notifications which go through a processing pipeline). If you are sitting in front of a device running the extension, sound alerts are the fastest possible signal and is an incredibly powerful feature.',
+      },
+      {
+        title: 'RFY quiet window',
+        description:
+          'To reduce activity overnight (or for your time window of choice), you can configure a quiet window in the extension popup under the RFY section. During a quiet window the polling cadence drops significantly. Monitoring does not stop — it just checks less often. Sound alerts still fire if new items are detected during the window.',
+      },
+      {
+        title: 'Screenshot checklist',
+        description:
+          'Capture: extension popup RFY section with interval control; popup with LIVE tab indicator active; popup sound alert toggle in Pro state; popup RFY quiet hours configured.',
+        images: [
+          {
+            src: '/docs-images/extension/popup-rfy-interval-control.png',
+            alt: 'Extension popup RFY interval control',
+          },
+          {
+            src: '/docs-images/extension/popup-rfy-live-indicator.png',
+            alt: 'Extension popup LIVE tab refresh indicator',
+          },
+          {
+            src: '/docs-images/extension/popup-sound-alert-toggle.png',
+            alt: 'Extension popup sound alert toggle on Pro',
+          },
+          {
+            src: '/docs-images/extension/popup-rfy-quiet-hours.png',
+            alt: 'Extension popup RFY quiet hours configured',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'search-monitoring',
+    title: 'Search Monitoring',
+    section: 'extensions',
+    summary: 'How Search monitoring works, the difference between Spread and Burst modes, system-managed intervals, and quiet windows for Search.',
+    readTime: '6 min read',
+    body: [
+      {
+        title: 'What is Search monitoring?',
+        description:
+          'Search monitoring tracks custom search terms via the native Vine search mechanism. You define the search terms you care about in the extension popup, and the extension handles the rest via two modes, \'Spread\' and \'Burst\' (more info below). New matching products appear in Divine Monitor Console alongside RFY items. Search monitoring is available on Plus and Pro.',
+      },
+      {
+        title: 'Spread mode',
+        description:
+          'In Spread mode the extension rotates through one search terms per cycle. This distributes polling load and gives every term consistent coverage. Spread is a safe default and a good choice for balanced, steady monitoring across all your terms.',
+      },
+      {
+        title: 'Burst mode',
+        description:
+          'In Burst mode, the extension refreshes multiple defined search terms per cycle. This concentrates multiple search terms into a tighter window for faster detection, at the cost of higher short-term activity. Burst mode includes automatic cooldown on repeated failures to maintain safe operation.',
+      },
+      {
+        title: 'System-managed intervals',
+        description:
+          'Unlike RFY, Search refresh intervals are always system-managed and are not user-configurable on any tier. Intervals are randomized within a system-defined range to maintain safe, sustainable request patterns across all users. This keeps Search monitoring reliable and within acceptable usage boundaries regardless of how many terms you are tracking.',
+      },
+      {
+        title: 'Search quiet window',
+        description:
+          'Search has its own quiet window, configured independently of RFY. Set it in the extension popup under the Search section. During a quiet window the Search cadence drops significantly but does not stop entirely.',
+      },
+      {
+        title: 'Screenshot checklist',
+        description:
+          'Capture: extension popup Search section with terms list; Spread mode selected; Burst mode selected; Search quiet hours configured.',
+        images: [
+          {
+            src: '/docs-images/extension/popup-search-terms-list.png',
+            alt: 'Extension popup Search terms list',
+          },
+          {
+            src: '/docs-images/extension/popup-search-spread-mode.png',
+            alt: 'Extension popup Search spread mode selected',
+          },
+          {
+            src: '/docs-images/extension/popup-search-burst-mode.png',
+            alt: 'Extension popup Search burst mode selected',
+          },
+          {
+            src: '/docs-images/extension/popup-search-quiet-hours.png',
+            alt: 'Extension popup Search quiet hours configured',
+          },
+        ],
       },
     ],
   },
