@@ -16,7 +16,7 @@ export function ContactPage() {
           <div className="contact-option-card contact-option-primary">
             <div className="contact-option-label">Contact form</div>
             <p className="contact-option-body">
-              The quickest way to reach me. Fill in a short form and I'll get back to you at your email address.
+              The quickest way to reach me is via the Divine Monitor Console. Fill in a short form and I'll get back to you at your email address.
             </p>
             <a
               href={APP_CONTACT_URL}
@@ -38,7 +38,7 @@ export function ContactPage() {
               any time.
             </p>
             <p className="contact-option-note">
-              If there's demand for other channels like Discord or live chat, those are on the table.
+              If there's demand for other communication channels, those can be considered.
             </p>
           </div>
         </div>
