@@ -1,0 +1,5 @@
+We're a small team of full time Software Engineers working in various industries. We're all Viners, and we wanted to build modern, fancy and slick tools for ourselves to help monitor vine, track history and analytics. The tools out there are great, and all have their strengths. We wanted modern and slick. We wanted it to be simple - that was the key. Access history anywhere. Generous free tiers. And genuinely useful for us.
+
+It started off as a project just for ourselves, and has been that way for years. But it got to the stage where we were receiving really good notifications and thinking 'Wow, other Viners could deifnitely benefit from this', so we fully re-architected the whole solution.
+
+One thing that differentiates us is we are unbelieeveably protective over our Vine accounts, so everything we do has been built for safety. Conservative default refresh intervals, backoffs, quiet windows, and also a commitment to never push the boundaries (eg one click ordering, etc).

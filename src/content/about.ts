@@ -17,15 +17,6 @@ export interface AboutSection {
 
 export const aboutSections: AboutSection[] = [
   {
-    slug: 'overview',
-    label: 'Why?',
-    group: 'About',
-    title: 'Why Divine Monitor?',
-    subtitle:
-      'The fastest way to stay ahead of your Amazon storefront — real‑time alerts, deep analytics, and zero noise.',
-    ready: true,
-  },
-  {
     slug: 'story',
     label: 'My Story',
     group: 'About',

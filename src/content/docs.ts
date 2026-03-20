@@ -1,4 +1,72 @@
-import type { DocSection, DocsEntry } from '@/types/docs'
+import React from 'react'
+import type { DocSection, DocsEntry, PlanTier, TierGroup } from '@/types/docs'
+
+export const PLAN_TIERS: PlanTier[] = [
+  { name: 'Free', price: 'Free', sub: '' },
+  { name: 'Plus', price: 'GBP 4.99', sub: '+ VAT / month', highlight: true },
+  { name: 'Pro', price: 'GBP 9.99', sub: '+ VAT / month' },
+]
+
+export const PLAN_TIER_GROUPS: TierGroup[] = [
+  {
+    label: 'Extension',
+    features: [
+      { label: 'RFY monitoring', free: true, plus: true, pro: true },
+      { label: 'Search terms monitoring', free: false, plus: '5 terms (spread mode)', pro: '10 terms (burst mode)' },
+      { label: 'Account monitoring', free: false, plus: true, pro: true },
+      { label: 'Review monitoring', free: false, plus: false, pro: true },
+      { label: 'Disable Vine opt-out button', free: true, plus: true, pro: true },
+      { label: 'Custom RFY refresh interval', free: false, plus: true, pro: true },
+      { label: 'Instant sound alerts for new RFY items', free: false, plus: false, pro: true },
+      { label: 'Quiet windows (reduced monitoring cadence during set hours)', free: true, plus: true, pro: true },
+      { label: 'Space saving mode (hide lower-page ads/history, side order flyer, and RFY/AFA categories)', free: true, plus: true, pro: true },
+      { label: 'Space saving mode plus (hide deals header, trim vertical space, compact product tiles)', free: false, plus: true, pro: true },
+    ],
+  },
+  {
+    label: 'Console & Sessions',
+    features: [
+      { label: 'Global Console', free: true, plus: true, pro: true },
+      { label: 'Concurrent Console sessions (active browser connections)', free: '2 browser sessions', plus: '4 browser sessions', pro: '6 browser sessions' },
+      { label: 'Products tab: grid/table views, sorting, and filtering', free: true, plus: true, pro: true },
+      { label: 'RFY analytics layouts (resizable grid)', free: true, plus: true, pro: true },
+      { label: 'Saved analytics layout preferences', free: true, plus: true, pro: true },
+      { label: 'Theme options (Slate default)', free: 'Slate', plus: 'Slate + Light + Dark', pro: 'Slate + Light + Dark' },
+    ],
+  },
+  {
+    label: 'Monitoring Modules',
+    features: [
+      { label: 'RFY monitoring', free: true, plus: true, pro: true },
+      { label: 'Search monitoring', free: false, plus: true, pro: true },
+      { label: 'Account monitoring', free: false, plus: true, pro: true },
+      { label: 'AI (all items) monitoring', free: false, plus: true, pro: true },
+      { label: 'Review monitoring', free: false, plus: false, pro: true },
+    ],
+  },
+  {
+    label: 'History & Lookbacks',
+    features: [
+      { label: 'Product history', free: '1 week', plus: '1 month', pro: '3 months' },
+      { label: 'Product multi-day lookback window', free: '1 day', plus: '3 days', pro: '7 days' },
+      { label: 'Analytics history', free: '1 week', plus: '1 month', pro: '3 months' },
+    ],
+  },
+  {
+    label: 'Notifications',
+    features: [
+      { label: 'RFY', free: false, plus: true, pro: true },
+      { label: 'Search (keyword feed)', free: false, plus: true, pro: true },
+      { label: 'Account alerts (status + ratios)', free: false, plus: true, pro: true },
+      { label: 'Exclude title/category filters (noise control)', free: false, plus: true, pro: true },
+      { label: 'Telegram alerts (delivery channel)', free: false, plus: true, pro: true },
+      { label: 'Reviews alerts (daily digest + not-approved)', free: false, plus: false, pro: true },
+      { label: 'Email alerts (delivery channel)', free: false, plus: false, pro: true },
+      { label: 'Browser push alerts (delivery channel)', free: false, plus: false, pro: true },
+
+    ],
+  },
+]
 
 export const docSections: DocSection[] = [
   { key: 'getting-started', label: 'Getting Started' },
@@ -9,6 +77,15 @@ export const docSections: DocSection[] = [
 
 export const docsEntries: DocsEntry[] = [
   {
+    slug: 'why-divine-monitor',
+    title: 'Why Divine Monitor',
+    section: 'getting-started',
+    summary: 'Real-time RFY alerts, smart notifications, and deep analytics — built by a Viner, for Viners.',
+    readTime: '2 min read',
+    kind: 'overview',
+    body: [],
+  },
+  {
     slug: 'quickstart',
     title: 'Quickstart',
     section: 'getting-started',
@@ -16,109 +93,26 @@ export const docsEntries: DocsEntry[] = [
     readTime: '5 min read',
     body: [
       {
-        title: 'Install and sign in',
-        description: 'Install the Chrome extension, then sign in to the Divine Monitor Console.',
+        title: 'Sign up',
+        description: React.createElement('span', null,
+          'Open up the ',
+          React.createElement('a', { href: 'https://app.divinemonitor.com/', target: '_blank', rel: 'noreferrer' }, 'Divine Monitor Console'),
+          ' and sign up for an account.'
+        ),
       },
       {
-        title: 'Check your plan features',
+        title: 'Install extension and sign in',
+        description: 'Install the Google Chrome extension and sign-in. From here you can start enabling your feeds. To work reliably, the extension must be installed onto a browser/pc/machine that is on 24/7. The browser must be open, but the extension will do its job in the background - i.e, Vine pages do not need to be open.',
+      },
+      {
+        title: 'Explore the Console',
         description:
-          'Open Account to confirm your current tier and unlocked features (for example Search, AI analytics, and Reviews).',
+          'Familiarise yourself with the core features of the Console - Products tab and history, grid/tabular view, the various analytics charts.',
       },
       {
-        title: 'Configure notifications',
+        title: 'Check your plan features via the Console',
         description:
-          'Go to Notifications, enable channels you want, then set your feed preferences and timezone.',
-      },
-      {
-        title: 'Open Products and start monitoring',
-        description:
-          'Use the date picker and feed pills (All, RFY, Search) to focus the feed you care about.',
-      },
-      {
-        title: 'Validate everything is working',
-        description:
-          'Look for the Live indicator on today\'s Products view and send a test notification from the Notifications page.',
-      },
-    ],
-  },
-  {
-    slug: 'plans',
-    title: 'Plans & Features',
-    section: 'getting-started',
-    summary: 'A simple comparison of what Free, Plus, and Pro include in the current rollout.',
-    readTime: '4 min read',
-    kind: 'plans',
-    body: [],
-    planTiers: [
-      { name: 'Free', price: 'Free', sub: '' },
-      { name: 'Plus', price: 'GBP 4.99', sub: '+ VAT / month', highlight: true },
-      { name: 'Pro', price: 'GBP 9.99', sub: '+ VAT / month' },
-    ],
-    tierGroups: [
-      {
-        label: 'Extension',
-        features: [
-          { label: 'Chrome extension & RFY monitoring', free: true, plus: true, pro: true },
-          { label: 'Disable Vine opt-out button', free: true, plus: true, pro: true },
-          { label: 'RFY refresh interval', free: 'Locked', plus: 'Configurable', pro: 'Configurable' },
-          { label: 'Search refresh interval', free: 'System-managed', plus: 'System-managed', pro: 'System-managed' },
-          { label: 'Sound alerts (browser audio on new RFY items)', free: false, plus: false, pro: true },
-          { label: 'Quiet windows (reduced monitoring cadence during set hours)', free: true, plus: true, pro: true },
-          {
-            label: 'Space saving mode (hide lower-page ads/history, side order flyer, and RFY/AFA categories)',
-            free: true,
-            plus: true,
-            pro: true,
-          },
-          {
-            label: 'Space saving mode plus (hide deals header, trim vertical space, compact product tiles)',
-            free: false,
-            plus: true,
-            pro: true,
-          },
-        ],
-      },
-      {
-        label: 'Console & Sessions',
-        features: [
-          { label: 'Global Divine Monitor Console access (feature availability depends on tier)', free: true, plus: true, pro: true },
-          { label: 'Concurrent Console sessions (active browser connections)', free: '2 browser sessions', plus: '4 browser sessions', pro: '6 browser sessions' },
-          { label: 'Products tab: grid/table views, sorting, and filtering', free: true, plus: true, pro: true },
-          { label: 'RFY analytics layouts (resizable grid)', free: true, plus: true, pro: true },
-          { label: 'Saved analytics layout preferences', free: true, plus: true, pro: true },
-          { label: 'Theme options (Slate default)', free: 'Slate', plus: 'Slate + Light + Dark', pro: 'Slate + Light + Dark' },
-        ],
-      },
-      {
-        label: 'Monitoring Modules',
-        features: [
-          { label: 'RFY monitoring', free: true, plus: true, pro: true },
-          { label: 'Search monitoring', free: false, plus: true, pro: true },
-          { label: 'Account monitoring', free: false, plus: true, pro: true },
-          { label: 'AI (all items) monitoring', free: false, plus: true, pro: true },
-          { label: 'Review monitoring', free: false, plus: false, pro: true },
-        ],
-      },
-      {
-        label: 'History & Lookbacks',
-        features: [
-          { label: 'Products date navigation history', free: '1 week', plus: '1 month', pro: '3 months' },
-          { label: 'Products multi-day lookback window', free: '1 day', plus: '3 days', pro: '7 days' },
-          { label: 'Main analytics history window', free: '1 week', plus: '1 month', pro: '3 months' },
-        ],
-      },
-      {
-        label: 'Notifications',
-        features: [
-          { label: 'RFY alerts (recommended feed)', free: false, plus: true, pro: true },
-          { label: 'Search alerts (keyword feed)', free: false, plus: true, pro: true },
-          { label: 'Account alerts (status + ratios)', free: false, plus: true, pro: true },
-          { label: 'Reviews alerts (daily digest + not-approved)', free: false, plus: true, pro: true },
-          { label: 'Telegram alerts (delivery channel)', free: false, plus: true, pro: true },
-          { label: 'Email alerts (delivery channel)', free: false, plus: true, pro: true },
-          { label: 'Browser push alerts (delivery channel)', free: false, plus: true, pro: true },
-          { label: 'Exclude title/category filters (noise control)', free: false, plus: true, pro: true },
-        ],
+          'Open Account to confirm your current tier and unlocked features (some features such as Search, Reviews and Account monitoring are limited to paid tiers).',
       },
     ],
   },
@@ -126,6 +120,7 @@ export const docsEntries: DocsEntry[] = [
     slug: 'marketplace-support',
     title: 'Marketplace Support',
     section: 'getting-started',
+    beta: true,
     summary: 'Which Amazon Vine marketplaces Divine Monitor supports, how marketplace detection works, and what to expect if a feature is not yet available in your region.',
     readTime: '3 min read',
     body: [

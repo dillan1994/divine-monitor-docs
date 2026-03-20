@@ -32,22 +32,22 @@ export function SiteLayout({ children }: PropsWithChildren) {
             Home
           </NavLink>
           <NavLink
-            to="/about"
-            className={({ isActive }) => `nav-tab${isActive ? ' active' : ''}`}
-          >
-            About
-          </NavLink>
-          <NavLink
             to="/docs"
             className={({ isActive }) => `nav-tab${isActive ? ' active' : ''}`}
           >
             Docs
           </NavLink>
           <NavLink
-            to="/changelog"
+            to="/plans"
             className={({ isActive }) => `nav-tab${isActive ? ' active' : ''}`}
           >
-            Changelog
+            Tiers
+          </NavLink>
+          <NavLink
+            to="/about"
+            className={({ isActive }) => `nav-tab${isActive ? ' active' : ''}`}
+          >
+            About
           </NavLink>
           <NavLink
             to="/faqs"
@@ -55,11 +55,27 @@ export function SiteLayout({ children }: PropsWithChildren) {
           >
             FAQs
           </NavLink>
+          <NavLink
+            to="/changelog"
+            className={({ isActive }) => `nav-tab${isActive ? ' active' : ''}`}
+          >
+            Changelog
+          </NavLink>
         </div>
 
-        <NavLink to="/docs/quickstart" className="nav-cta">
-          Get Started
-        </NavLink>
+        <div className="nav-actions">
+          <a
+            href="https://app.divinemonitor.com"
+            className="nav-console-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Console ↗
+          </a>
+          <NavLink to="/docs/quickstart" className="nav-cta">
+            Get Started
+          </NavLink>
+        </div>
       </nav>
 
       {/* Page content — each route manages its own layout below the nav */}

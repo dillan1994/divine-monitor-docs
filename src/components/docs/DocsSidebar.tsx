@@ -24,7 +24,10 @@ export function DocsSidebar() {
                   `docs-sidebar-link${isActive ? ' active' : ''}`
                 }
               >
-                {entry.title}
+                <span className="docs-sidebar-link-text">
+                  {entry.title}
+                  {entry.beta && <span className="docs-sidebar-beta">Beta</span>}
+                </span>
                 <span className="docs-sidebar-arrow">→</span>
               </NavLink>
             ))}

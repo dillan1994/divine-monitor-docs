@@ -1,3 +1,5 @@
+import type React from 'react'
+
 export type DocSection = {
   key: string
   label: string
@@ -13,7 +15,7 @@ export type DocStepImage = {
 
 export type DocBodyStep = {
   title: string
-  description: string
+  description: React.ReactNode
   images?: DocStepImage[]
 }
 
@@ -43,7 +45,6 @@ export type DocsEntry = {
   summary: string
   readTime: string
   body: DocBodyStep[]
-  kind?: 'plans'
-  planTiers?: PlanTier[]
-  tierGroups?: TierGroup[]
+  kind?: 'overview'
+  beta?: boolean
 }

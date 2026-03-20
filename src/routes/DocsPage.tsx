@@ -1,50 +1,9 @@
 import { useState } from 'react'
-import { Navigate, useParams } from 'react-router-dom'
+import { Navigate, NavLink, useParams } from 'react-router-dom'
 import { DocsSidebar } from '@/components/docs/DocsSidebar'
 import { docSections, docsEntries } from '@/content/docs'
-import type { DocStepImage, PlanTier, TierFeatureRow, TierGroup } from '@/types/docs'
-
-function TierCell({ value, highlight }: { value: boolean | string; highlight?: boolean }) {
-  const cls = `plans-row-cell${highlight ? ' plans-row-cell--highlight' : ''}`
-  const CHECKMARK = '\u2713'
-  const DASH = '\u2014'
-  if (value === true) return <div className={cls}><span className="plans-check">{CHECKMARK}</span></div>
-  if (value === false) return <div className={cls}><span className="plans-cross">{DASH}</span></div>
-  return <div className={cls}><span className="plans-value">{value}</span></div>
-}
-
-function PlansTable({ tiers, tierGroups }: { tiers: PlanTier[]; tierGroups: TierGroup[] }) {
-  return (
-    <div className="plans-wrap">
-      <div className="plans-table">
-        <div className="plans-header">
-          <div className="plans-header-feature" />
-          {tiers.map((tier) => (
-            <div key={tier.name} className={`plans-header-tier${tier.highlight ? ' plans-header-tier--highlight' : ''}`}>
-              <div className="plans-tier-name">{tier.name}</div>
-              <div className="plans-tier-price">{tier.price}</div>
-              <div className="plans-tier-sub">{tier.sub}</div>
-            </div>
-          ))}
-        </div>
-
-        {tierGroups.map((group) => (
-          <div key={group.label} className="plans-group">
-            <div className="plans-group-label">{group.label}</div>
-            {group.features.map((feature: TierFeatureRow) => (
-              <div key={feature.label} className="plans-row">
-                <div className="plans-row-label">{feature.label}</div>
-                <TierCell value={feature.free} />
-                <TierCell value={feature.plus} highlight />
-                <TierCell value={feature.pro} />
-              </div>
-            ))}
-          </div>
-        ))}
-      </div>
-    </div>
-  )
-}
+import { SELLING_POINTS } from '@/content/about'
+import type { DocStepImage } from '@/types/docs'
 
 function StepImageCard({ image }: { image: DocStepImage }) {
   const [missing, setMissing] = useState(false)
@@ -119,8 +78,21 @@ export function DocsPage() {
         <p className="docs-meta">{entry.readTime}</p>
         <p className="docs-lede">{entry.summary}</p>
 
-        {entry.kind === 'plans' && entry.planTiers && entry.tierGroups ? (
-          <PlansTable tiers={entry.planTiers} tierGroups={entry.tierGroups} />
+        {entry.kind === 'overview' ? (
+          <div className="docs-overview">
+            <div className="about-points-grid">
+              {SELLING_POINTS.map((pt) => (
+                <div key={pt.heading} className="about-point-card">
+                  <span className="about-point-icon" aria-hidden="true">{pt.icon}</span>
+                  <h3 className="about-point-heading">{pt.heading}</h3>
+                  <p className="about-point-body">{pt.body}</p>
+                </div>
+              ))}
+            </div>
+            <NavLink to="/docs/quickstart" className="about-cta-primary">
+              Get started →
+            </NavLink>
+          </div>
         ) : (
           <ol className="docs-steps" aria-label="Steps">
             {entry.body.map((step, index) => (

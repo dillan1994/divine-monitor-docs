@@ -211,6 +211,29 @@ ol, ul {
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
 }
 
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-console-link {
+  padding: 7px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--b2);
+  color: var(--t2);
+  font-size: 13px;
+  font-weight: 400;
+  text-decoration: none;
+  transition: color 0.15s, border-color 0.15s;
+  white-space: nowrap;
+}
+
+.nav-console-link:hover {
+  color: var(--text);
+  border-color: var(--teal-bdr);
+}
+
 .nav-cta {
   padding: 7px 20px;
   border-radius: 8px;
@@ -1043,6 +1066,55 @@ ol, ul {
   text-align: center;
 }
 
+/* ─── Sidebar beta badge ─────────────────────────────────────────── */
+.docs-sidebar-link-text {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex: 1;
+  min-width: 0;
+}
+
+.docs-sidebar-beta {
+  font-size: 9px;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--teal);
+  background: var(--teal-bg);
+  border: 1px solid var(--teal-bdr);
+  border-radius: 4px;
+  padding: 1px 5px;
+  line-height: 1.5;
+  flex-shrink: 0;
+}
+
+/* ─── Plans page ─────────────────────────────────────────────────── */
+.plans-page {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: calc(var(--nav-h) + 48px) 24px 80px;
+}
+
+.plans-page-header {
+  margin-bottom: 40px;
+}
+
+.plans-page-title {
+  font-family: var(--font-serif);
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.plans-page-lede {
+  font-size: 16px;
+  color: var(--t2);
+  line-height: 1.6;
+}
+
 /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    Footer
    â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
@@ -1174,6 +1246,41 @@ ol, ul {
 /* ═══════════════════════════════════════════════════════════════════
    About Page (/about/:slug)
    ═══════════════════════════════════════════════════════════════════ */
+
+/* My Story page — full-width, no sidebar */
+.my-story-page {
+  min-height: 100vh;
+  padding: calc(var(--nav-h) + 52px) 24px 80px;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.my-story-inner {
+  width: 100%;
+  max-width: 680px;
+}
+
+.my-story-title {
+  font-family: var(--font-serif);
+  font-size: clamp(36px, 5vw, 52px);
+  font-weight: 300;
+  letter-spacing: -1.5px;
+  margin: 10px 0 12px;
+}
+
+.my-story-subtitle {
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--t2);
+  line-height: 1.7;
+  margin-bottom: 40px;
+}
+
+.my-story-body {
+  margin-bottom: 36px;
+}
 
 .about-lede {
   font-size: 15px;
