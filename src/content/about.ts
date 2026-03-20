@@ -30,7 +30,7 @@ export const aboutSections: AboutSection[] = [
 export const STORY_PARAGRAPHS = [
   {
     key: 'origin',
-    text: "I'm a full-time software engineer and an Amazon Vine member. For a while my setup for staying on top of new products was genuinely embarrassing: a patchwork of auto-refresh extensions, complex regex trying to detect new listings, and constant tweaking to avoid duplicate alerts for things I wasn't even interested in. It kind of worked, but it was fragile. I wanted something that actually held together: notifications that fired when they should, history I could check from any device, simple enough to just use. So I built it.",
+    text: "I'm a full-time Software Engineer and an Amazon Vine Voice living in London. For a while my setup for staying on top of new products was genuinely embarrassing: a patchwork of auto-refresh extensions, complex regex trying to detect new listings, and constant tweaking to avoid duplicate alerts for things I wasn't even interested in. It kind of worked, but it was fragile. I wanted something that actually held together: notifications that fired when they should, history I could check from any device, simple enough to just use. So I built it.",
   },
   {
     key: 'growth',
