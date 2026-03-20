@@ -190,7 +190,9 @@ export function HomePage() {
         <div className="site-footer-links">
           <a href="https://docs.divinemonitor.com">docs.divinemonitor.com</a>
           <Link to="/changelog">Changelog</Link>
+          <Link to="/contact">Contact</Link>
           <a href="https://divinemonitor.com">Status</a>
+          <Link to="/terms">Terms</Link>
         </div>
       </footer>
     </>

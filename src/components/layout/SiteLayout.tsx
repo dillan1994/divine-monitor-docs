@@ -32,6 +32,12 @@ export function SiteLayout({ children }: PropsWithChildren) {
             Home
           </NavLink>
           <NavLink
+            to="/about"
+            className={({ isActive }) => `nav-tab${isActive ? ' active' : ''}`}
+          >
+            About
+          </NavLink>
+          <NavLink
             to="/docs"
             className={({ isActive }) => `nav-tab${isActive ? ' active' : ''}`}
           >
