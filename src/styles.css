@@ -934,6 +934,38 @@ ol, ul {
   padding-left: 20px;
 }
 
+.docs-entry-notice {
+  margin: -12px 0 20px;
+  padding: 14px 16px;
+  border: 1px solid rgba(222, 175, 59, 0.4);
+  background: rgba(222, 175, 59, 0.08);
+  border-radius: var(--radius);
+  font-size: 13px;
+  color: var(--t2);
+  line-height: 1.6;
+}
+
+.docs-entry-notice strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.docs-inline-notice {
+  margin-top: 12px;
+  padding: 12px 14px;
+  border: 1px solid rgba(222, 175, 59, 0.4);
+  background: rgba(222, 175, 59, 0.08);
+  border-radius: var(--radius);
+  font-size: 13px;
+  color: var(--t2);
+  line-height: 1.6;
+}
+
+.docs-inline-notice strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
 /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    Plans & Features Table
    â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
@@ -2183,6 +2215,32 @@ ol, ul {
   background: #0c0d14;
 }
 
+.docs-step-media-zoom {
+  display: block;
+  width: 100%;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  cursor: zoom-in;
+}
+
+.docs-step-media-image[src$=".svg"] {
+  object-fit: contain;
+  height: 220px;
+  background: #101827;
+}
+
+.docs-step-media--diagram {
+  border: 0;
+  background: transparent;
+}
+
+.docs-step-media--diagram .docs-step-media-image[src$=".svg"] {
+  height: 220px;
+  width: 100%;
+  background: transparent;
+}
+
 .docs-step-media-placeholder {
   min-height: 165px;
   padding: 12px;
@@ -2234,4 +2292,38 @@ ol, ul {
   font-size: 11px;
   color: var(--t2);
   line-height: 1.5;
+}
+
+.docs-image-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 120;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(6, 10, 15, 0.86);
+}
+
+.docs-image-lightbox-image {
+  max-width: min(1300px, 94vw);
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.55);
+  background: #0d1622;
+}
+
+.docs-image-lightbox-close {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(10, 14, 22, 0.86);
+  color: #e8eef6;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 12px;
+  cursor: pointer;
 }

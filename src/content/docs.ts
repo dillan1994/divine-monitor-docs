@@ -355,22 +355,39 @@ export const docsEntries: DocsEntry[] = [
     title: 'Search Monitoring',
     section: 'extensions',
     summary: 'How Search monitoring works, the difference between Spread and Burst modes, system-managed intervals, and quiet windows for Search.',
-    readTime: '6 min read',
+    readTime: '3 min read',
     body: [
       {
         title: 'What is Search monitoring?',
-        description:
+        description: React.createElement(React.Fragment, null,
           'Search monitoring tracks custom search terms via the native Vine search mechanism. You define the search terms you care about in the extension popup, and the extension handles the rest via two modes, \'Spread\' and \'Burst\' (more info below). New matching products appear in Divine Monitor Console alongside RFY items. Search monitoring is available on Plus and Pro.',
+          React.createElement('div', { className: 'docs-inline-notice' },
+            React.createElement('strong', null, 'Important: '),
+            'Search monitoring adds extra requests because each saved term needs checking. \'Spread\' and \'Burst\' both exist so you can choose how that activity is paced: Spread keeps it slower, smoother and safer, while Burst is faster but busier for short periods.'
+          )
+        ),
       },
       {
         title: 'Spread mode',
         description:
-          'In Spread mode the extension rotates through one search terms per cycle. This distributes polling load and gives every term consistent coverage. Spread is a safe default and a good choice for balanced, steady monitoring across all your terms.',
+          '\'Spread\' checks one of your search terms per round, separating each with a random delay between 30-60s. This keeps activity smooth and gives all terms fair attention over time.',
+        images: [
+          {
+            src: '/docs-images/extension/search-mode-spread-diagram.svg',
+            alt: 'Spread mode diagram showing hat, umbrella, and bottle checked one at a time in sequence',
+          },
+        ],
       },
       {
         title: 'Burst mode',
         description:
-          'In Burst mode, the extension refreshes multiple defined search terms per cycle. This concentrates multiple search terms into a tighter window for faster detection, at the cost of higher short-term activity. Burst mode includes automatic cooldown on repeated failures to maintain safe operation.',
+          '\'Burst\' checks multiple search terms per round. A short random pause is added between each term. After all terms have been searched, a random delay between 30-60s begins before the next burst starts. This approach allows for faster detection, but creates higher short-term activity. There are several safety mechanisms built in to address this.',
+        images: [
+          {
+            src: '/docs-images/extension/search-mode-burst-diagram.svg',
+            alt: 'Burst mode diagram showing hat, umbrella, and bottle checked together with short random pauses between each term',
+          },
+        ],
       },
       {
         title: 'System-managed intervals',

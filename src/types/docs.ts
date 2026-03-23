@@ -45,6 +45,7 @@ export type DocsEntry = {
   summary: string
   readTime: string
   body: DocBodyStep[]
+  notice?: React.ReactNode
   kind?: 'overview'
   beta?: boolean
 }
