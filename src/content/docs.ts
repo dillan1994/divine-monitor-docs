@@ -16,6 +16,7 @@ export const PLAN_TIER_GROUPS: TierGroup[] = [
       { label: 'Account monitoring', free: false, plus: true, pro: true },
       { label: 'Review monitoring', free: false, plus: false, pro: true },
       { label: 'Disable Vine opt-out button', free: true, plus: true, pro: true },
+      { label: 'Amazon review multi-photo upload button', free: true, plus: true, pro: true },
       { label: 'Custom RFY refresh interval', free: false, plus: true, pro: true },
       { label: 'Instant sound alerts for new RFY items', free: false, plus: false, pro: true },
       { label: 'Quiet windows (reduced monitoring cadence during set hours)', free: true, plus: true, pro: true },
@@ -290,7 +291,12 @@ export const docsEntries: DocsEntry[] = [
         title: 'Space Saving Mode Plus',
         description:
           'Available on Plus and Pro. Builds on the base mode by also hiding the Amazon deals header at the top of the page, reducing extra vertical whitespace between elements, and compacting product tiles — significantly transforming the default Vine tab layout.',
-      }
+      },
+      {
+        title: 'Amazon review multi-photo upload',
+        description:
+          'Adds a "Multi-Photo Upload" button to the review creation page, so you can bulk-pick photos in one go instead of the painful one-by-one process we are all used to. It respects Amazon\'s current photo limit, and is available on for free for all tiers. It can be disabled in the extension settings.',
+      },
     ],
   },
   {

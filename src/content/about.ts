@@ -30,11 +30,11 @@ export const aboutSections: AboutSection[] = [
 export const STORY_PARAGRAPHS = [
   {
     key: 'origin',
-    text: "I'm a full-time Software Engineer and an Amazon Vine Voice living in London. For a while my setup for staying on top of new products was genuinely embarrassing: a patchwork of auto-refresh extensions, complex regex trying to detect new listings, and constant tweaking to avoid duplicate alerts for things I wasn't even interested in. It kind of worked, but it was fragile. I wanted something that actually held together: notifications that fired when they should, history I could check from any device, simple enough to just use. So I built it.",
+    text: "I'm a full-time Software Engineer and an Amazon Vine Voice living in London. For a long time I had a pretty embarrassing setup for staying on top of new products. It was a patchwork of generic auto-refresh extensions, complex regex trying to detect new products, and tweaking to avoid alerts for products I wasn't interested in, or that I had seen before. It worked to an extent, but was fragile. I wanted something that was reliable and simple - notifications that fired when they were supposed to, my own history I could check from any device, and something that just worked. So I built it.",
   },
   {
     key: 'growth',
-    text: "That was years ago, and it stayed private for a long time. The moment it really clicked was when the notifications became genuinely good. An alert for something I actually wanted, at the right moment. But it wasn't just RFY.. I'm busy and reviews slip easily, so getting a daily notification of exactly what was overdue, due soon, or rejected, became something I relied on. Once it was working reliably, I kept thinking other Viners would get real value from it, so I rebuilt the whole thing properly (smarter extension, fully cloud-native backend) and opened it up.",
+    text: "That was years ago, and it stayed private for a long time. The moment it really clicked was when the notifications became genuinely good, e.g an alert for something I actually wanted, at the right moment, or daily review reminders (we're all busy!) summarising what was overdue, due soon, or rejected. Once it was working reliably, I kept thinking other Viners would get real value from it, so I rebuilt the whole thing properly (smarter extension, fully cloud-native backend) and decided to open it up.",
   },
   {
     key: 'safety',
