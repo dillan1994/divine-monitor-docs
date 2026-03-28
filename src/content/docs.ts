@@ -81,7 +81,7 @@ export const docsEntries: DocsEntry[] = [
     slug: 'why-divine-monitor',
     title: 'Why Divine Monitor',
     section: 'getting-started',
-    summary: 'Real-time RFY alerts, smart notifications, and deep analytics — built by a Viner, for Viners.',
+    summary: 'Real-time RFY alerts, smart notifications, account/review reminders and deep analytics — built by a Viner, for Viners.',
     readTime: '2 min read',
     kind: 'overview',
     body: [],
@@ -103,7 +103,7 @@ export const docsEntries: DocsEntry[] = [
       },
       {
         title: 'Install extension and sign in',
-        description: 'Install the Google Chrome extension and sign-in. From here you can start enabling your feeds. To work reliably, the extension must be installed onto a browser/pc/machine that is on 24/7. The browser must be open, but the extension will do its job in the background - i.e, Vine pages do not need to be open.',
+        description: 'Install the Google Chrome extension and sign-in. From here you can start enabling your feeds. To work reliably, I\'d recommend installing the extension  onto a browser/pc/machine that is on 24/7. The browser must be open, but the extension will do its job in the background - i.e, Vine pages do not need to be open.',
       },
       {
         title: 'Explore the Console',
@@ -123,6 +123,8 @@ export const docsEntries: DocsEntry[] = [
     section: 'getting-started',
     beta: true,
     summary: 'Which Amazon Vine marketplaces Divine Monitor supports, how marketplace detection works, and what to expect if a feature is not yet available in your region.',
+    notice:
+      'Divine Monitor has been developed solely by a UK Viner and has therefore not yet been tested in other regions. Support has been added, but bugs may still be encountered. If you run into any bugs, please contact me via the form in the Divine Monitor Console.',
     readTime: '3 min read',
     body: [
       {
@@ -133,17 +135,12 @@ export const docsEntries: DocsEntry[] = [
       {
         title: 'Automatic marketplace detection',
         description:
-          'The extension detects your active marketplace automatically from the Amazon page URL — no manual configuration required. If you participate in multiple marketplaces, the extension adjusts to whichever one you are currently browsing.',
+          'The extension detects your active marketplace automatically from the Amazon page URL — no manual configuration required.',
       },
       {
         title: 'Feature availability by marketplace',
         description:
-          'Most features are available across all supported marketplaces. Some features — such as Account monitoring and Review monitoring — are rolling out progressively. If a feature is not yet available in your marketplace, the relevant tab or section in the Divine Monitor Console will display a coming-soon message rather than showing an error.',
-      },
-      {
-        title: 'Primary marketplace',
-        description:
-          'Your account is associated with a primary marketplace, which determines how your data is stored and displayed in the Console. Contact support if you need to change your primary marketplace.',
+          'Most features are available across marketplaces. Some features — such as Account monitoring and Review monitoring — will be rolled out progressively.',
       },
     ],
   },
@@ -210,20 +207,20 @@ export const docsEntries: DocsEntry[] = [
   },
   {
     slug: 'extension-popup',
-    title: 'Extension Popup Guide',
+    title: 'Extension Guide',
     section: 'extensions',
-    summary: 'A walkthrough of every section in the extension popup — the control panel for all monitoring, interval, and alert settings.',
+    summary: 'A walkthrough of the extension settings — the control panel for all monitoring, interval, and alert settings.',
     readTime: '5 min read',
     body: [
       {
-        title: 'Opening the popup',
+        title: 'Opening the popup for quick-settings',
         description:
-          'Click the Divine Monitor icon in your Chrome toolbar to open the popup. If the icon is not visible, click the extensions puzzle piece and pin Divine Monitor. The popup is the primary control panel for everything the extension does.',
+          'Click the Divine Monitor icon in your Chrome toolbar to open the popup for the quick-settings. If the icon is not visible, click the extensions puzzle piece and pin Divine Monitor. The popup is the quick control for toggling on and off the extension, RFY/Search, and adding in new search terms. control panel for everything the extension does.',
       },
       {
         title: 'Global enable/disable',
         description:
-          'The toggle at the top of the popup enables or disables all monitoring globally. When disabled, no feed polling occurs and no data is written to the Console. Per-feed controls are only active when the global toggle is on.',
+          'The toggle at the top of the popup enables or disables all monitoring globally. When disabled, none of your Vine data will be monitored and will therefore not appear in the Console.',
       },
       {
         title: 'Per-feed status indicators',
@@ -233,17 +230,12 @@ export const docsEntries: DocsEntry[] = [
       {
         title: 'RFY and Search feed sections',
         description:
-          'Expand the RFY or Search section to access interval controls (Plus/Pro for RFY), mode selection (Search only), quiet window times, and the sound alert toggle (Pro, RFY only). Changes take effect on the next polling cycle.',
+          'Expand the RFY or Search section to access deeper controls. For RFY, configure refresh intervals (tiered feature) and quiet windows (free tier). For Search (plus tier), swap between "Spread" and "Burst" (pro tier) mode, toggle quiet window, and add/remove search terms.',
       },
       {
         title: 'Managing Search terms',
         description:
-          'Expand the Search section to add or remove search terms. Plus supports up to 5 terms and Pro supports up to 10. Choose Spread or Burst mode per the Search Monitoring doc. The term list and mode selection persist across browser sessions.',
-      },
-      {
-        title: 'Force-fetch for Reviews and Account',
-        description:
-          'The Reviews and Account feeds run on longer cycles by default. Use the force-fetch buttons in their respective popup sections to trigger an immediate data refresh outside the normal schedule — useful after completing reviews or expecting an account status change.',
+          'Expand the Search section to add or remove search terms. Plus supports up to 5 terms and Pro supports up to 10. Choose Spread or Burst mode per the Search Monitoring doc.',
       },
       {
         title: 'Screenshot checklist',
@@ -274,7 +266,11 @@ export const docsEntries: DocsEntry[] = [
     slug: 'space-saving-mode',
     title: 'Vine Page Enhancements',
     section: 'extensions',
-    summary: 'Everything the extension does to the Vine page UI — Space Saving Mode, opt-out protection, and layout cleanup.',
+    summary: 'Everything the extension does to the Vine page UI —  opt-out protection, multi-photo upload for reviews, and Space Saving Mode.',
+    notice: React.createElement('span', null,
+      React.createElement('span', { 'aria-hidden': 'true' }, 'ⓘ '),
+      'These enhancements will remain completely free, I have no intention of gating these improvements. As a Viner I understand very well how annoying these can be and how these little improvements can make a huge difference.'
+    ),
     readTime: '4 min read',
     body: [
         {
@@ -283,19 +279,14 @@ export const docsEntries: DocsEntry[] = [
           'The extension disables the Vine opt-out button on your Amazon Vine pages across all tiers, active from the moment the extension is installed. This prevents accidental opt-out with no configuration required — the button remains visible but cannot be clicked.',
       },
       {
-        title: 'Space Saving Mode (base)',
-        description:
-          'Available on all tiers. Space Saving Mode hides Amazon ads and browsing history in the lower portion of the page, hides the side order flyer, and removes the category sections on RFY and AFA pages to reclaim horizontal space.',
-      },
-      {
-        title: 'Space Saving Mode Plus',
-        description:
-          'Available on Plus and Pro. Builds on the base mode by also hiding the Amazon deals header at the top of the page, reducing extra vertical whitespace between elements, and compacting product tiles — significantly transforming the default Vine tab layout.',
-      },
-      {
         title: 'Amazon review multi-photo upload',
         description:
-          'Adds a "Multi-Photo Upload" button to the review creation page, so you can bulk-pick photos in one go instead of the painful one-by-one process we are all used to. It respects Amazon\'s current photo limit, and is available on for free for all tiers. It can be disabled in the extension settings.',
+          'Adds a "Multi-Photo Upload" button to the review creation page, so you can bulk-pick photos in one go instead of the painful one-by-one process we are all used to. It respects Amazon\'s current photo limit. It can be disabled in the extension settings.',
+      },
+      {
+        title: 'Vine page enhancements (Space Saving)',
+        description:
+          'Space Saving Mode hides Amazon ads and browsing history in the lower portion of the page, hides the side order flyer, and removes the category sections on RFY and AFA pages to reclaim horizontal space. the Amazon deals header at the top of the page, reducing extra vertical whitespace between elements, and compacting product tiles — significantly transforming the default Vine tab layout.',
       },
     ],
   },
@@ -303,33 +294,28 @@ export const docsEntries: DocsEntry[] = [
     slug: 'rfy-monitoring',
     title: 'RFY Monitoring',
     section: 'extensions',
-    summary: 'How the extension monitors the RFY queue in the background, configures refresh intervals, refreshes your open Vine tab, and alerts you instantly with sound on Pro.',
+    summary: 'Everything about RFY monitoring configuration via the extension',
     readTime: '6 min read',
     body: [
       {
         title: 'Background RFY monitoring',
         description:
-          'The extension refreshes your RFY feed in the background, with no open Vine tab required. New products are detected and written to the Divine Monitor Console automatically. This is the core monitoring mechanism that runs at all times while the extension is enabled.',
+          'The extension refreshes your RFY feed in the background, with no open Vine tab required. New products are detected and written to the Divine Monitor Console automatically. This is the core monitoring mechanism that runs at all times while the extension is enabled (can be disabled at any time).',
       },
       {
         title: 'Randomized refresh intervals',
         description:
-          'Polling intervals are deliberately randomized within a range rather than fixed to a single value, avoiding predictable request patterns. On Free the range is system-managed and locked. On Plus and Pro you can adjust the interval target via the extension popup — the popup shows your active range so you always know the current cadence.',
+          'Polling intervals are deliberately randomized within a range rather than fixed to a single value, avoiding predictable request patterns. On Free tier, this range is system-managed and locked to a safe interval. On Plus and Pro you can adjust the interval target via the extension popup — the popup shows your active range so you always know the current cadence, but of course adjusting this is at your own risk and the faster you refresh the higher the chance of getting throttled by Amazon.',
       },
       {
         title: 'Visible Vine tab refresh',
         description:
-          'Optionally, you can opt to have a visible RFY tab refreshing which means you have an up to date RFY page in front of you at all times. Also overlays a timer on the Vine page to indicate when the next refresh and to indicate it is being actively refreshed. Incredibly powerful for an all in one solution without the need for any third party auto-refresh extensions..',
-      },
-      {
-        title: 'Sound alerts (Pro)',
-        description:
-          'On Pro, when a refresh cycle detects new RFY items, you can enbable the extension to play a browser audio alert immediately. Sound alerts are instant — they fire the moment new items are found (faster than push, email, or Telegram notifications which go through a processing pipeline). If you are sitting in front of a device running the extension, sound alerts are the fastest possible signal and is an incredibly powerful feature.',
+          'Optionally, you can opt to have a visible RFY tab refreshing which means you have an up to date RFY page in front of you at all times. Also overlays a timer on the Vine page to indicate when the next refresh and to indicate it is being actively refreshed. Incredibly powerful for an all in one solution without the need for any third party auto-refresh extensions, and is what I personally use on my main device.',
       },
       {
         title: 'RFY quiet window',
         description:
-          'To reduce activity overnight (or for your time window of choice), you can configure a quiet window in the extension popup under the RFY section. During a quiet window the polling cadence drops significantly. Monitoring does not stop — it just checks less often. Sound alerts still fire if new items are detected during the window.',
+          'To reduce activity overnight (or for your time window of choice), you can configure a quiet window in the extension popup under the RFY section. During a quiet window the polling cadence drops significantly. Monitoring does not stop — it just checks less often. Beneficial to prevent constantly refreshing Vine unnecessarily. ',
       },
       {
         title: 'Screenshot checklist',
@@ -369,7 +355,7 @@ export const docsEntries: DocsEntry[] = [
           'Search monitoring tracks custom search terms via the native Vine search mechanism. You define the search terms you care about in the extension popup, and the extension handles the rest via two modes, \'Spread\' and \'Burst\' (more info below). New matching products appear in Divine Monitor Console alongside RFY items. Search monitoring is available on Plus and Pro.',
           React.createElement('div', { className: 'docs-inline-notice' },
             React.createElement('strong', null, 'Important: '),
-            'Search monitoring adds extra requests because each saved term needs checking. \'Spread\' and \'Burst\' both exist so you can choose how that activity is paced: Spread keeps it slower, smoother and safer, while Burst is faster but busier for short periods.'
+            'Search monitoring adds extra requests because each saved term needs checking. \'Spread\' and \'Burst\' both exist so you can choose how that activity is paced: Spread keeps it slower, smoother and safer, while Burst is faster but busier for short periods. The two modes exist to give you as much control as possible.'
           )
         ),
       },

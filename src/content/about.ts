@@ -63,32 +63,33 @@ export interface SellingPoint {
 export const SELLING_POINTS: SellingPoint[] = [
   {
     icon: '⚡',
-    heading: 'Real-time RFY alerts',
-    body: 'Know the moment your product enters or exits a Recommended for You feed — on every tier, no polling delays.',
+    heading: 'Real-time alerts',
+    body: 'Get RFY and Search alerts, review reminders and more. Simple to configure. Filter out alerts that you don\'t want to see.',
+  },
+  {
+    icon: '🌐',
+    heading: 'Your data anywhere',
+    body: 'Access your data anywhere via the Divine Monitor Console, via your browser. Up to 6 concurrent sessions on Pro.',
   },
   {
     icon: '🔔',
     heading: 'Multi-channel notifications',
-    body: 'Push alerts to Email, Discord, or Slack. Configure per-module rules so you only hear about what matters.',
+    body: 'Push alerts to Telegram, Email, or Browser notifications. Configure per-module rules so you only hear about what matters.',
   },
   {
     icon: '📊',
     heading: 'Analytics that go deep',
-    body: 'Track RFY trends, search placement, and account health over 1 week, 1 month, or 3 months depending on your plan.',
+    body: 'Track your personal RFY trends, account health, review stats, AI product counts and more.',
   },
   {
     icon: '📋',
-    heading: 'Product & review history',
+    heading: 'Product history & review activity',
     body: 'Browse day-by-day product history and review activity without leaving the console.',
   },
-  {
-    icon: '🌐',
-    heading: 'Console anywhere',
-    body: 'The Divine Monitor Console works in your browser. Up to 6 concurrent sessions on Pro — share access with your team.',
-  },
+
   {
     icon: '🆓',
     heading: 'Free tier that\'s actually useful',
-    body: 'RFY monitoring, 2 console sessions, and core notifications — no credit card required to get started.',
+    body: 'RFY monitoring, 2 console sessions, analytics, and several Vine page quality-of-life improvements.',
   },
 ]
