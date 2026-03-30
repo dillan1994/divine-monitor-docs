@@ -153,27 +153,27 @@ export const docsEntries: DocsEntry[] = [
       {
         title: 'Switch between single-day and multi-day views',
         description:
-          'Use the Date picker for a single day. Open Multi-day lookback to see multiple days worth of data at once (particularly useful in the tabular view).',
+          'Use the Date picker to view your products for a single day. Open Multi-day lookback to see multiple days worth of data at once (particularly useful in the tabular view). The options available will vary with tier.',
       },
       {
-        title: 'Run individual day checks',
+        title: 'Filter the Products by type (RFY or Search)',
         description:
           'Pick any day and then filter by feed using All, RFY, or Search. Search feed access is tier-gated.',
       },
-      {
-        title: 'Understand the \'LIVE\' indicator',
+        {
+        title: 'Explore captured product metadata',
         description:
-          'LIVE means this tab is actively listening for new products identified by the extension.',
+          'Every product is stored with its price, seller, brand, and category (including sub-category) at the time it was seen. This metadata is exposed in both tile and table mode.',
+      },
+      {
+        title: 'The \'LIVE\' indicator',
+        description:
+          'LIVE means this tab is actively listening for new products identified by the extension - no manual refreshing of the Console required',
       },
       {
         title: 'Use grid and table modes',
         description:
           'Grid is best for browsing products quickly/at a glance. Table is best for sorting and filtering by title, seller, price etc.',
-      },
-      {
-        title: 'Explore captured product metadata',
-        description:
-          'Every product is stored with its price, seller, brand, and category (including sub-category) at the time it was seen. This metadata is visible in table mode and powers the deeper analytics views — tracking these fields over time reveals patterns that a simple product list never could.',
       },
       {
         title: 'Resize product tiles and inspect info icons',
@@ -543,11 +543,6 @@ export const docsEntries: DocsEntry[] = [
     readTime: '6 min read',
     body: [
       {
-        title: 'Open Analytics -> Account',
-        description:
-          'This view focuses on Vine account health metrics',
-      },
-      {
         title: 'Read core KPIs',
         description:
           'Check Vine tier (Silver, Gold), review-to-order ratio, insightfulness, media rate, and eval-period progress.',
@@ -558,19 +553,14 @@ export const docsEntries: DocsEntry[] = [
           'Where possible, these stats are charted to understand how they change over time',
       },
         {
-        title: 'Alerting',
+        title: 'Alerting (Beta)',
         description:
-          'should be some here.. what alerting exists?',
+          'Currently alerts on insightfulness score changes - more coming soon.',
       },
       {
         title: 'Use eval period comparison (beta)',
         description:
           'Compare periods side by side to spot improvement or risk early.',
-      },
-      {
-        title: 'Marketplace rollout note',
-        description:
-          'If this tab is unavailable in your marketplace, the UI will show a coming-soon message.',
       },
       {
         title: 'Screenshot checklist',
@@ -604,30 +594,20 @@ export const docsEntries: DocsEntry[] = [
     summary: 'Track review state, due pressure, and review alerts from Reviews and Analytics.',
     readTime: '8 min read',
     body: [
-      {
-        title: 'Use the Reviews page for queue management',
+              {
+        title: 'Summary tiles',
         description:
-          'Filter by state and quality, search by title, and keep your active review queue tidy.',
+          'View stats since first installing the extension, such as total outstanding reviews/total review count/approval rates etc.',
       },
       {
-        title: 'Configure review alerts',
+        title: 'Count of reviews due in x days',
         description:
-          'From Reviews and Notifications, set daily digest preferences and not-approved alerts.',
+          'Shows several tiles with counts of reviews due, eg overdue, due today, due tomorrow etc, with RAG colours to quickly see what is urgent at a glance. Clicking each filters the Journey board (see below). ',
       },
-      {
-        title: 'Track due pressure in Analytics → Reviews',
+            {
+        title: 'Review Journey Board',
         description:
-          'Analytics → Reviews shows due-pressure tiles at the top: Overdue, Due Today, Due Tomorrow, Due within 7 days, and Safe. Click any tile to filter the view below to only reviews in that bucket. KPI cards above the tiles give totals for total reviews, not yet reviewed, pending approval, approval rate, and average final review time.',
-      },
-      {
-        title: 'Use the Review Journey Board',
-        description:
-          'Below the due-pressure tiles, the Journey Board is a kanban-style view of all in-flight reviews across three columns: Not Yet Reviewed, Completed Pending, and Completed Pending Approval. Use it to see exactly where each review sits in its lifecycle at a glance. Combine a due-pressure filter with the board to focus on overdue or at-risk items without losing sight of the full queue.',
-      },
-      {
-        title: 'Know access requirements',
-        description:
-          'Review monitoring is available on Pro. If not available in your marketplace yet, a coming-soon state is shown.',
+          'The Journey Board is a kanban-style view of all in-flight reviews across three columns: Not Yet Reviewed, Submitted, and Pending Approval. Use it to see exactly where each review sits in its lifecycle at a glance. Also works in tandem with the clickable RAG tiles to quickly see the exact products requiring attention.',
       },
       {
         title: 'Screenshot checklist',
@@ -666,24 +646,24 @@ export const docsEntries: DocsEntry[] = [
     readTime: '6 min read',
     body: [
       {
-        title: 'Open Analytics -> AI',
+        title: 'All Items monitoring ',
         description:
-          'AI monitoring focuses on all-items volume and category movement over your selected lookback window.',
+          'Exposes metrics on AI total counts, counts by product, identifies drop times and exposes heatmaps.',
       },
       {
-        title: 'Select lookback window',
+        title: 'Total Counts',
         description:
-          'Switch between shorter and longer windows to compare immediate movement with broader trends.',
+          'Captures counts every 15 minutes, and charts the drop velocity to identify drop events (whether big or small). Powerful when viewed over time to observe when drops are occurring. ',
       },
       {
-        title: 'Read the two core AI charts',
+        title: 'Counts by category',
         description:
-          'Use product count plus velocity overlays for pace changes, and category trends for mix changes.',
+          'Similar to Total Counts, except charts the count of each particular category every 15 minutes. Can show or hide the legend and expand the chart for easier viewing.',
       },
       {
-        title: 'Adjust chart controls and layout',
+        title: 'Top Drops (Events)',
         description:
-          'Toggle velocity mode and legend visibility, then edit layout to match your own monitoring style.',
+          'Identifies the largest drop events in your selected time window',
       },
       {
         title: 'Screenshot checklist',
