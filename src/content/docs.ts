@@ -80,7 +80,7 @@ export const docsEntries: DocsEntry[] = [
     slug: 'why-divine-monitor',
     title: 'Why Divine Monitor',
     section: 'getting-started',
-    summary: 'Real-time RFY alerts, smart notifications, and deep analytics — built by a Viner, for Viners.',
+    summary: 'Real-time RFY alerts, smart notifications, account/review reminders and deep analytics — built by a Viner, for Viners.',
     readTime: '2 min read',
     kind: 'overview',
     body: [],
@@ -102,7 +102,7 @@ export const docsEntries: DocsEntry[] = [
       },
       {
         title: 'Install extension and sign in',
-        description: 'Install the Google Chrome extension and sign-in. From here you can start enabling your feeds. To work reliably, the extension must be installed onto a browser/pc/machine that is on 24/7. The browser must be open, but the extension will do its job in the background - i.e, Vine pages do not need to be open.',
+        description: 'Install the Google Chrome extension and sign-in. From here you can start enabling your feeds. To work reliably, I\'d recommend installing the extension  onto a browser/pc/machine that is on 24/7. The browser must be open, but the extension will do its job in the background - i.e, Vine pages do not need to be open.',
       },
       {
         title: 'Explore the Console',
@@ -122,6 +122,8 @@ export const docsEntries: DocsEntry[] = [
     section: 'getting-started',
     beta: true,
     summary: 'Which Amazon Vine marketplaces Divine Monitor supports, how marketplace detection works, and what to expect if a feature is not yet available in your region.',
+    notice:
+      'Divine Monitor has been developed solely by a UK Viner and has therefore not yet been tested in other regions. Support has been added, but bugs may still be encountered. If you run into any bugs, please contact me via the form in the Divine Monitor Console.',
     readTime: '3 min read',
     body: [
       {
@@ -132,17 +134,12 @@ export const docsEntries: DocsEntry[] = [
       {
         title: 'Automatic marketplace detection',
         description:
-          'The extension detects your active marketplace automatically from the Amazon page URL — no manual configuration required. If you participate in multiple marketplaces, the extension adjusts to whichever one you are currently browsing.',
+          'The extension detects your active marketplace automatically from the Amazon page URL — no manual configuration required.',
       },
       {
         title: 'Feature availability by marketplace',
         description:
-          'Most features are available across all supported marketplaces. Some features — such as Account monitoring and Review monitoring — are rolling out progressively. If a feature is not yet available in your marketplace, the relevant tab or section in the Divine Monitor Console will display a coming-soon message rather than showing an error.',
-      },
-      {
-        title: 'Primary marketplace',
-        description:
-          'Your account is associated with a primary marketplace, which determines how your data is stored and displayed in the Console. Contact support if you need to change your primary marketplace.',
+          'Most features are available across marketplaces. Some features — such as Account monitoring and Review monitoring — will be rolled out progressively.',
       },
     ],
   },
@@ -156,7 +153,7 @@ export const docsEntries: DocsEntry[] = [
       {
         title: 'Switch between single-day and multi-day views',
         description:
-          'Use the Date picker for a single day. Open Multi-day lookback for rolling windows that end on your selected date.',
+          'Use the Date picker for a single day. Open Multi-day lookback to see multiple days worth of data at once (particularly useful in the tabular view).',
       },
       {
         title: 'Run individual day checks',
@@ -164,14 +161,14 @@ export const docsEntries: DocsEntry[] = [
           'Pick any day and then filter by feed using All, RFY, or Search. Search feed access is tier-gated.',
       },
       {
-        title: 'Understand Live and Passive indicators',
+        title: 'Understand the \'LIVE\' indicator',
         description:
-          'Live means this tab is actively streaming new products. Passive means this tab mirrors another active tab to reduce duplicate reads.',
+          'LIVE means this tab is actively listening for new products identified by the extension.',
       },
       {
         title: 'Use grid and table modes',
         description:
-          'Grid is best for browsing cards quickly. Table is best for sorting and filtering by title, seller, price, and seen times.',
+          'Grid is best for browsing products quickly/at a glance. Table is best for sorting and filtering by title, seller, price etc.',
       },
       {
         title: 'Resize product tiles and inspect info icons',
@@ -209,20 +206,20 @@ export const docsEntries: DocsEntry[] = [
   },
   {
     slug: 'extension-popup',
-    title: 'Extension Popup Guide',
+    title: 'Extension Guide',
     section: 'extensions',
-    summary: 'A walkthrough of every section in the extension popup — the control panel for all monitoring, interval, and alert settings.',
+    summary: 'A walkthrough of the extension settings — the control panel for all monitoring, interval, and alert settings.',
     readTime: '5 min read',
     body: [
       {
-        title: 'Opening the popup',
+        title: 'Opening the popup for quick-settings',
         description:
-          'Click the Divine Monitor icon in your Chrome toolbar to open the popup. If the icon is not visible, click the extensions puzzle piece and pin Divine Monitor. The popup is the primary control panel for everything the extension does.',
+          'Click the Divine Monitor icon in your Chrome toolbar to open the popup for the quick-settings. If the icon is not visible, click the extensions puzzle piece and pin Divine Monitor. The popup is the quick control for toggling on and off the extension, RFY/Search, and adding in new search terms. control panel for everything the extension does.',
       },
       {
         title: 'Global enable/disable',
         description:
-          'The toggle at the top of the popup enables or disables all monitoring globally. When disabled, no feed polling occurs and no data is written to the Console. Per-feed controls are only active when the global toggle is on.',
+          'The toggle at the top of the popup enables or disables all monitoring globally. When disabled, none of your Vine data will be monitored and will therefore not appear in the Console.',
       },
       {
         title: 'Per-feed status indicators',
@@ -232,17 +229,12 @@ export const docsEntries: DocsEntry[] = [
       {
         title: 'RFY and Search feed sections',
         description:
-          'Expand the RFY or Search section to access interval controls (Plus/Pro for RFY), mode selection (Search only), and quiet window times. Changes take effect on the next polling cycle.',
+          'Expand the RFY or Search section to access deeper controls. For RFY, configure refresh intervals (tiered feature) and quiet windows (free tier). For Search (plus tier), swap between "Spread" and "Burst" (pro tier) mode, toggle quiet window, and add/remove search terms.',
       },
       {
         title: 'Managing Search terms',
         description:
-          'Expand the Search section to add or remove search terms. Plus supports up to 5 terms and Pro supports up to 10. Choose Spread or Burst mode per the Search Monitoring doc. The term list and mode selection persist across browser sessions.',
-      },
-      {
-        title: 'Force-fetch for Reviews and Account',
-        description:
-          'The Reviews and Account feeds run on longer cycles by default. Use the force-fetch buttons in their respective popup sections to trigger an immediate data refresh outside the normal schedule — useful after completing reviews or expecting an account status change.',
+          'Expand the Search section to add or remove search terms. Plus supports up to 5 terms and Pro supports up to 10. Choose Spread or Burst mode per the Search Monitoring doc.',
       },
       {
         title: 'Screenshot checklist',
@@ -273,7 +265,11 @@ export const docsEntries: DocsEntry[] = [
     slug: 'space-saving-mode',
     title: 'Vine Page Enhancements',
     section: 'extensions',
-    summary: 'Everything the extension does to the Vine page UI — Space Saving Mode, opt-out protection, and layout cleanup.',
+    summary: 'Everything the extension does to the Vine page UI —  opt-out protection, multi-photo upload for reviews, and Space Saving Mode.',
+    notice: React.createElement('span', null,
+      React.createElement('span', { 'aria-hidden': 'true' }, 'ⓘ '),
+      'These enhancements will remain completely free, I have no intention of gating these improvements. As a Viner I understand very well how annoying these can be and how these little improvements can make a huge difference.'
+    ),
     readTime: '4 min read',
     body: [
         {
@@ -282,19 +278,14 @@ export const docsEntries: DocsEntry[] = [
           'The extension disables the Vine opt-out button on your Amazon Vine pages across all tiers, active from the moment the extension is installed. This prevents accidental opt-out with no configuration required — the button remains visible but cannot be clicked.',
       },
       {
-        title: 'Space Saving Mode (base)',
-        description:
-          'Available on all tiers. Space Saving Mode hides Amazon ads and browsing history in the lower portion of the page, hides the side order flyer, and removes the category sections on RFY and AFA pages to reclaim horizontal space.',
-      },
-      {
-        title: 'Space Saving Mode Plus',
-        description:
-          'Available on Plus and Pro. Builds on the base mode by also hiding the Amazon deals header at the top of the page, reducing extra vertical whitespace between elements, and compacting product tiles — significantly transforming the default Vine tab layout.',
-      },
-      {
         title: 'Amazon review multi-photo upload',
         description:
-          'Adds a "Multi-Photo Upload" button to the review creation page, so you can bulk-pick photos in one go instead of the painful one-by-one process we are all used to. It respects Amazon\'s current photo limit, and is available on for free for all tiers. It can be disabled in the extension settings.',
+          'Adds a "Multi-Photo Upload" button to the review creation page, so you can bulk-pick photos in one go instead of the painful one-by-one process we are all used to. It respects Amazon\'s current photo limit. It can be disabled in the extension settings.',
+      },
+      {
+        title: 'Vine page enhancements (Space Saving)',
+        description:
+          'Space Saving Mode hides Amazon ads and browsing history in the lower portion of the page, hides the side order flyer, and removes the category sections on RFY and AFA pages to reclaim horizontal space. the Amazon deals header at the top of the page, reducing extra vertical whitespace between elements, and compacting product tiles — significantly transforming the default Vine tab layout.',
       },
     ],
   },
@@ -302,13 +293,13 @@ export const docsEntries: DocsEntry[] = [
     slug: 'rfy-monitoring',
     title: 'RFY Monitoring',
     section: 'extensions',
-    summary: 'How the extension monitors the RFY queue in the background, configures refresh intervals, and refreshes your open Vine tab.',
+    summary: 'Everything about RFY monitoring configuration via the extension',
     readTime: '6 min read',
     body: [
       {
         title: 'Background RFY monitoring',
         description:
-          'The extension refreshes your RFY feed in the background, with no open Vine tab required. New products are detected and written to the Divine Monitor Console automatically. This is the core monitoring mechanism that runs at all times while the extension is enabled.',
+          'The extension refreshes your RFY feed in the background, with no open Vine tab required. New products are detected and written to the Divine Monitor Console automatically. This is the core monitoring mechanism that runs at all times while the extension is enabled (can be disabled at any time).',
       },
       {
         title: 'Randomized refresh intervals',
@@ -359,7 +350,7 @@ export const docsEntries: DocsEntry[] = [
           'Search monitoring tracks custom search terms via the native Vine search mechanism. You define the search terms you care about in the extension popup, and the extension handles the rest via two modes, \'Spread\' and \'Burst\' (more info below). New matching products appear in Divine Monitor Console alongside RFY items. Search monitoring is available on Plus and Pro.',
           React.createElement('div', { className: 'docs-inline-notice' },
             React.createElement('strong', null, 'Important: '),
-            'Search monitoring adds extra requests because each saved term needs checking. \'Spread\' and \'Burst\' both exist so you can choose how that activity is paced: Spread keeps it slower, smoother and safer, while Burst is faster but busier for short periods.'
+            'Search monitoring adds extra requests because each saved term needs checking. \'Spread\' and \'Burst\' both exist so you can choose how that activity is paced: Spread keeps it slower, smoother and safer, while Burst is faster but busier for short periods. The two modes exist to give you as much control as possible.'
           )
         ),
       },
@@ -428,19 +419,24 @@ export const docsEntries: DocsEntry[] = [
     readTime: '10 min read',
     body: [
       {
-        title: 'Learn the analytics tab structure',
+        title: 'Analytics tab structure',
         description:
-          'Top-level tabs are RFY, Account, Search, Reviews, and AI. Some tabs appear only when your plan includes access.',
+          'Top-level tabs are RFY, Account, Search, Reviews, and AI.',
       },
       {
-        title: 'Pick a time window',
+        title: 'Choose how much historic analytics you see',
         description:
-          'Use standard windows for RFY/Search/Account/Reviews and dedicated lookback windows for AI monitoring.',
+          'You can choose how much history you want to see via the day selectors.',
       },
       {
         title: 'Use RFY preset views for focused analysis',
         description:
-          'RFY includes four preset views: Overview (daily/hourly counts, heatmap, subcategories, brands), Price & Value (recommended value, price mix, signal trends), Timing Patterns (date-hour heatmap, weekday-hour heatmap, hourly and day-of-week breakdowns), and Catalog Mix (top categories, subcategories, brands, sellers). Each view is pre-arranged for a specific analytical focus.',
+          'RFY includes four preset views: Overview (daily/hourly counts, heatmap, subcategories, brands), Price & Value (recommended value, price mix, signal trends), Timing Patterns (date-hour heatmap, weekday-hour heatmap, hourly and day-of-week breakdowns), and Catalog Mix (top categories, subcategories, brands, sellers). Each view is pre-arranged for a specific analytical focus, however charts can still be moved around and resized.',
+      },
+      {
+        title: 'Resize and save your layout',
+        description:
+          'Open layout settings, enter edit mode, drag/resize widgets, then save. Layout preferences are saved per-view — each preset and the Custom view remembers its own arrangement independently.',
       },
       {
         title: 'Use the Custom view for full widget control',
@@ -455,7 +451,7 @@ export const docsEntries: DocsEntry[] = [
       {
         title: 'Use chart help and expand actions',
         description:
-          'Use chart tooltips and expand buttons for deeper reading before you move to another subtab.',
+          'Use chart tooltips to understand what each chart is trying to show you. The expand button on each chart allows you to see the data more clearly.',
       },
       {
         title: 'Screenshot checklist',
@@ -486,78 +482,83 @@ export const docsEntries: DocsEntry[] = [
       },
     ],
   },
-  {
-    slug: 'search-analytics',
-    title: 'Search Analytics',
-    section: 'monitoring',
-    summary: 'How to use the Search analytics tab to understand your keyword feed — time windows, the widget grid, and saving layouts.',
-    readTime: '6 min read',
-    body: [
-      {
-        title: 'Open Analytics → Search',
-        description:
-          'The Search analytics tab is available on Plus and Pro. It provides the same draggable, resizable widget grid as RFY analytics, scoped to data from your Search monitoring feed. If you have no search terms configured yet, see the Search Monitoring doc first.',
-      },
-      {
-        title: 'Pick a time window',
-        description:
-          'Use the time window selector to set the lookback period for all widgets on the tab. Available windows follow your plan limits: 1 week on Free, 1 month on Plus, and up to 1 year on Pro.',
-      },
-      {
-        title: 'Read the widget grid',
-        description:
-          'Search analytics widgets include per-term breakdowns, daily and hourly product counts, category and brand distributions, and price analysis — mirroring the RFY analytics structure but filtered to your Search feed data. Widgets only show data for the terms that were active during the selected window.',
-      },
-      {
-        title: 'Customise and save your layout',
-        description:
-          'Enter layout edit mode to drag and resize widgets. Save the layout to persist your arrangement. The Search analytics layout is saved independently from your RFY layout so changes to one do not affect the other.',
-      },
-      {
-        title: 'Screenshot checklist',
-        description:
-          'Capture: Search analytics tab selected; time window selector open; widget grid with at least two widgets visible; layout edit mode active.',
-        images: [
-          {
-            src: '/docs-images/analytics/search-analytics-tab.png',
-            alt: 'Search analytics tab selected',
-          },
-          {
-            src: '/docs-images/analytics/search-analytics-widget-grid.png',
-            alt: 'Search analytics widget grid',
-          },
-          {
-            src: '/docs-images/analytics/search-analytics-layout-edit.png',
-            alt: 'Search analytics layout edit mode',
-          },
-        ],
-      },
-    ],
-  },
+//   {
+//     slug: 'search-analytics',
+//     title: 'Search Analytics',
+//     section: 'monitoring',
+//     summary: 'How to use the Search analytics tab to understand your keyword feed — time windows, the widget grid, and saving layouts.',
+//     readTime: '6 min read',
+//     body: [
+//       {
+//         title: 'Open Analytics → Search',
+//         description:
+//           'The Search analytics tab is available on Plus and Pro. It provides the same draggable, resizable widget grid as RFY analytics, scoped to data from your Search monitoring feed. If you have no search terms configured yet, see the Search Monitoring doc first.',
+//       },
+//       {
+//         title: 'Pick a time window',
+//         description:
+//           'Use the time window selector to set the lookback period for all widgets on the tab. Available windows follow your plan limits: 1 week on Free, 1 month on Plus, and up to 1 year on Pro.',
+//       },
+//       {
+//         title: 'Read the widget grid',
+//         description:
+//           'Search analytics widgets include per-term breakdowns, daily and hourly product counts, category and brand distributions, and price analysis — mirroring the RFY analytics structure but filtered to your Search feed data. Widgets only show data for the terms that were active during the selected window.',
+//       },
+//       {
+//         title: 'Customise and save your layout',
+//         description:
+//           'Enter layout edit mode to drag and resize widgets. Save the layout to persist your arrangement. The Search analytics layout is saved independently from your RFY layout so changes to one do not affect the other.',
+//       },
+//       {
+//         title: 'Screenshot checklist',
+//         description:
+//           'Capture: Search analytics tab selected; time window selector open; widget grid with at least two widgets visible; layout edit mode active.',
+//         images: [
+//           {
+//             src: '/docs-images/analytics/search-analytics-tab.png',
+//             alt: 'Search analytics tab selected',
+//           },
+//           {
+//             src: '/docs-images/analytics/search-analytics-widget-grid.png',
+//             alt: 'Search analytics widget grid',
+//           },
+//           {
+//             src: '/docs-images/analytics/search-analytics-layout-edit.png',
+//             alt: 'Search analytics layout edit mode',
+//           },
+//         ],
+//       },
+//     ],
+//   },
   {
     slug: 'account-monitoring',
     title: 'Account Monitoring',
     section: 'monitoring',
-    summary: 'How to monitor Vine account health using the Account analytics tab.',
+    summary: 'Monitor your Vine account via the Account analytics tab.',
     readTime: '6 min read',
     body: [
       {
         title: 'Open Analytics -> Account',
         description:
-          'This view focuses on Vine account health metrics, not product feed browsing.',
+          'This view focuses on Vine account health metrics',
       },
       {
         title: 'Read core KPIs',
         description:
-          'Track Vine status, review-to-order ratio, insightfulness, media rate, and eval-period progress.',
+          'Check Vine tier (Silver, Gold), review-to-order ratio, insightfulness, media rate, and eval-period progress.',
       },
       {
         title: 'Review trend charts',
         description:
-          'Use trend cards to understand direction over time, then expand charts for detail when needed.',
+          'Where possible, these stats are charted to understand how they change over time',
+      },
+        {
+        title: 'Alerting',
+        description:
+          'should be some here.. what alerting exists?',
       },
       {
-        title: 'Use eval period comparison',
+        title: 'Use eval period comparison (beta)',
         description:
           'Compare periods side by side to spot improvement or risk early.',
       },
@@ -915,4 +916,3 @@ export const docsEntries: DocsEntry[] = [
     ],
   },
 ]
-

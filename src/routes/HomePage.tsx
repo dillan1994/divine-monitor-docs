@@ -69,7 +69,7 @@ export function HomePage() {
         </div>
         <p className="hero-body">
           Divine Monitor gives you a globally accessible Console for real-time updates,
-          long-term history, and rich analytics, with simple but powerful notification controls
+          long-term trends, and rich analytics, with simple but powerful notification controls
           across email, push, and Telegram, configured in minutes.
         </p>
         <div className="hero-actions">
