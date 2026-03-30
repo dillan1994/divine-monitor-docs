@@ -1,11 +1,47 @@
-import { NavLink } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import { NavLink, useLocation } from 'react-router-dom'
 import type { PropsWithChildren } from 'react'
 import { ConstellationCanvas } from '@/components/common/ConstellationCanvas'
 
+const NAV_ITEMS: Array<{ to: string; label: string; end?: boolean }> = [
+  { to: '/', label: 'Home', end: true },
+  { to: '/docs', label: 'Docs' },
+  { to: '/plans', label: 'Tiers' },
+  { to: '/about', label: 'About' },
+  { to: '/faqs', label: 'FAQs' },
+  { to: '/changelog', label: 'Changelog' },
+]
+
 export function SiteLayout({ children }: PropsWithChildren) {
+  const location = useLocation()
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+  useEffect(() => {
+    setIsMenuOpen(false)
+  }, [location.pathname])
+
+  useEffect(() => {
+    if (!isMenuOpen) return
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setIsMenuOpen(false)
+      }
+    }
+
+    const previousOverflow = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    window.addEventListener('keydown', onKeyDown)
+
+    return () => {
+      document.body.style.overflow = previousOverflow
+      window.removeEventListener('keydown', onKeyDown)
+    }
+  }, [isMenuOpen])
+
   return (
     <>
-      {/* Fixed ambient glows — rendered once, persist across route changes */}
+      {/* Fixed ambient glows - rendered once, persist across route changes */}
       <div className="glows" aria-hidden="true">
         <div className="g1" />
         <div className="g2" />
@@ -13,7 +49,7 @@ export function SiteLayout({ children }: PropsWithChildren) {
         <div className="g4" />
       </div>
 
-      {/* Animated dot constellation — fixed full-viewport canvas */}
+      {/* Animated dot constellation - fixed full-viewport canvas */}
       <ConstellationCanvas />
 
       {/* Fixed top navigation */}
@@ -24,43 +60,16 @@ export function SiteLayout({ children }: PropsWithChildren) {
         </NavLink>
 
         <div className="nav-tabs" role="tablist">
-          <NavLink
-            to="/"
-            className={({ isActive }) => `nav-tab${isActive ? ' active' : ''}`}
-            end
-          >
-            Home
-          </NavLink>
-          <NavLink
-            to="/docs"
-            className={({ isActive }) => `nav-tab${isActive ? ' active' : ''}`}
-          >
-            Docs
-          </NavLink>
-          <NavLink
-            to="/plans"
-            className={({ isActive }) => `nav-tab${isActive ? ' active' : ''}`}
-          >
-            Tiers
-          </NavLink>
-          <NavLink
-            to="/about"
-            className={({ isActive }) => `nav-tab${isActive ? ' active' : ''}`}
-          >
-            About
-          </NavLink>
-          <NavLink
-            to="/faqs"
-            className={({ isActive }) => `nav-tab${isActive ? ' active' : ''}`}
-          >
-            FAQs
-          </NavLink>
-          <NavLink
-            to="/changelog"
-            className={({ isActive }) => `nav-tab${isActive ? ' active' : ''}`}
-          >
-            Changelog
-          </NavLink>
+          {NAV_ITEMS.map((item) => (
+            <NavLink
+              key={item.to}
+              to={item.to}
+              className={({ isActive }) => `nav-tab${isActive ? ' active' : ''}`}
+              end={item.end}
+            >
+              {item.label}
+            </NavLink>
+          ))}
         </div>
 
         <div className="nav-actions">
@@ -70,15 +79,75 @@ export function SiteLayout({ children }: PropsWithChildren) {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Console ↗
+            Console -&gt;
           </a>
           <NavLink to="/docs/quickstart" className="nav-cta">
             Get Started
           </NavLink>
         </div>
+
+        <button
+          type="button"
+          className="nav-mobile-toggle"
+          aria-label="Open menu"
+          aria-expanded={isMenuOpen}
+          aria-controls="mobile-primary-nav"
+          onClick={() => setIsMenuOpen((prev) => !prev)}
+        >
+          Menu
+        </button>
       </nav>
 
-      {/* Page content — each route manages its own layout below the nav */}
+      <button
+        type="button"
+        className={`nav-mobile-backdrop${isMenuOpen ? ' open' : ''}`}
+        aria-label="Close menu"
+        aria-hidden={!isMenuOpen}
+        tabIndex={isMenuOpen ? 0 : -1}
+        onClick={() => setIsMenuOpen(false)}
+      />
+
+      <aside
+        id="mobile-primary-nav"
+        className={`nav-mobile-drawer${isMenuOpen ? ' open' : ''}`}
+        aria-label="Mobile navigation"
+        aria-hidden={!isMenuOpen}
+      >
+        <div className="nav-mobile-links">
+          {NAV_ITEMS.map((item) => (
+            <NavLink
+              key={`mobile-${item.to}`}
+              to={item.to}
+              className={({ isActive }) => `nav-mobile-link${isActive ? ' active' : ''}`}
+              end={item.end}
+              onClick={() => setIsMenuOpen(false)}
+            >
+              {item.label}
+            </NavLink>
+          ))}
+        </div>
+
+        <div className="nav-mobile-actions">
+          <a
+            href="https://app.divinemonitor.com"
+            className="nav-mobile-console-link"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Console -&gt;
+          </a>
+          <NavLink
+            to="/docs/quickstart"
+            className="nav-mobile-cta"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Get Started
+          </NavLink>
+        </div>
+      </aside>
+
+      {/* Page content - each route manages its own layout below the nav */}
       <div className="site-content">{children}</div>
     </>
   )

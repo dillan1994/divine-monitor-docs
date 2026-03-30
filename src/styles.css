@@ -252,6 +252,109 @@ ol, ul {
   box-shadow: 0 4px 24px rgba(94, 234, 212, 0.38);
 }
 
+.nav-mobile-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--b2);
+  background: var(--s1);
+  color: var(--text);
+  border-radius: 8px;
+  padding: 7px 12px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.nav-mobile-backdrop {
+  display: none;
+  position: fixed;
+  inset: var(--nav-h) 0 0 0;
+  z-index: 104;
+  background: rgba(2, 6, 10, 0.45);
+  border: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.nav-mobile-backdrop.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.nav-mobile-drawer {
+  display: none;
+  position: fixed;
+  top: var(--nav-h);
+  right: 0;
+  bottom: 0;
+  width: min(84vw, 330px);
+  z-index: 105;
+  border-left: 1px solid var(--b1);
+  background: linear-gradient(180deg, rgba(22, 24, 36, 0.98), rgba(28, 31, 46, 0.98));
+  padding: 18px;
+  transform: translateX(100%);
+  transition: transform 0.22s ease;
+  pointer-events: none;
+  overflow-y: auto;
+}
+
+.nav-mobile-drawer.open {
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+.nav-mobile-links {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.nav-mobile-link {
+  display: block;
+  text-decoration: none;
+  color: var(--t2);
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 10px 12px;
+  font-size: 14px;
+}
+
+.nav-mobile-link.active {
+  color: var(--teal);
+  border-color: var(--teal-bdr);
+  background: var(--teal-bg);
+}
+
+.nav-mobile-actions {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--b1);
+  display: grid;
+  gap: 10px;
+}
+
+.nav-mobile-console-link,
+.nav-mobile-cta {
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 13px;
+  padding: 10px 12px;
+  text-align: center;
+}
+
+.nav-mobile-console-link {
+  border: 1px solid var(--b2);
+  color: var(--text);
+}
+
+.nav-mobile-cta {
+  background: var(--teal);
+  color: #081514;
+  font-weight: 600;
+}
+
+
 /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    Site Shell
    â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
@@ -1702,6 +1805,23 @@ ol, ul {
     display: none;
   }
 
+  .nav-actions {
+    display: none;
+  }
+
+  .nav-mobile-toggle {
+    display: inline-flex;
+  }
+
+  .nav-mobile-backdrop,
+  .nav-mobile-drawer {
+    display: block;
+  }
+
+  .nav-brand-name {
+    font-size: 16px;
+  }
+
   .hero {
     padding: var(--nav-h) 24px 48px;
   }
@@ -2327,3 +2447,5 @@ ol, ul {
   font-size: 12px;
   cursor: pointer;
 }
+
+
