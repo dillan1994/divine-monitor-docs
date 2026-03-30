@@ -753,6 +753,35 @@ ol, ul {
   padding: 88px 80px;
 }
 
+.screenshot-section {
+  position: relative;
+  z-index: 1;
+  border-top: 1px solid var(--b1);
+  padding: 88px 80px;
+}
+
+.screenshot-placeholder {
+  margin-top: 48px;
+}
+
+.screenshot-placeholder-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px dashed var(--b1);
+  border-radius: var(--radius-lg);
+  background: var(--s1);
+  height: 480px;
+}
+
+.screenshot-placeholder-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--muted);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
 .docs-preview-shell {
   display: grid;
   grid-template-columns: var(--docs-sidebar-w) 1fr;

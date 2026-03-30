@@ -63,33 +63,29 @@ export interface SellingPoint {
 export const SELLING_POINTS: SellingPoint[] = [
   {
     icon: '⚡',
-    heading: 'Real-time alerts',
-    body: 'Get RFY and Search alerts, review reminders and more. Simple to configure. Filter out alerts that you don\'t want to see.',
+    heading: 'Real-time alerts - multiple channels',
+    body: 'Get RFY and Search alerts, review reminders and more. Simple to configure. Filter out alerts that you don\'t want to see. Available via Telegram app, Email, or Browser push notifications.',
   },
   {
     icon: '🌐',
     heading: 'Your data anywhere',
-    body: 'Access your data anywhere via the Divine Monitor Console, via your browser. Up to 6 concurrent sessions on Pro.',
+    body: 'Access your Vine data from anywhere via the Divine Monitor Console — a rich, interactive web dashboard.',
   },
-  {
-    icon: '🔔',
-    heading: 'Multi-channel notifications',
-    body: 'Push alerts to Telegram, Email, or Browser notifications. Configure per-module rules so you only hear about what matters.',
-  },
-  {
+     {
     icon: '📊',
     heading: 'Analytics that go deep',
-    body: 'Track your personal RFY trends, account health, review stats, AI product counts and more.',
-  },
-  {
-    icon: '📋',
-    heading: 'Product history & review activity',
-    body: 'Browse day-by-day product history and review activity without leaving the console.',
+    body: 'Track RFY trends, account health, review stats, AI product counts, and more. Dig into price history, brands, sellers, and categories — and see how they shift over time.',
   },
 
   {
     icon: '🆓',
     heading: 'Free tier that\'s actually useful',
-    body: 'RFY monitoring, 2 console sessions, analytics, and several Vine page quality-of-life improvements.',
+    body: 'RFY monitoring, product metadata capture, Vine history accessible from anywhere, analytics and several Vine page quality-of-life improvements. All for free.',
   },
+  {
+    icon: '🏷️',
+    heading: 'Rich product metadata',
+    body: 'Every product is captured with price, seller, brand, and category — including sub-category. Tracked over time, these details reveal patterns that a simple product list never could.',
+  },
+
 ]

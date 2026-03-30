@@ -171,6 +171,11 @@ export const docsEntries: DocsEntry[] = [
           'Grid is best for browsing products quickly/at a glance. Table is best for sorting and filtering by title, seller, price etc.',
       },
       {
+        title: 'Explore captured product metadata',
+        description:
+          'Every product is stored with its price, seller, brand, and category (including sub-category) at the time it was seen. This metadata is visible in table mode and powers the deeper analytics views — tracking these fields over time reveals patterns that a simple product list never could.',
+      },
+      {
         title: 'Resize product tiles and inspect info icons',
         description:
           'Tile size control is available in grid mode. Use the info icon on products to see sent/skipped/failed notification details.',
