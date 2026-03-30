@@ -135,16 +135,19 @@ export function DocsPage() {
           </div>
         ) : (
           <ol className="docs-steps" aria-label="Steps">
-            {entry.body.map((step, index) => (
-              <li key={step.title} className="docs-step">
+            {entry.body.map((step, index) => {
+              const hasImages = Boolean(step.images?.length)
+
+              return (
+              <li key={step.title} className={`docs-step${hasImages ? ' docs-step--visual' : ''}`}>
                 <div className="docs-step-number">{index + 1}</div>
                 <div className="docs-step-body">
-                  <div className="docs-step-title">{step.title}</div>
-                  <div className="docs-step-desc">{step.description}</div>
+                  {!hasImages ? <div className="docs-step-title">{step.title}</div> : null}
+                  {!hasImages ? <div className="docs-step-desc">{step.description}</div> : null}
                   <StepImageGrid images={step.images} onZoom={setZoomImage} />
                 </div>
               </li>
-            ))}
+            )})}
           </ol>
         )}
       </main>

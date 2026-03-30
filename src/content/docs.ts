@@ -181,29 +181,17 @@ export const docsEntries: DocsEntry[] = [
           'Tile size control is available in grid mode. Use the info icon on products to see sent/skipped/failed notification details.',
       },
       {
-        title: 'Screenshot checklist',
+        title: 'Products tab in action',
         description:
-          'Capture: products header with date controls; multi-day panel expanded; feed pills in use; grid vs table examples; a product info popover open.',
+          'Use these views as your baseline: slate-theme tiles for fast browsing and light-theme table mode for detailed sorting.',
         images: [
           {
-            src: '/docs-images/products/products-header-date-controls.png',
-            alt: 'Products header with date controls',
-          },
-          {
-            src: '/docs-images/products/products-multi-day-lookback-panel.png',
-            alt: 'Products multi-day lookback panel expanded',
-          },
-          {
             src: '/docs-images/products/products-feed-filter-pills.png',
-            alt: 'Products feed filter pills for all, RFY, and search',
+            alt: 'Products slate-theme tile view',
           },
           {
             src: '/docs-images/products/products-grid-and-table-views.png',
-            alt: 'Products grid and table view examples',
-          },
-          {
-            src: '/docs-images/products/products-notification-info-popover.png',
-            alt: 'Products notification info popover open',
+            alt: 'Products light-theme table view',
           },
         ],
       },
@@ -459,29 +447,17 @@ export const docsEntries: DocsEntry[] = [
           'Use chart tooltips to understand what each chart is trying to show you. The expand button on each chart allows you to see the data more clearly.',
       },
       {
-        title: 'Screenshot checklist',
+        title: 'RFY analytics and layouts in action',
         description:
-          'Capture: analytics main tab strip; RFY view strip; layout settings open; widget resize in progress; saved custom layout state.',
+          'This pair shows the live analytics experience across light and slate themes with the view and layout controls visible.',
         images: [
           {
             src: '/docs-images/analytics/analytics-main-subtabs.png',
-            alt: 'Analytics main subtabs',
+            alt: 'RFY analytics in light theme',
           },
           {
             src: '/docs-images/analytics/analytics-rfy-view-tabs.png',
-            alt: 'RFY view tabs inside analytics',
-          },
-          {
-            src: '/docs-images/analytics/analytics-layout-settings-open.png',
-            alt: 'Analytics layout settings open',
-          },
-          {
-            src: '/docs-images/analytics/analytics-widget-resize.png',
-            alt: 'Analytics widget resize in progress',
-          },
-          {
-            src: '/docs-images/analytics/analytics-saved-custom-layout.png',
-            alt: 'Analytics custom layout saved state',
+            alt: 'RFY analytics in slate theme',
           },
         ],
       },
@@ -610,29 +586,17 @@ export const docsEntries: DocsEntry[] = [
           'The Journey Board is a kanban-style view of all in-flight reviews across three columns: Not Yet Reviewed, Submitted, and Pending Approval. Use it to see exactly where each review sits in its lifecycle at a glance. Also works in tandem with the clickable RAG tiles to quickly see the exact products requiring attention.',
       },
       {
-        title: 'Screenshot checklist',
+        title: 'Review monitoring in action',
         description:
-          'Capture: Reviews filter bar; review cards list; review alerts panel; Reviews analytics due tiles; journey board filtered state.',
+          'A quick light-vs-slate visual comparison of the Reviews experience across analytics tiles and the review list.',
         images: [
           {
-            src: '/docs-images/reviews/reviews-filter-bar.png',
-            alt: 'Reviews filter bar',
+            src: '/docs-images/reviews/reviews-analytics-due-tiles.png',
+            alt: 'Reviews analytics in light theme',
           },
           {
             src: '/docs-images/reviews/reviews-card-list.png',
-            alt: 'Reviews card list',
-          },
-          {
-            src: '/docs-images/reviews/reviews-alert-settings.png',
-            alt: 'Reviews alert settings panel',
-          },
-          {
-            src: '/docs-images/reviews/reviews-analytics-due-tiles.png',
-            alt: 'Reviews analytics due tiles',
-          },
-          {
-            src: '/docs-images/reviews/reviews-journey-board-filtered.png',
-            alt: 'Reviews journey board in filtered state',
+            alt: 'Reviews monitoring in slate theme',
           },
         ],
       },
@@ -666,25 +630,17 @@ export const docsEntries: DocsEntry[] = [
           'Identifies the largest drop events in your selected time window',
       },
       {
-        title: 'Screenshot checklist',
+        title: 'AI analytics in action',
         description:
-          'Capture: AI tab with window selector; AI product counts with velocity toggle; category chart with legend; AI layout edit mode.',
+          'Use these paired screenshots to anchor the walkthrough: light-theme overview and slate-theme velocity-focused view.',
         images: [
           {
             src: '/docs-images/ai/ai-window-selector.png',
-            alt: 'AI analytics window selector',
+            alt: 'AI analytics in light theme',
           },
           {
             src: '/docs-images/ai/ai-product-counts-velocity-toggle.png',
-            alt: 'AI product counts chart with velocity toggle',
-          },
-          {
-            src: '/docs-images/ai/ai-category-chart-legend.png',
-            alt: 'AI category chart with legend enabled',
-          },
-          {
-            src: '/docs-images/ai/ai-layout-edit-mode.png',
-            alt: 'AI analytics layout edit mode',
+            alt: 'AI analytics in slate theme',
           },
         ],
       },

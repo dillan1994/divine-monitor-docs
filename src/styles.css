@@ -960,6 +960,32 @@ ol, ul {
   line-height: 1.6;
 }
 
+.docs-step--visual {
+  display: block;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.docs-step--visual:hover {
+  border-color: transparent;
+}
+
+.docs-step--visual .docs-step-number {
+  display: none;
+}
+
+.docs-step--visual .docs-step-title {
+  margin-bottom: 8px;
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.docs-step--visual .docs-step-desc {
+  margin-bottom: 4px;
+}
+
 /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    Full Docs Page (/docs/:slug)
    â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
@@ -2342,10 +2368,10 @@ ol, ul {
 
 /* Docs image slots */
 .docs-step-media-grid {
-  margin-top: 14px;
+  margin-top: 16px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 14px;
 }
 
 .docs-step-media {
@@ -2359,8 +2385,9 @@ ol, ul {
 .docs-step-media-image {
   display: block;
   width: 100%;
-  height: 165px;
-  object-fit: cover;
+  height: auto;
+  max-height: 560px;
+  object-fit: contain;
   background: #0c0d14;
 }
 
@@ -2391,7 +2418,7 @@ ol, ul {
 }
 
 .docs-step-media-placeholder {
-  min-height: 165px;
+  min-height: 240px;
   padding: 12px;
   display: flex;
   flex-direction: column;
@@ -2438,7 +2465,7 @@ ol, ul {
 .docs-step-media-caption {
   border-top: 1px solid var(--b1);
   padding: 8px 10px;
-  font-size: 11px;
+  font-size: 12px;
   color: var(--t2);
   line-height: 1.5;
 }
@@ -2477,4 +2504,8 @@ ol, ul {
   cursor: pointer;
 }
 
-
+@media (max-width: 900px) {
+  .docs-step-media-grid {
+    grid-template-columns: 1fr;
+  }
+}
