@@ -12,6 +12,8 @@ const NAV_ITEMS: Array<{ to: string; label: string; end?: boolean }> = [
   { to: '/changelog', label: 'Changelog' },
 ]
 
+const MOBILE_UA_RE = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i
+
 export function SiteLayout({ children }: PropsWithChildren) {
   const location = useLocation()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -38,6 +40,11 @@ export function SiteLayout({ children }: PropsWithChildren) {
       window.removeEventListener('keydown', onKeyDown)
     }
   }, [isMenuOpen])
+
+  useEffect(() => {
+    const deviceClass = MOBILE_UA_RE.test(navigator.userAgent) ? 'mobile' : 'desktop'
+    document.documentElement.dataset.deviceClass = deviceClass
+  }, [])
 
   return (
     <>

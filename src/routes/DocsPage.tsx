@@ -74,6 +74,30 @@ function StepImageGrid({
 export function DocsPage() {
   const { slug } = useParams<{ slug?: string }>()
   const [zoomImage, setZoomImage] = useState<ZoomImage | null>(null)
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false)
+
+  useEffect(() => {
+    setIsSidebarOpen(false)
+  }, [slug])
+
+  useEffect(() => {
+    if (!isSidebarOpen) return
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setIsSidebarOpen(false)
+      }
+    }
+
+    const previousOverflow = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    window.addEventListener('keydown', onKeyDown)
+
+    return () => {
+      document.body.style.overflow = previousOverflow
+      window.removeEventListener('keydown', onKeyDown)
+    }
+  }, [isSidebarOpen])
 
   useEffect(() => {
     if (!zoomImage) return
@@ -101,10 +125,28 @@ export function DocsPage() {
   const section = docSections.find((s) => s.key === entry.section)
 
   return (
-    <div className="docs-page">
-      <DocsSidebar />
+    <div className={`docs-page${isSidebarOpen ? ' docs-sidebar-open' : ''}`}>
+      <button
+        type="button"
+        className={`docs-sidebar-backdrop${isSidebarOpen ? ' open' : ''}`}
+        aria-label="Close docs navigation"
+        aria-hidden={!isSidebarOpen}
+        tabIndex={isSidebarOpen ? 0 : -1}
+        onClick={() => setIsSidebarOpen(false)}
+      />
+      <DocsSidebar onClose={() => setIsSidebarOpen(false)} />
 
       <main className="docs-main">
+        <button
+          type="button"
+          className="docs-sidebar-toggle"
+          aria-label="Open docs navigation"
+          aria-expanded={isSidebarOpen}
+          aria-controls="docs-sidebar-nav"
+          onClick={() => setIsSidebarOpen(true)}
+        >
+          Browse Docs
+        </button>
         <nav className="docs-breadcrumb" aria-label="Breadcrumb">
           <span>Docs</span>
           <span className="docs-breadcrumb-sep">/</span>
