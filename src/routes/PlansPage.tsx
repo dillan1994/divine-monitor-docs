@@ -48,7 +48,17 @@ export function PlansPage() {
     <div className="plans-page">
       <div className="plans-page-header">
         <h1 className="plans-page-title">Tiers &amp; Features</h1>
-        <p className="plans-page-lede">A simple comparison of what Free, Plus, and Pro include in the current rollout.</p>
+        <div className="plans-page-lede-row">
+          <p className="plans-page-lede">A simple comparison of what Free, Plus, and Pro include in the current rollout.</p>
+          <a
+            href="https://www.patreon.com/c/DivineMonitor/membership"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hero-cta-primary plans-page-upgrade"
+          >
+            Upgrade on Patreon
+          </a>
+        </div>
       </div>
       <PlansTable tiers={PLAN_TIERS} tierGroups={PLAN_TIER_GROUPS} />
     </div>
