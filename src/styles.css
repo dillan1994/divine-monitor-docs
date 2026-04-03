@@ -361,6 +361,13 @@ ol, ul {
 .site-content {
   position: relative;
   z-index: 1;
+  flex: 1 0 auto;
+}
+
+.site-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
@@ -1008,7 +1015,7 @@ ol, ul {
 .docs-page {
   display: grid;
   grid-template-columns: var(--docs-sidebar-w) 1fr;
-  height: calc(100vh - var(--nav-h));
+  min-height: calc(100vh - var(--nav-h));
   margin-top: var(--nav-h);
   border-top: 1px solid var(--b1);
   background: var(--s1);
@@ -1022,7 +1029,6 @@ ol, ul {
   background: rgba(15, 16, 25, 0.65);
   display: flex;
   flex-direction: column;
-  overflow-y: auto;
 }
 
 .docs-sidebar-mobile-head {
@@ -1098,7 +1104,6 @@ ol, ul {
 .docs-main {
   padding: 44px 52px;
   background: var(--s2);
-  overflow-y: auto;
 }
 
 .docs-title {

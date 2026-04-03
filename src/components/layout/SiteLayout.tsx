@@ -47,7 +47,7 @@ export function SiteLayout({ children }: PropsWithChildren) {
   }, [])
 
   return (
-    <>
+    <div className="site-shell">
       {/* Fixed ambient glows - rendered once, persist across route changes */}
       <div className="glows" aria-hidden="true">
         <div className="g1" />
@@ -156,6 +156,15 @@ export function SiteLayout({ children }: PropsWithChildren) {
 
       {/* Page content - each route manages its own layout below the nav */}
       <div className="site-content">{children}</div>
-    </>
+
+      <footer className="site-footer">
+        <div className="site-footer-brand">Divine Monitor</div>
+        <div className="site-footer-links">
+          <NavLink to="/terms">Terms</NavLink>
+          <NavLink to="/privacy">Privacy</NavLink>
+          <NavLink to="/contact">Contact</NavLink>
+        </div>
+      </footer>
+    </div>
   )
 }

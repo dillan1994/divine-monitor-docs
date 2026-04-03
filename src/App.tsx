@@ -7,6 +7,7 @@ import { DocsPage } from '@/routes/DocsPage'
 import { FaqsPage } from '@/routes/FaqsPage'
 import { HomePage } from '@/routes/HomePage'
 import { PlansPage } from '@/routes/PlansPage'
+import { PrivacyPage } from '@/routes/PrivacyPage'
 import { TermsPage } from '@/routes/TermsPage'
 
 export function App() {
@@ -21,6 +22,7 @@ export function App() {
         <Route path="/changelog" element={<ChangelogPage />} />
         <Route path="/faqs" element={<FaqsPage />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/privacy" element={<PrivacyPage />} />
         <Route path="/terms" element={<TermsPage />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
