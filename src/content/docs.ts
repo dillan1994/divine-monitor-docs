@@ -459,6 +459,14 @@ export const docsEntries: DocsEntry[] = [
             src: '/docs-images/analytics/analytics-rfy-view-tabs.png',
             alt: 'RFY analytics in slate theme',
           },
+          {
+            src: '/docs-images/analytics/analytics-rfy-price-light.png',
+            alt: 'RFY price analytics in light theme',
+          },
+          {
+            src: '/docs-images/analytics/analytics-rfy-price-slate.png',
+            alt: 'RFY price analytics in slate theme',
+          },
         ],
       },
     ],
