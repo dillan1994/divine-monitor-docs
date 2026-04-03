@@ -64,7 +64,7 @@ export const SELLING_POINTS: SellingPoint[] = [
   {
     icon: '⚡',
     heading: 'Real-time alerts - multiple channels',
-    body: 'Get RFY and Search alerts, review reminders and more. Simple to configure. Filter out alerts that you don\'t want to see. Available via Telegram app, Email, or Browser push notifications.',
+    body: 'Never miss a new RFY product or review deadline again. Rich notifications available via Telegram app, Email, or Browser push notifications.',
   },
   {
     icon: '🌐',
