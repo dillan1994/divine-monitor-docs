@@ -9,6 +9,25 @@ const STATS: Array<{ value: string; sup?: string; label: string }> = [
   { value: '3', sup: 'mo', label: 'Max analytics history (Pro)' },
 ]
 
+const HOME_SCREENSHOTS = [
+  {
+    src: '/docs-images/imported/divine-monitor-2026-03-30/products-full-light-grid.png',
+    alt: 'Divine Monitor products view in light theme with product tiles',
+  },
+  {
+    src: '/docs-images/imported/divine-monitor-2026-03-30/rfy-analytics-full-slate.png',
+    alt: 'Divine Monitor analytics overview in slate theme',
+  },
+  {
+    src: '/docs-images/imported/divine-monitor-2026-04-03/rfy-analytics-full-light-price.png',
+    alt: 'Divine Monitor price analytics view in light theme',
+  },
+  {
+    src: '/docs-images/imported/divine-monitor-2026-03-30/ai-analytics-reviews-full-slate.png',
+    alt: 'Divine Monitor reviews analytics in slate theme',
+  },
+] as const
+
 
 export function HomePage() {
   return (
@@ -79,11 +98,17 @@ export function HomePage() {
             Your Vine data, visualised.
           </h2>
         </ScrollReveal>
-        <ScrollReveal delay={140} className="screenshot-placeholder">
-          <div className="screenshot-placeholder-inner">
-            {/* Replace with <img src="/screenshots/analytics.png" alt="Divine Monitor analytics dashboard" /> */}
-            <span className="screenshot-placeholder-label">Analytics dashboard screenshot coming soon</span>
-          </div>
+        <ScrollReveal delay={140} className="screenshot-grid">
+          {HOME_SCREENSHOTS.map((shot, index) => (
+            <figure className="screenshot-card" key={shot.src}>
+              <img
+                className="screenshot-card-image"
+                src={shot.src}
+                alt={shot.alt}
+                loading={index < 2 ? 'eager' : 'lazy'}
+              />
+            </figure>
+          ))}
         </ScrollReveal>
       </section>
 
