@@ -1,0 +1,106 @@
+<svg viewBox="0 0 920 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="flow-line" x1="140" y1="0" x2="780" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2A344B"/>
+      <stop offset="0.5" stop-color="#5EEAD4"/>
+      <stop offset="1" stop-color="#2A344B"/>
+    </linearGradient>
+    <radialGradient id="node-glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(460 232) rotate(90) scale(180 360)">
+      <stop stop-color="rgba(94,234,212,0.12)"/>
+      <stop offset="1" stop-color="rgba(94,234,212,0)"/>
+    </radialGradient>
+    <filter id="soft-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="920" height="520" rx="20" fill="#131621"/>
+  <rect width="920" height="520" rx="20" fill="url(#node-glow)"/>
+
+  <text x="460" y="50" text-anchor="middle"
+    font-family="'Courier New', Courier, monospace"
+    font-size="14" letter-spacing="4" fill="#5EEAD4">HOW IT WORKS</text>
+  <text x="460" y="80" text-anchor="middle"
+    font-family="system-ui, -apple-system, sans-serif"
+    font-size="17" font-weight="600" fill="#D8E1EE">One device collects. Divine Monitor processes. You view it anywhere.</text>
+
+  <line x1="70" y1="102" x2="850" y2="102" stroke="#1E2840" stroke-width="1"/>
+
+  <line x1="180" y1="220" x2="740" y2="220" stroke="url(#flow-line)" stroke-width="4" stroke-linecap="round"/>
+  <line x1="180" y1="220" x2="740" y2="220" stroke="#5EEAD4" stroke-opacity="0.18" stroke-width="12" stroke-linecap="round" filter="url(#soft-glow)"/>
+  <polygon points="740,220 722,210 722,230" fill="#5EEAD4"/>
+
+  <circle cx="180" cy="220" r="44" fill="#172031" stroke="rgba(94,234,212,0.35)" stroke-width="2"/>
+  <circle cx="180" cy="220" r="26" fill="rgba(94,234,212,0.08)" stroke="rgba(94,234,212,0.18)" stroke-width="1.5"/>
+  <rect x="165" y="205" width="30" height="24" rx="5" fill="#5EEAD4" fill-opacity="0.9"/>
+  <rect x="171" y="198" width="18" height="4" rx="2" fill="#5EEAD4" fill-opacity="0.9"/>
+
+  <circle cx="460" cy="220" r="52" fill="#172031" stroke="rgba(94,234,212,0.45)" stroke-width="2"/>
+  <circle cx="460" cy="220" r="30" fill="rgba(94,234,212,0.08)" stroke="rgba(94,234,212,0.18)" stroke-width="1.5"/>
+  <ellipse cx="460" cy="208" rx="18" ry="7" fill="#5EEAD4" fill-opacity="0.9"/>
+  <path d="M442 208V228C442 234 450 238 460 238C470 238 478 234 478 228V208" stroke="#5EEAD4" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M442 218C442 224 450 228 460 228C470 228 478 224 478 218" stroke="#5EEAD4" stroke-width="3" stroke-linecap="round"/>
+
+  <circle cx="740" cy="220" r="44" fill="#172031" stroke="rgba(94,234,212,0.35)" stroke-width="2"/>
+  <circle cx="740" cy="220" r="26" fill="rgba(94,234,212,0.08)" stroke="rgba(94,234,212,0.18)" stroke-width="1.5"/>
+  <rect x="722" y="204" width="36" height="24" rx="4" stroke="#5EEAD4" stroke-width="3"/>
+  <line x1="730" y1="235" x2="750" y2="235" stroke="#5EEAD4" stroke-width="3" stroke-linecap="round"/>
+
+  <text x="180" y="306" text-anchor="middle"
+    font-family="'Courier New', Courier, monospace"
+    font-size="12" letter-spacing="2" fill="#5EEAD4">EXTENSION</text>
+  <text x="180" y="338" text-anchor="middle"
+    font-family="system-ui, -apple-system, sans-serif"
+    font-size="24" font-weight="700" fill="#E2E8F0">Collects</text>
+  <text x="180" y="364" text-anchor="middle"
+    font-family="system-ui, -apple-system, sans-serif"
+    font-size="14" fill="#94A3B8">
+    <tspan x="180" dy="0">Runs on one signed-in device</tspan>
+    <tspan x="180" dy="20">and fetches data from Vine pages.</tspan>
+  </text>
+
+  <text x="460" y="306" text-anchor="middle"
+    font-family="'Courier New', Courier, monospace"
+    font-size="12" letter-spacing="2" fill="#5EEAD4">DIVINE MONITOR</text>
+  <text x="460" y="338" text-anchor="middle"
+    font-family="system-ui, -apple-system, sans-serif"
+    font-size="24" font-weight="700" fill="#E2E8F0">Processes</text>
+  <text x="460" y="364" text-anchor="middle"
+    font-family="system-ui, -apple-system, sans-serif"
+    font-size="14" fill="#94A3B8">
+    <tspan x="460" dy="0">Stores the incoming data and turns it</tspan>
+    <tspan x="460" dy="20">into feeds, history, analytics and alerts.</tspan>
+  </text>
+
+  <text x="740" y="306" text-anchor="middle"
+    font-family="'Courier New', Courier, monospace"
+    font-size="12" letter-spacing="2" fill="#5EEAD4">CONSOLE</text>
+  <text x="740" y="338" text-anchor="middle"
+    font-family="system-ui, -apple-system, sans-serif"
+    font-size="24" font-weight="700" fill="#E2E8F0">View anywhere</text>
+  <text x="740" y="364" text-anchor="middle"
+    font-family="system-ui, -apple-system, sans-serif"
+    font-size="14" fill="#94A3B8">
+    <tspan x="740" dy="0">Via the Console, monitor from anywhere</tspan>
+    <tspan x="740" dy="20">products, analytics, history and alerts.</tspan>
+  </text>
+
+  <text x="320" y="202" text-anchor="middle"
+    font-family="'Courier New', Courier, monospace"
+    font-size="10" letter-spacing="1.8" fill="#5EEAD4">UPLOADS DATA</text>
+  <text x="600" y="202" text-anchor="middle"
+    font-family="'Courier New', Courier, monospace"
+    font-size="10" letter-spacing="1.8" fill="#5EEAD4">SERVES RESULTS</text>
+
+  <line x1="230" y1="418" x2="690" y2="418" stroke="rgba(94,234,212,0.18)" stroke-width="1"/>
+  <text x="460" y="444" text-anchor="middle"
+    font-family="system-ui, -apple-system, sans-serif"
+    font-size="14" fill="#CBD5E1">
+    <tspan x="460" dy="0">The collector device and the Console are separate,</tspan>
+    <tspan x="460" dy="19">so Divine Monitor Console is not tied to the machine doing the fetching.</tspan>
+  </text>
+</svg>

@@ -18,6 +18,7 @@ export type DocBodyStep = {
   description: React.ReactNode
   images?: DocStepImage[]
   hideTextWhenImages?: boolean
+  highlight?: 'accent'
 }
 
 export type TierFeatureRow = {

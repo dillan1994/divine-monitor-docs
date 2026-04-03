@@ -961,6 +961,30 @@ ol, ul {
   border-color: var(--teal-bdr);
 }
 
+.docs-step--accent {
+  border-color: rgba(251, 146, 60, 0.42);
+  background:
+    linear-gradient(135deg, rgba(251, 146, 60, 0.1), rgba(251, 146, 60, 0.03) 38%, rgba(18, 22, 33, 0.96) 100%),
+    var(--s3);
+  box-shadow: inset 0 0 0 1px rgba(251, 146, 60, 0.1);
+}
+
+.docs-step--accent:hover {
+  border-color: rgba(251, 146, 60, 0.68);
+}
+
+.docs-step--accent .docs-step-number {
+  color: #fb923c;
+}
+
+.docs-step--accent .docs-step-title {
+  color: #fed7aa;
+}
+
+.docs-step--accent .docs-step-desc {
+  color: #fde6d0;
+}
+
 .docs-step-number {
   font-family: var(--font-serif);
   font-size: 24px;

@@ -187,7 +187,10 @@ export function DocsPage() {
                 const stepNumber = isPhotoOnlySection ? null : ++visibleStepNumber
 
                 return (
-                  <li key={`${entry.slug}-${index}`} className={`docs-step${isPhotoOnlySection ? ' docs-step--visual' : ''}`}>
+                  <li
+                    key={`${entry.slug}-${index}`}
+                    className={`docs-step${isPhotoOnlySection ? ' docs-step--visual' : ''}${step.highlight ? ` docs-step--${step.highlight}` : ''}`}
+                  >
                     {!isPhotoOnlySection ? <div className="docs-step-number">{stepNumber}</div> : null}
                     <div className="docs-step-body">
                       {!hideStepText ? <div className="docs-step-title">{step.title}</div> : null}

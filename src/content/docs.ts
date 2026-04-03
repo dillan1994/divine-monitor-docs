@@ -86,6 +86,54 @@ export const docsEntries: DocsEntry[] = [
     body: [],
   },
   {
+    slug: 'how-it-works',
+    title: 'How does it work?',
+    section: 'getting-started',
+    summary: 'A simple overview of the extension, backend, and Console so you can see where data is collected, processed, and used.',
+    readTime: '3 min read',
+    body: [
+      {
+        title: 'The extension is the collection layer',
+        description:
+          'The Divine Monitor Chrome extension acts as the collection layer. Once installed and signed into your Divine Monitor account, it safely checks supported Amazon Vine pages for RFY, Search, Reviews, Account, and other monitoring data.',
+      },
+      {
+        title: 'Data is fetched from Vine pages',
+        description:
+          'When monitoring is enabled, the extension fetches data from the relevant Amazon Vine pages and sends the data to the Divine Monitor backend. That includes the data required to power live feeds, history, analytics, and alerts. Product price and metadata is also captured to allow richer analytics and insights.',
+      },
+      {
+        title: 'The backend processes and stores the data',
+        description:
+          'The Divine Monitor backend receives that incoming data, processes, transforms, and persists, allowing it to drive the various views in the Console. This is what separates collection from viewing: the machine running the extension is responsible for fetching, while the Divine Monitor backend handles the processing, storage, and live feeds.',
+      },
+      {
+        title: 'The Console is where the data becomes useful',
+        description: React.createElement('span', null,
+          'The ',
+          React.createElement('a', { href: 'https://app.divinemonitor.com/', target: '_blank', rel: 'noreferrer' }, 'Divine Monitor Console'),
+          ' is where that processed data becomes useful. It is the part of Divine Monitor used to view live product feeds, RFY and Search monitoring, analytics, product history, notification controls, and the rest of the platform.'
+        ),
+      },
+      {
+        title: 'Collection and access are intentionally separate',
+        description:
+          'The extension does not need to be the same device used to check Divine Monitor. It can stay signed in on a browser or machine left running in the background, while the Console can be opened from another device whenever needed. That separation is what makes Divine Monitor accessible from anywhere, rather than tying the experience to the machine doing the fetching, and is also what separates Divine Monitor from every other Vine extension. There is more overhead, complexity and cost associated with this approach, however the flexibility it offers is clear.',
+      },
+      {
+        title: 'Flow overview',
+        description: '',
+        hideTextWhenImages: true,
+        images: [
+          {
+            src: '/docs-images/extension/how-it-works-flow-diagram.svg',
+            alt: 'Diagram showing data flowing from the extension to the Divine Monitor backend and into the Console',
+          },
+        ],
+      },
+    ],
+  },
+  {
     slug: 'quickstart',
     title: 'Quickstart',
     section: 'getting-started',
@@ -179,6 +227,12 @@ export const docsEntries: DocsEntry[] = [
         title: 'Resize product tiles and inspect info icons',
         description:
           'Tile size control is available in grid mode. Use the info icon on products to see sent/skipped/failed notification details.',
+      },
+      {
+        title: 'Coming soon: AI drops',
+        highlight: 'accent',
+        description:
+          'Coming soon: Divine Monitor could add an AI Drops feature within the Products tab which would be a live view of all new products as they appear during a drop. The aim would be to surface newly seen items more directly as they land, and be able to access this easily from anywhere via the Console.',
       },
       {
         title: 'Products tab in action',
