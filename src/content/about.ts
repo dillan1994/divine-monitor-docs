@@ -20,8 +20,8 @@ export const aboutSections: AboutSection[] = [
     slug: 'story',
     label: 'My Story',
     group: 'About',
-    title: 'Built by a Viner, for Viners',
-    subtitle: 'A private tool that got too good to keep to myself.',
+    title: 'Built for myself, shared with you',
+    subtitle: 'A private tool that I felt got too good to keep to myself.',
     ready: true,
   },
 ]
@@ -30,11 +30,11 @@ export const aboutSections: AboutSection[] = [
 export const STORY_PARAGRAPHS = [
   {
     key: 'origin',
-    text: "I'm a full-time Software Engineer and an Amazon Vine Voice living in London. For a long time I had a pretty embarrassing setup for staying on top of new products. It was a patchwork of generic auto-refresh extensions, complex regex trying to detect new products, and tweaking to avoid alerts for products I wasn't interested in, or that I had seen before. It worked to an extent, but was fragile. I wanted something that was reliable and simple - notifications that fired when they were supposed to, my own history I could check from any device, and something that just worked. So I built it.",
+    text: "I'm a full-time Software Engineer and an Amazon Vine Voice living in London. For a long time I my setup for monitoring my Vine feeds was a mess of generic auto-refresh extensions, complex regex trying to detect new products, and tweaking to avoid alerts for products I wasn't interested in or I'd already seen before. It worked to an extent, but was fragile, and I wanted something that was reliable and simple - notifications that fired when they were supposed to, my own history I could check from any device, and something that was simple and just worked. So I built it.",
   },
   {
     key: 'growth',
-    text: "That was years ago, and it stayed private for a long time. The moment it really clicked was when the notifications became genuinely good, e.g an alert for something I actually wanted, at the right moment, or daily review reminders (we're all busy!) summarising what was overdue, due soon, or rejected. Once it was working reliably, I kept thinking other Viners would get real value from it, so I rebuilt the whole thing properly (smarter extension, fully cloud-native backend) and decided to open it up.",
+    text: "That was years ago, and it stayed private for a long time. The moment it really clicked was when the notifications became genuinely good, e.g an alert for something I actually wanted, at the right moment, or daily review reminders summarising what I need to action immediately. Once it was working reliably, I kept thinking other Viners would get real value from it, so I rebuilt the whole thing to be smarter and more resilient, and decided to open it up.",
   },
   {
     key: 'safety',
@@ -42,7 +42,7 @@ export const STORY_PARAGRAPHS = [
   },
   {
     key: 'free-tier',
-    text: "The free tier took a while to land on. Infrastructure costs are real, and the obvious move would have been to gate most things. But the Vine community has given me a lot, and I wanted to give something back worth using. So I absorbed the cost. RFY monitoring, product history, analytics, global dashboard access, all free. The core Vine page enhancements are free too. Things like hiding the opt-out button, now that one is personal. I know the anxiety of seeing it sitting there, waiting to be accidentally clicked. I wanted to remove that for anyone who gets knows the feeling.",
+    text: "The free tier took a while to decide on as the infrastructure and maintenance costs are real.. the obvious move would have been to gate most things. But the Vine community has given me a lot, and I saw this as an opportunity to give something back worth using. So I absorbed a lot of the cost. RFY monitoring, product history, analytics, global dashboard access, all free. The core Vine page enhancements are free too (hiding distracting elements, optimising space, multi photo upload during reviews). Things like hiding the opt-out button, now that one is personal. I know the anxiety of seeing it sitting there, waiting to be accidentally clicked. I wanted to remove that for anyone who gets the same feeling.",
   },
 ]
 

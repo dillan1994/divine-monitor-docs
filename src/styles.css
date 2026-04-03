@@ -1473,10 +1473,11 @@ ol, ul {
 
 .my-story-title {
   font-family: var(--font-serif);
-  font-size: clamp(36px, 5vw, 52px);
+  font-size: clamp(24px, 3.8vw, 52px);
   font-weight: 300;
   letter-spacing: -1.5px;
   margin: 10px 0 12px;
+  white-space: nowrap;
 }
 
 .my-story-subtitle {
@@ -1668,6 +1669,37 @@ ol, ul {
   font-size: 13.5px;
   font-weight: 300;
   color: var(--t2);
+}
+
+.about-story-support {
+  margin-top: 34px;
+  padding: 20px 22px;
+  border: 1px solid var(--b1);
+  border-radius: var(--radius);
+  background: linear-gradient(155deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.015));
+}
+
+.about-story-support-title {
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+
+.about-story-support-text {
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--t2);
+  line-height: 1.75;
+}
+
+.about-story-support-text + .about-story-support-text {
+  margin-top: 10px;
+}
+
+.about-story-support .about-story-contact {
+  margin-top: 14px;
 }
 
 /* ═══════════════════════════════════════════════════════════════════
