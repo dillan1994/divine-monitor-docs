@@ -20,7 +20,7 @@ export const PLAN_TIER_GROUPS: TierGroup[] = [
       { label: 'Custom RFY refresh interval', free: false, plus: true, pro: true },
       { label: 'Quiet windows (reduced monitoring cadence during set hours)', free: true, plus: true, pro: true },
       { label: 'Space saving mode (hide lower-page ads/history, side order flyer, and RFY/AFA categories)', free: true, plus: true, pro: true },
-      { label: 'Space saving mode plus (hide deals header, trim vertical space, compact product tiles)', free: false, plus: true, pro: true },
+      { label: 'Space saving mode plus (hide deals header, trim vertical space, compact product tiles)', free: true, plus: true, pro: true },
     ],
   },
   {
