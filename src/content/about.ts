@@ -71,10 +71,10 @@ export const SELLING_POINTS: SellingPoint[] = [
     heading: 'Your data anywhere',
     body: 'Access your Vine data from anywhere via the Divine Monitor Console — a rich, interactive web dashboard.',
   },
-     {
+  {
     icon: '📊',
     heading: 'Analytics that go deep',
-    body: 'Track RFY trends, account health, review stats, AI product counts, and more. Dig into price history, brands, sellers, and categories — and see how they shift over time.',
+    body: 'Track RFY trends, account health, review stats, All Items product counts, and more. Dig into price history, brands, sellers, and categories — and see how they shift over time.',
   },
 
   {

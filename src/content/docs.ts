@@ -40,7 +40,7 @@ export const PLAN_TIER_GROUPS: TierGroup[] = [
       { label: 'RFY monitoring', free: true, plus: true, pro: true },
       { label: 'Search monitoring', free: false, plus: true, pro: true },
       { label: 'Account monitoring', free: false, plus: true, pro: true },
-      { label: 'AI (all items) monitoring', free: false, plus: true, pro: true },
+      { label: 'All Items monitoring', free: false, plus: true, pro: true },
       { label: 'Review monitoring', free: false, plus: false, pro: true },
     ],
   },
@@ -208,7 +208,7 @@ export const docsEntries: DocsEntry[] = [
       {
         title: 'Opening the popup for quick-settings',
         description:
-          'Click the Divine Monitor icon in your Chrome toolbar to open the popup for the quick-settings. If the icon is not visible, click the extensions puzzle piece and pin Divine Monitor. The popup is the quick control for toggling on and off the extension, RFY/Search, and adding in new search terms. control panel for everything the extension does.',
+          'Click the Divine Monitor icon in your Chrome toolbar to open the popup for the quick-settings. If the icon is not visible, click the extensions puzzle piece and pin Divine Monitor. The popup is the quick control for toggling on and off the extension, RFY/Search, and adding in new search terms.',
       },
       {
         title: 'Global enable/disable',
@@ -218,7 +218,7 @@ export const docsEntries: DocsEntry[] = [
       {
         title: 'Per-feed status indicators',
         description:
-          'Below the global toggle, each feed — RFY, Search, Reviews, Account, and AI — shows its current status. A green indicator means the feed is actively polling. A quiet-mode indicator means the feed is running at reduced cadence inside a quiet window. A grey indicator means the feed is paused or unavailable on your tier.',
+          'Below the global toggle, each feed — RFY, Search, Reviews, Account, and All Items — shows its current status. A green indicator means the feed is actively polling. A quiet-mode indicator means the feed is running at reduced cadence inside a quiet window. A grey indicator means the feed is paused or unavailable on your tier.',
       },
       {
         title: 'RFY and Search feed sections',
@@ -262,7 +262,7 @@ export const docsEntries: DocsEntry[] = [
     summary: 'Everything the extension does to the Vine page UI —  opt-out protection, multi-photo upload for reviews, and Space Saving Mode.',
     notice: React.createElement('span', null,
       React.createElement('span', { 'aria-hidden': 'true' }, 'ⓘ '),
-      'These enhancements will remain completely free, I have no intention of gating these improvements. As a Viner I understand very well how annoying these can be and how these little improvements can make a huge difference.'
+      'These enhancements will remain completely free, I have no intention of charging for these improvements. As a Viner I understand how much time we spend on these pages and how these little improvements can make a huge difference.'
     ),
     readTime: '4 min read',
     body: [
@@ -279,7 +279,25 @@ export const docsEntries: DocsEntry[] = [
       {
         title: 'Vine page enhancements (Space Saving)',
         description:
-          'Space Saving Mode hides Amazon ads and browsing history in the lower portion of the page, hides the side order flyer, and removes the category sections on RFY and AFA pages to reclaim horizontal space. the Amazon deals header at the top of the page, reducing extra vertical whitespace between elements, and compacting product tiles — significantly transforming the default Vine tab layout.',
+          'Space Saving Mode hides Amazon ads and browsing history in the lower portion of the page, hides the side order flyer, and removes the category sections on RFY and AFA pages to reclaim horizontal space. It also hides the Amazon deals header at the top of the page, reduces extra vertical whitespace between elements, and compacts product tiles — significantly transforming the default Vine tab layout.',
+      },
+      {
+        title: 'Space Saving before and after',
+        description:
+          'Before and after comparison of the Vine page with Space Saving Mode applied.',
+        hideTextWhenImages: true,
+        images: [
+          {
+            src: '/docs-images/extension/space-saving-before.png',
+            alt: 'Space Saving mode before view',
+            caption: 'Before',
+          },
+          {
+            src: '/docs-images/extension/space-saving-after.png',
+            alt: 'Space Saving mode after view',
+            caption: 'After',
+          },
+        ],
       },
     ],
   },
@@ -294,6 +312,11 @@ export const docsEntries: DocsEntry[] = [
         title: 'Background RFY monitoring',
         description:
           'The extension refreshes your RFY feed in the background, with no open Vine tab required. New products are detected and written to the Divine Monitor Console automatically. This is the core monitoring mechanism that runs at all times while the extension is enabled (can be disabled at any time).',
+      },
+      {
+        title: 'Notifications',
+        description:
+          'On Plus tier and above, RFY notifications can be configured so new matches are delivered in real time. Telegram notifications are supported on Plus and Pro, and Pro also adds email and browser push channels. Exclusions can be specified to reduce noise from unwanted categories/subcategories or keyword matches in titles.',
       },
       {
         title: 'Randomized refresh intervals',
@@ -347,6 +370,11 @@ export const docsEntries: DocsEntry[] = [
             'Search monitoring adds extra requests because each saved term needs checking. \'Spread\' and \'Burst\' both exist so you can choose how that activity is paced: Spread keeps it slower, smoother and safer, while Burst is faster but busier for short periods. The two modes exist to give you as much control as possible.'
           )
         ),
+      },
+      {
+        title: 'Notifications',
+        description:
+          'Search monitoring is a Plus tier feature, so notifications can be configured to alert you when your saved search terms find new matches. Telegram notifications are available on Plus tier, and Pro also supports email and browser push notifications.',
       },
       {
         title: 'Spread mode',
@@ -415,7 +443,7 @@ export const docsEntries: DocsEntry[] = [
       {
         title: 'Analytics tab structure',
         description:
-          'Top-level tabs are RFY, Account, Search, Reviews, and AI.',
+          'Top-level tabs are RFY, Account, Search, Reviews, and All Items.',
       },
       {
         title: 'Choose how much historic analytics you see',
@@ -615,15 +643,15 @@ export const docsEntries: DocsEntry[] = [
   },
   {
     slug: 'ai-all-items-monitoring',
-    title: 'AI (All Items) Monitoring',
+    title: 'All Items Monitoring',
     section: 'monitoring',
-    summary: 'Follow all-items behavior over time using the AI analytics tab.',
+    summary: 'Follow all-items behavior over time using the All Items analytics tab.',
     readTime: '6 min read',
     body: [
       {
         title: 'All Items monitoring ',
         description:
-          'Exposes metrics on AI total counts, counts by product, identifies drop times and exposes heatmaps.',
+          'Exposes metrics on All Items total counts, counts by product, identifies drop times and exposes heatmaps.',
       },
       {
         title: 'Total Counts',
@@ -641,18 +669,18 @@ export const docsEntries: DocsEntry[] = [
           'Identifies the largest drop events in your selected time window',
       },
       {
-        title: 'AI analytics in action',
+        title: 'All Items analytics in action',
         description:
           'Use these paired screenshots to anchor the walkthrough: light-theme overview and slate-theme velocity-focused view.',
         hideTextWhenImages: true,
         images: [
           {
             src: '/docs-images/ai/ai-window-selector.png',
-            alt: 'AI analytics in light theme',
+            alt: 'All Items analytics in light theme',
           },
           {
             src: '/docs-images/ai/ai-product-counts-velocity-toggle.png',
-            alt: 'AI analytics in slate theme',
+            alt: 'All Items analytics in slate theme',
           },
         ],
       },
