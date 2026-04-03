@@ -184,6 +184,7 @@ export const docsEntries: DocsEntry[] = [
         title: 'Products tab in action',
         description:
           'Use these views as your baseline: slate-theme tiles for fast browsing and light-theme table mode for detailed sorting.',
+        hideTextWhenImages: true,
         images: [
           {
             src: '/docs-images/products/products-feed-filter-pills.png',
@@ -450,6 +451,7 @@ export const docsEntries: DocsEntry[] = [
         title: 'RFY analytics and layouts in action',
         description:
           'This pair shows the live analytics experience across light and slate themes with the view and layout controls visible.',
+        hideTextWhenImages: true,
         images: [
           {
             src: '/docs-images/analytics/analytics-main-subtabs.png',
@@ -597,6 +599,7 @@ export const docsEntries: DocsEntry[] = [
         title: 'Review monitoring in action',
         description:
           'A quick light-vs-slate visual comparison of the Reviews experience across analytics tiles and the review list.',
+        hideTextWhenImages: true,
         images: [
           {
             src: '/docs-images/reviews/reviews-analytics-due-tiles.png',
@@ -641,6 +644,7 @@ export const docsEntries: DocsEntry[] = [
         title: 'AI analytics in action',
         description:
           'Use these paired screenshots to anchor the walkthrough: light-theme overview and slate-theme velocity-focused view.',
+        hideTextWhenImages: true,
         images: [
           {
             src: '/docs-images/ai/ai-window-selector.png',

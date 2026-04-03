@@ -177,19 +177,27 @@ export function DocsPage() {
           </div>
         ) : (
           <ol className="docs-steps" aria-label="Steps">
-            {entry.body.map((step, index) => {
-              const hasImages = Boolean(step.images?.length)
+            {(() => {
+              // Keep render order and numbering aligned with entry.body; only photo-only sections skip numbering.
+              let visibleStepNumber = 0
+              return entry.body.map((step, index) => {
+                const hasImages = Boolean(step.images?.length)
+                const isPhotoOnlySection = hasImages && Boolean(step.hideTextWhenImages)
+                const hideStepText = isPhotoOnlySection
+                const stepNumber = isPhotoOnlySection ? null : ++visibleStepNumber
 
-              return (
-              <li key={step.title} className={`docs-step${hasImages ? ' docs-step--visual' : ''}`}>
-                <div className="docs-step-number">{index + 1}</div>
-                <div className="docs-step-body">
-                  {!hasImages ? <div className="docs-step-title">{step.title}</div> : null}
-                  {!hasImages ? <div className="docs-step-desc">{step.description}</div> : null}
-                  <StepImageGrid images={step.images} onZoom={setZoomImage} />
-                </div>
-              </li>
-            )})}
+                return (
+                  <li key={`${entry.slug}-${index}`} className={`docs-step${isPhotoOnlySection ? ' docs-step--visual' : ''}`}>
+                    {!isPhotoOnlySection ? <div className="docs-step-number">{stepNumber}</div> : null}
+                    <div className="docs-step-body">
+                      {!hideStepText ? <div className="docs-step-title">{step.title}</div> : null}
+                      {!hideStepText ? <div className="docs-step-desc">{step.description}</div> : null}
+                      <StepImageGrid images={step.images} onZoom={setZoomImage} />
+                    </div>
+                  </li>
+                )
+              })
+            })()}
           </ol>
         )}
       </main>
