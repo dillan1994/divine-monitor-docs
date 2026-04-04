@@ -232,7 +232,7 @@ export const docsEntries: DocsEntry[] = [
         title: 'Coming soon: AI drops',
         highlight: 'accent',
         description:
-          'Coming soon: Divine Monitor could add an AI Drops feature within the Products tab which would be a live view of all new products as they appear during a drop. The aim would be to surface newly seen items more directly as they land, and be able to access this easily from anywhere via the Console.',
+          'Coming soon: I\'ve been playing with the idea of adding an AI Drops feature within the Products tab which would be a live view of all new products as they appear during a drop. The aim would be to see all new items as they drop, as a live feed, and naturally you\'d be able to access this easily from anywhere via the Console.',
       },
       {
         title: 'Products tab in action',
