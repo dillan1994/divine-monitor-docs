@@ -3,10 +3,10 @@ import { SELLING_POINTS } from '@/content/about'
 import { ScrollReveal } from '@/components/common/ScrollReveal'
 
 const STATS: Array<{ value: string; sup?: string; label: string }> = [
-  { value: 'RFY', label: 'Core monitoring available' },
-  { value: 'Multi', label: 'Console sessions supported' },
-  { value: '3', label: 'Notification channels supported' },
-  { value: 'Long', label: 'Analytics history available' },
+  { value: 'History', label: 'Products, analytics and trends' },
+  { value: 'Notifications', label: 'Rich, powerful yet simple' },
+  { value: 'Global Console', label: 'Access your data easily, from anywhere.' },
+  { value: 'Free tier', label: 'Generous.' },
 ]
 
 const HOME_SCREENSHOTS = [
@@ -34,8 +34,11 @@ export function HomePage() {
     <>
       <section className="hero">
         <div className="hero-eyebrow">Real-time Amazon Vine monitoring</div>
-        <h1 className="hero-l1">Your Vine data,</h1>
-        <h1 className="hero-l2">historic to real-time, wherever you are.</h1>
+        <h1 className="hero-headline">
+          <span className="hero-hl-white">Your Vine data,</span>
+          <em className="hero-hl-italic">historic to real-time,</em>
+          <span className="hero-hl-muted">wherever you are.</span>
+        </h1>
         <div className="hero-rule">
           <div className="hero-rule-line" />
           <div className="hero-rule-diamond" />
