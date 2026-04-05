@@ -18,8 +18,8 @@ Mapped into existing documentation placeholders as follows:
 | `rfy-analytics-full-slate.png` | `/docs-images/analytics/analytics-rfy-view-tabs.png` |
 | `ai-analytics-full-light.png` | `/docs-images/ai/ai-window-selector.png` |
 | `ai-analytics-full-slate.png` | `/docs-images/ai/ai-product-counts-velocity-toggle.png` |
-| `ai-analytics-reviews-full-light.png` | `/docs-images/reviews/reviews-analytics-due-tiles.png` |
-| `ai-analytics-reviews-full-slate.png` | `/docs-images/reviews/reviews-card-list.png` |
+| `reviews-journey-board-light.png` | `/docs-images/reviews/reviews-journey-board-light.png` |
+| `reviews-journey-board-slate.png` | `/docs-images/reviews/reviews-journey-board-slate.png` |
 
 Notes:
 - These source captures are full-page screenshots, so they best fit the broader/high-level placeholders.

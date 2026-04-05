@@ -684,12 +684,12 @@ export const docsEntries: DocsEntry[] = [
         hideTextWhenImages: true,
         images: [
           {
-            src: '/docs-images/reviews/reviews-analytics-due-tiles.png',
-            alt: 'Reviews analytics in light theme',
+            src: '/docs-images/reviews/reviews-journey-board-light.png',
+            alt: 'Review monitoring board in light theme',
           },
           {
-            src: '/docs-images/reviews/reviews-card-list.png',
-            alt: 'Reviews monitoring in slate theme',
+            src: '/docs-images/reviews/reviews-journey-board-slate.png',
+            alt: 'Review monitoring board in slate theme',
           },
         ],
       },
