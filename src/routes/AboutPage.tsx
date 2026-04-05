@@ -24,7 +24,7 @@ export function AboutPage() {
             That kind of message will help me to improve the app for you and myself, and help prioritise what to build next.
           </p>
           <p className="about-story-support-text">
-            If you are happy on the free tier but still want to support the project, you are welcome to buy me a coffee or make a
+            If you would like to support the project, you are welcome to buy me a coffee or make a
             custom donation amount via Patreon.
           </p>
           <div className="about-story-contact">

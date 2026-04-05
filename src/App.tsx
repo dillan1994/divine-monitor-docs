@@ -6,7 +6,6 @@ import { ContactPage } from '@/routes/ContactPage'
 import { DocsPage } from '@/routes/DocsPage'
 import { FaqsPage } from '@/routes/FaqsPage'
 import { HomePage } from '@/routes/HomePage'
-import { PlansPage } from '@/routes/PlansPage'
 import { PrivacyPage } from '@/routes/PrivacyPage'
 import { TermsPage } from '@/routes/TermsPage'
 
@@ -18,7 +17,7 @@ export function App() {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/docs" element={<DocsPage />} />
         <Route path="/docs/:slug" element={<DocsPage />} />
-        <Route path="/plans" element={<PlansPage />} />
+        <Route path="/plans" element={<Navigate to="/about" replace />} />
         <Route path="/changelog" element={<ChangelogPage />} />
         <Route path="/faqs" element={<FaqsPage />} />
         <Route path="/contact" element={<ContactPage />} />

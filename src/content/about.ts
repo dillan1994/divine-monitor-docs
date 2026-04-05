@@ -42,14 +42,14 @@ export const STORY_PARAGRAPHS = [
   },
   {
     key: 'free-tier',
-    text: "The free tier took a while to decide on as the infrastructure and maintenance costs are real.. the obvious move would have been to gate most things. But the Vine community has given me a lot, and I saw this as an opportunity to give something back worth using. So I absorbed a lot of the cost. RFY monitoring, product history, analytics, global dashboard access, all free. The core Vine page enhancements are free too (hiding distracting elements, optimising space, multi photo upload during reviews). Things like hiding the opt-out button, now that one is personal. I know the anxiety of seeing it sitting there, waiting to be accidentally clicked. I wanted to remove that for anyone who gets the same feeling.",
+    text: "Access took a while to decide on because the infrastructure and maintenance costs are real. The obvious move would have been to gate most things. But the Vine community has given me a lot, and I saw this as an opportunity to give something back worth using. So I absorbed a lot of the cost. RFY monitoring, product history, analytics, globally accessible Console views, and the core Vine page enhancements are intended to be genuinely useful from the start. Things like hiding the opt-out button, now that one is personal. I know the anxiety of seeing it sitting there, waiting to be accidentally clicked. I wanted to remove that for anyone who gets the same feeling.",
   },
 ]
 
 export const STORY_VALUES = [
   { icon: '🛡️', label: 'Safety first, always' },
   { icon: '✦', label: 'Simple over clever' },
-  { icon: '🆓', label: 'Generous free access' },
+  { icon: '🆓', label: 'Accessible by design' },
   { icon: '🛠️', label: 'Built for myself, shared with you' },
 ]
 
@@ -79,8 +79,8 @@ export const SELLING_POINTS: SellingPoint[] = [
 
   {
     icon: '🆓',
-    heading: 'Free tier that\'s actually useful',
-    body: 'RFY monitoring, product metadata capture, Vine history accessible from anywhere, analytics and several Vine page quality-of-life improvements. All for free.',
+    heading: 'Useful from day one',
+    body: 'RFY monitoring, product metadata capture, Vine history accessible from anywhere, analytics, and several Vine page quality-of-life improvements are built into the core experience.',
   },
   {
     icon: '🏷️',

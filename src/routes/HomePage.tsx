@@ -3,10 +3,10 @@ import { SELLING_POINTS } from '@/content/about'
 import { ScrollReveal } from '@/components/common/ScrollReveal'
 
 const STATS: Array<{ value: string; sup?: string; label: string }> = [
-  { value: 'RFY', label: 'Monitoring on all tiers' },
-  { value: '2/4/6', label: 'Console sessions (Free/Plus/Pro)' },
+  { value: 'RFY', label: 'Core monitoring available' },
+  { value: 'Multi', label: 'Console sessions supported' },
   { value: '3', label: 'Notification channels supported' },
-  { value: '3', sup: 'mo', label: 'Max analytics history (Pro)' },
+  { value: 'Long', label: 'Analytics history available' },
 ]
 
 const HOME_SCREENSHOTS = [
@@ -73,7 +73,7 @@ export function HomePage() {
         </ScrollReveal>
         <ScrollReveal delay={80}>
           <h2 className="section-heading" id="caps-heading">
-            Feature rich and powerful - even on free tier
+            Feature rich and built for everyday Vine use
           </h2>
         </ScrollReveal>
         <div className="caps-grid">

@@ -6,7 +6,6 @@ import { ConstellationCanvas } from '@/components/common/ConstellationCanvas'
 const NAV_ITEMS: Array<{ to: string; label: string; end?: boolean }> = [
   { to: '/', label: 'Home', end: true },
   { to: '/docs', label: 'Docs' },
-  { to: '/plans', label: 'Tiers' },
   { to: '/about', label: 'About' },
   { to: '/faqs', label: 'FAQs' },
   { to: '/changelog', label: 'Changelog' },
