@@ -662,20 +662,15 @@ export const docsEntries: DocsEntry[] = [
     summary: 'Track review state, due pressure, and review alerts from Reviews and Analytics.',
     readTime: '8 min read',
     body: [
-              {
-        title: 'Summary tiles',
-        description:
-          'View stats since first installing the extension, such as total outstanding reviews/total review count/approval rates etc.',
-      },
-      {
-        title: 'Count of reviews due in x days',
-        description:
-          'Shows several tiles with counts of reviews due, eg overdue, due today, due tomorrow etc, with RAG colours to quickly see what is urgent at a glance. Clicking each filters the Journey board (see below). ',
-      },
             {
         title: 'Review Journey Board',
         description:
           'The Journey Board is a kanban-style view of all in-flight reviews across three columns: Not Yet Reviewed, Submitted, and Pending Approval. Use it to see exactly where each review sits in its lifecycle at a glance. Also works in tandem with the clickable RAG tiles to quickly see the exact products requiring attention.',
+      },
+      {
+        title: 'Count of reviews due in x days',
+        description:
+          'Shows several RAG tiles with counts of reviews due, eg overdue, due today, due tomorrow etc, to quickly see what is urgent at a glance. Clicking each filters the Journey board. ',
       },
       {
         title: 'Review monitoring in action',
