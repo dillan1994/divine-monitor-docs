@@ -165,33 +165,6 @@ export const docsEntries: DocsEntry[] = [
     ],
   },
   {
-    slug: 'marketplace-support',
-    title: 'Marketplace Support',
-    section: 'extensions',
-    beta: true,
-    summary: 'Which Amazon Vine marketplaces Divine Monitor supports, how marketplace detection works, and what to expect if a feature is not yet available in your region.',
-    notice:
-      'Divine Monitor has been developed solely by a UK Viner and has therefore not yet been tested in other regions. Support has been added, but bugs may still be encountered. If you run into any bugs, please contact me via the form in the Divine Monitor Console.',
-    readTime: '3 min read',
-    body: [
-      {
-        title: 'Supported marketplaces',
-        description:
-          'Divine Monitor supports Amazon Vine across 12 marketplaces: US, CA, UK, DE, FR, IT, ES, JP, AU, SG, BR, and MX. The extension and Divine Monitor Console work across all of these.',
-      },
-      {
-        title: 'Automatic marketplace detection',
-        description:
-          'The extension detects your active marketplace automatically from the Amazon page URL — no manual configuration required.',
-      },
-      {
-        title: 'Feature availability by marketplace',
-        description:
-          'Most features are available across marketplaces. Some features — such as Account monitoring and Review monitoring — will be rolled out progressively.',
-      },
-    ],
-  },
-  {
     slug: 'products-tab-walkthrough',
     title: 'Products Tab Walkthrough',
     section: 'monitoring',
@@ -484,6 +457,33 @@ export const docsEntries: DocsEntry[] = [
             alt: 'Extension popup Search quiet hours configured',
           },
         ],
+      },
+    ],
+  },
+  {
+    slug: 'marketplace-support',
+    title: 'Marketplace Support',
+    section: 'extensions',
+    beta: true,
+    summary: 'Which Amazon Vine marketplaces Divine Monitor supports, how marketplace detection works, and what to expect if a feature is not yet available in your region.',
+    notice:
+      'Divine Monitor has been developed solely by a UK Viner and has therefore not yet been tested in other regions. Support has been added, but bugs may still be encountered. If you run into any bugs, please contact me via the form in the Divine Monitor Console.',
+    readTime: '3 min read',
+    body: [
+      {
+        title: 'Supported marketplaces',
+        description:
+          'Divine Monitor supports Amazon Vine across 12 marketplaces: US, CA, UK, DE, FR, IT, ES, JP, AU, SG, BR, and MX. The extension and Divine Monitor Console work across all of these.',
+      },
+      {
+        title: 'Automatic marketplace detection',
+        description:
+          'The extension detects your active marketplace automatically from the Amazon page URL — no manual configuration required.',
+      },
+      {
+        title: 'Feature availability by marketplace',
+        description:
+          'Most features are available across marketplaces. Some features — such as Account monitoring and Review monitoring — will be rolled out progressively.',
       },
     ],
   },
