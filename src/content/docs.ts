@@ -167,7 +167,7 @@ export const docsEntries: DocsEntry[] = [
   {
     slug: 'marketplace-support',
     title: 'Marketplace Support',
-    section: 'getting-started',
+    section: 'extensions',
     beta: true,
     summary: 'Which Amazon Vine marketplaces Divine Monitor supports, how marketplace detection works, and what to expect if a feature is not yet available in your region.',
     notice:
