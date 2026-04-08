@@ -42,7 +42,7 @@ export const STORY_PARAGRAPHS = [
   },
   {
     key: 'free-tier',
-    text: "Access took a while to decide on because the infrastructure and maintenance costs are real. The obvious move would have been to gate most things. But the Vine community has given me a lot, and I saw this as an opportunity to give something back worth using. So I absorbed a lot of the cost. RFY monitoring, product history, analytics, globally accessible Console views, and the core Vine page enhancements are intended to be genuinely useful from the start. Things like hiding the opt-out button, now that one is personal. I know the anxiety of seeing it sitting there, waiting to be accidentally clicked. I wanted to remove that for anyone who gets the same feeling.",
+    text: "Tiers took a while to decide on because the infrastructure and maintenance costs are real. The obvious move would have been to gate most things. But the Vine community has given me a lot, and I saw this as an opportunity to give something back worth using. So I absorbed a lot of the cost. RFY monitoring, product history, analytics, globally accessible Console views, and the core Vine page enhancements are free and intended to be genuinely useful from the start. Things like hiding the opt-out button, I know the anxiety of seeing it sitting there, waiting to be accidentally clicked. I wanted to remove that for anyone who gets the same feeling.",
   },
 ]
 

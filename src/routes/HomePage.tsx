@@ -1,6 +1,8 @@
+import { useEffect, useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { SELLING_POINTS } from '@/content/about'
 import { ScrollReveal } from '@/components/common/ScrollReveal'
+import type { DocStepImage } from '@/types/docs'
 
 const STATS: Array<{ value: string; sup?: string; label: string }> = [
   { value: 'History', label: 'Products, analytics and trends' },
@@ -9,7 +11,7 @@ const STATS: Array<{ value: string; sup?: string; label: string }> = [
   { value: 'Free tier', label: 'Generous.' },
 ]
 
-const HOME_SCREENSHOTS = [
+const HOME_SCREENSHOTS: DocStepImage[] = [
   {
     src: '/docs-images/imported/divine-monitor-2026-03-30/products-full-light-grid.png',
     alt: 'Divine Monitor products view in light theme with product tiles',
@@ -26,10 +28,24 @@ const HOME_SCREENSHOTS = [
     src: '/docs-images/imported/divine-monitor-2026-03-30/ai-analytics-reviews-full-slate.png',
     alt: 'Divine Monitor reviews analytics in slate theme',
   },
-] as const
-
+]
 
 export function HomePage() {
+  const [zoomImage, setZoomImage] = useState<DocStepImage | null>(null)
+
+  useEffect(() => {
+    if (!zoomImage) return
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setZoomImage(null)
+      }
+    }
+
+    window.addEventListener('keydown', onKeyDown)
+    return () => window.removeEventListener('keydown', onKeyDown)
+  }, [zoomImage])
+
   return (
     <>
       <section className="hero">
@@ -104,16 +120,59 @@ export function HomePage() {
         <ScrollReveal delay={140} className="screenshot-grid">
           {HOME_SCREENSHOTS.map((shot, index) => (
             <figure className="screenshot-card" key={shot.src}>
-              <img
-                className="screenshot-card-image"
-                src={shot.src}
-                alt={shot.alt}
-                loading={index < 2 ? 'eager' : 'lazy'}
-              />
+              <button
+                type="button"
+                className="screenshot-card-button"
+                onClick={() => setZoomImage(shot)}
+                aria-label={`Open larger image: ${shot.alt}`}
+              >
+                <img
+                  className="screenshot-card-image"
+                  src={shot.src}
+                  alt={shot.alt}
+                  loading={index < 2 ? 'eager' : 'lazy'}
+                />
+              </button>
             </figure>
           ))}
         </ScrollReveal>
       </section>
+
+      {zoomImage?.src ? (
+        <div
+          className="docs-image-lightbox"
+          role="dialog"
+          aria-modal="true"
+          aria-label={zoomImage.alt}
+          onClick={() => setZoomImage(null)}
+        >
+          <button
+            type="button"
+            className="docs-image-lightbox-close"
+            onClick={() => setZoomImage(null)}
+            aria-label="Close image preview"
+          >
+            Close
+          </button>
+          <img
+            src={zoomImage.src}
+            alt={zoomImage.alt}
+            className="docs-image-lightbox-image"
+            onClick={(event) => event.stopPropagation()}
+          />
+        </div>
+      ) : null}
+
+      <footer className="site-footer">
+        <span className="site-footer-brand">Divine Monitor</span>
+        <div className="site-footer-links">
+          <a href="https://docs.divinemonitor.com">docs.divinemonitor.com</a>
+          <Link to="/changelog">Changelog</Link>
+          <Link to="/contact">Contact</Link>
+          <a href="https://divinemonitor.com">Status</a>
+          <Link to="/terms">Terms</Link>
+        </div>
+      </footer>
     </>
   )
 }
