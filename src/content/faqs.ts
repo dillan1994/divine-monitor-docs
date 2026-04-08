@@ -7,21 +7,20 @@ export const faqs: FaqItem[] = [
   {
     question: 'What is Divine Monitor?',
     answer:
-      'Divine Monitor is a notification and analytics platform for your Vine account, designed to turn account activity into actionable insights. \
+      'Divine Monitor is a platform based around storing your historic vine recommendations, configuring notifications and viewing computed analytics for your Vine account. The idea is to turn account activity into actionable insights. \
       Whether it\'s monitoring product drops, staying on top of reviews, tracking changes to your account status, or simply viewing your own \
       historic recommendations, Divine Monitor has been designed to do this all in the most simple, user-friendly way possible.',
   },
   {
     question: 'How can I view my data?',
     answer:
-      'Divine Monitor includes a rich, modern web-based global dashboard you can access from any browser. \
-       Concurrent browser sessions are tier-based: Free supports up to 2 browsers, Plus up to 4, and Pro up to 6.',
+      'Divine Monitor includes a rich, modern web-based global dashboard you can access from any browser.',
   },
     {
     question: 'Does it support alerting and notifications?',
     answer:
       'Yes, and this is where Divine Monitor shines. You can configure notifications for your RFY feed, custom Search terms, outstanding review reminders, \
-      changes to account status, and more! Notifications are currently supported via Telegram, Email, and multi-device browser notifications. \
+      changes to account status, and more. Notifications are currently supported via Telegram, Email, and multi-device browser notifications. \
       Most importantly, the setup is designed to be simple, perfect for non-technical users.',
   },
     {
@@ -36,8 +35,9 @@ export const faqs: FaqItem[] = [
     question: 'Is it safe?',
     answer:
       'The Chrome extension is designed to safely extract and store only the data needed, with everything else handled in the global Console. \
-      What sets Divine Monitor apart is its account-safe approach: no one-click ordering, no direct Amazon API calls, and full control over \
-      how data is collected through the customisable extension.',
+      Divine Monitor employs an account-safe approach: no one-click ordering, no direct Amazon API calls, and full control over \
+      how data is collected through the customisable extension. \
+      I have safely used my own extension 24/7 over the past 2 years and had no issues with safety whatsoever.',
   },
   {
     question: 'How do I get started?',
