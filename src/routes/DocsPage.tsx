@@ -22,9 +22,10 @@ function StepImageCard({
   const showImage = Boolean(src) && !missing
   const fileHint = image.fileHint?.trim() || src
   const isSvg = src.toLowerCase().endsWith('.svg')
+  const imageClassName = image.className?.trim() || ''
 
   return (
-    <figure className={`docs-step-media${showImage ? '' : ' is-placeholder'}${isSvg ? ' docs-step-media--diagram' : ''}`}>
+    <figure className={`docs-step-media${showImage ? '' : ' is-placeholder'}${isSvg ? ' docs-step-media--diagram' : ''}${imageClassName ? ` ${imageClassName}` : ''}`}>
       {showImage ? (
         <button
           type="button"

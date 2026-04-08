@@ -9,6 +9,7 @@ export type DocStepImage = {
   src?: string
   alt: string
   caption?: string
+  className?: string
   placeholder?: string
   fileHint?: string
 }

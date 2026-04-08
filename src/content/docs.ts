@@ -257,29 +257,6 @@ export const docsEntries: DocsEntry[] = [
         description:
           'Expand the Search section to add or remove search terms. Plus supports up to 5 terms and Pro supports up to 10. Choose Spread or Burst mode per the Search Monitoring doc.',
       },
-      {
-        title: 'Screenshot checklist',
-        description:
-          'Capture: popup open with global toggle on; per-feed status row; RFY section expanded with interval control; Search section with terms list; force-fetch buttons for Reviews and Account.',
-        images: [
-          {
-            src: '/docs-images/extension/popup-global-toggle.png',
-            alt: 'Extension popup global enable toggle',
-          },
-          {
-            src: '/docs-images/extension/popup-feed-status-row.png',
-            alt: 'Extension popup per-feed status indicators',
-          },
-          {
-            src: '/docs-images/extension/popup-rfy-section-expanded.png',
-            alt: 'Extension popup RFY section expanded',
-          },
-          {
-            src: '/docs-images/extension/popup-search-terms-list.png',
-            alt: 'Extension popup Search terms list',
-          },
-        ],
-      },
     ],
   },
   {
@@ -293,7 +270,7 @@ export const docsEntries: DocsEntry[] = [
     ),
     readTime: '4 min read',
     body: [
-        {
+      {
         title: 'Disable Vine opt-out button',
         description:
           'The extension disables the Vine opt-out button on your Amazon Vine pages across all tiers, active from the moment the extension is installed. This prevents accidental opt-out with no configuration required — the button remains visible but cannot be clicked.',
@@ -309,9 +286,9 @@ export const docsEntries: DocsEntry[] = [
           'Space Saving Mode hides Amazon ads and browsing history in the lower portion of the page, hides the side order flyer, and removes the category sections on RFY and AFA pages to reclaim horizontal space. It also hides the Amazon deals header at the top of the page, reduces extra vertical whitespace between elements, and compacts product tiles — significantly transforming the default Vine tab layout.',
       },
       {
-        title: 'Space Saving before and after',
+        title: 'Enhancement screenshots',
         description:
-          'Before and after comparison of the Vine page with Space Saving Mode applied.',
+          'Screenshots showing the disabled opt-out button, multi-photo upload, and the Vine page before and after Space Saving Mode is applied.',
         hideTextWhenImages: true,
         images: [
           {
@@ -323,6 +300,17 @@ export const docsEntries: DocsEntry[] = [
             src: '/docs-images/extension/space-saving-after.png',
             alt: 'Space Saving mode after view',
             caption: 'After',
+          },
+          {
+            src: '/docs-images/extension/extension-opt-out-button.png',
+            alt: 'Amazon Vine opt-out button disabled by the extension',
+            caption: 'Opt-out protection',
+            className: 'docs-step-media--light',
+          },
+          {
+            src: '/docs-images/extension/extension-review-photo-multi-upload.png',
+            alt: 'Amazon review form showing the Divine Monitor multi-photo upload button',
+            caption: 'Multi-photo upload',
           },
         ],
       },
@@ -361,21 +349,21 @@ export const docsEntries: DocsEntry[] = [
           'To reduce activity overnight (or for your time window of choice), you can configure a quiet window in the extension popup under the RFY section. During a quiet window the polling cadence drops significantly. Monitoring does not stop — it just checks less often. ',
       },
       {
-        title: 'Screenshot checklist',
+        title: 'RFY screenshots',
         description:
-          'Capture: extension popup RFY section with interval control; popup with LIVE tab indicator active; popup RFY quiet hours configured.',
+          'Popup and settings views for RFY monitoring.',
+        hideTextWhenImages: true,
         images: [
           {
-            src: '/docs-images/extension/popup-rfy-interval-control.png',
-            alt: 'Extension popup RFY interval control',
+            src: '/docs-images/extension/rfy-extension-popup.png',
+            alt: 'Extension popup with the RFY section expanded',
+            caption: 'RFY popup',
+            className: 'docs-step-media--portrait',
           },
           {
-            src: '/docs-images/extension/popup-rfy-live-indicator.png',
-            alt: 'Extension popup LIVE tab refresh indicator',
-          },
-          {
-            src: '/docs-images/extension/popup-rfy-quiet-hours.png',
-            alt: 'Extension popup RFY quiet hours configured',
+            src: '/docs-images/extension/rfy-extension-settings.png',
+            alt: 'Divine Monitor extension RFY settings page',
+            caption: 'RFY settings',
           },
         ],
       },
@@ -436,25 +424,21 @@ export const docsEntries: DocsEntry[] = [
           'Search has its own quiet window, configured independently of RFY. Set it in the extension popup under the Search section. During a quiet window the Search cadence drops significantly but does not stop entirely.',
       },
       {
-        title: 'Screenshot checklist',
+        title: 'Search screenshots',
         description:
-          'Capture: extension popup Search section with terms list; Spread mode selected; Burst mode selected; Search quiet hours configured.',
+          'Popup and settings views for Search monitoring.',
+        hideTextWhenImages: true,
         images: [
           {
-            src: '/docs-images/extension/popup-search-terms-list.png',
-            alt: 'Extension popup Search terms list',
+            src: '/docs-images/extension/search-extension-popup.png',
+            alt: 'Extension popup with the Search section expanded',
+            caption: 'Search popup',
+            className: 'docs-step-media--portrait',
           },
           {
-            src: '/docs-images/extension/popup-search-spread-mode.png',
-            alt: 'Extension popup Search spread mode selected',
-          },
-          {
-            src: '/docs-images/extension/popup-search-burst-mode.png',
-            alt: 'Extension popup Search burst mode selected',
-          },
-          {
-            src: '/docs-images/extension/popup-search-quiet-hours.png',
-            alt: 'Extension popup Search quiet hours configured',
+            src: '/docs-images/extension/search-extension-settings.png',
+            alt: 'Divine Monitor extension Search settings page',
+            caption: 'Search settings',
           },
         ],
       },

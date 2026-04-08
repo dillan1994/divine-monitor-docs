@@ -2568,6 +2568,9 @@ ol, ul {
 }
 
 .docs-step-media {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   margin: 0;
   border: 1px solid var(--b1);
   border-radius: var(--radius);
@@ -2587,6 +2590,7 @@ ol, ul {
 .docs-step-media-zoom {
   display: block;
   width: 100%;
+  flex: 1 1 auto;
   border: 0;
   padding: 0;
   background: transparent;
@@ -2656,11 +2660,31 @@ ol, ul {
 }
 
 .docs-step-media-caption {
+  margin-top: auto;
   border-top: 1px solid var(--b1);
   padding: 8px 10px;
   font-size: 12px;
   color: var(--t2);
   line-height: 1.5;
+}
+
+.docs-step-media--light .docs-step-media-zoom {
+  background: #fff;
+}
+
+.docs-step-media--light .docs-step-media-image {
+  background: #fff;
+  padding: 24px;
+}
+
+.docs-step-media--light .docs-step-media-caption {
+  background: rgba(15, 16, 25, 0.6);
+}
+
+.docs-step-media--portrait .docs-step-media-image {
+  height: 280px;
+  width: 100%;
+  object-fit: contain;
 }
 
 .docs-image-lightbox {
