@@ -37,7 +37,7 @@ export const faqs: FaqItem[] = [
       'The Chrome extension is designed to safely extract and store only the data needed, with everything else handled in the global Console. \
       Divine Monitor employs an account-safe approach: no one-click ordering, no direct Amazon API calls, and full control over \
       how data is collected through the customisable extension. \
-      I have safely used my own extension 24/7 over the past 2 years and had no issues with safety whatsoever.',
+      I have safely used my own extension 24/7 over the past 2 years and had no issues. Remember, the extension gives you control to monitor what you want, and how frequently you want to monitor it, you get the control.',
   },
   {
     question: 'How do I get started?',
