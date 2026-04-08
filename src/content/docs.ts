@@ -782,43 +782,23 @@ export const docsEntries: DocsEntry[] = [
     slug: 'notification-filters',
     title: 'Notification Filters',
     section: 'settings',
-    summary: 'Use keyword and category exclude filters to reduce notification noise and focus alerts on items you actually care about.',
+    summary: 'Define keyword and category exclusions to reduce notification noise and focus alerts on items you actually care about.',
     readTime: '5 min read',
     body: [
       {
         title: 'What notification filters do',
         description:
-          'Notification filters let you suppress alerts for products that match patterns you define. Instead of receiving a notification for every new RFY or Search item, filters let you skip items whose titles contain certain keywords or whose categories you are not interested in. Filters apply to outgoing notifications — products still appear in the Divine Monitor Console feed.',
+          'Instead of receiving a notification for every new RFY or Search item, filters let you skip items whose titles contain certain keywords or whose categories you are not interested in. Filters apply to notifications only, products still appear in the Divine Monitor Console feed.',
       },
       {
-        title: 'Keyword exclude filters',
+        title: 'Title exclude filters',
         description:
-          'Add keywords or phrases to the title exclude list in Notifications → Channels → Global Preferences. When a new product\'s title contains any of your excluded keywords, its notification is suppressed. Matching is case-insensitive. Use this to block categories of items by name — for example, a brand you never order from or a product type that always shows up but never interests you.',
+          'When a product\'s title contains any of your excluded keywords, its notification is suppressed. Matching is case-insensitive.',
       },
       {
         title: 'Category exclude filters',
         description:
-          'Add Amazon Vine category names to the category exclude list in the same Global Preferences panel. Notifications for products in any excluded category are suppressed. Category names are matched against the product\'s detected category at the time of detection.',
-      },
-      {
-        title: 'Pro requirement',
-        description:
-          'Keyword and category exclude filters are available on Pro. On Free and Plus the filter controls are visible but locked. Filters apply across all notification channels — email, push, and Telegram — simultaneously.',
-      },
-      {
-        title: 'Screenshot checklist',
-        description:
-          'Capture: Global Preferences panel with keyword exclude chips added; category exclude chips added; a Pro-locked state (for comparison); filter panel with both lists non-empty.',
-        images: [
-          {
-            src: '/docs-images/notifications/notifications-keyword-exclude-chips.png',
-            alt: 'Notifications keyword exclude chips',
-          },
-          {
-            src: '/docs-images/notifications/notifications-category-exclude-chips.png',
-            alt: 'Notifications category exclude chips',
-          },
-        ],
+          'Similar to title filters, except the match is on category or sub-categories. ',
       },
     ],
   },
@@ -832,7 +812,7 @@ export const docsEntries: DocsEntry[] = [
       {
         title: 'What browser push notifications require',
         description:
-          'Browser push notifications are available on Pro. They deliver alerts directly to your browser on any registered device, even when the Divine Monitor Console tab is not open, as long as the browser is running. Each device you want to receive push alerts on must be registered separately.',
+          'Browser push notifications are available on Pro. They deliver alerts directly to your browser on any registered device, even when the Divine Monitor Console tab is not open, as long as the browser is running. These notifications are heavily dependent on browser and machine level notification settings.',
       },
       {
         title: 'Registering a device',
@@ -842,31 +822,12 @@ export const docsEntries: DocsEntry[] = [
       {
         title: 'Device limit',
         description:
-          'Pro supports up to 3 registered browser push devices. If you reach the limit, you must remove an existing device before adding a new one. The device list shows each registered device with the browser and approximate registration time.',
+          'If you reach the limit of registered devices, you must remove an existing device before adding a new one. The device list shows each registered device with the browser and approximate registration time.',
       },
       {
         title: 'Removing a device',
         description:
           'In the device list, click Remove next to any device you no longer want to receive push alerts. The device is deregistered immediately — push notifications to that browser will stop on the next event. You can re-register the same device later if needed.',
-      },
-      {
-        title: 'Screenshot checklist',
-        description:
-          'Capture: Browser Push card with device list showing one registered device; device limit reached state (3 devices); remove button on a device; browser notification permission prompt.',
-        images: [
-          {
-            src: '/docs-images/notifications/push-device-list-one-registered.png',
-            alt: 'Browser push device list with one registered device',
-          },
-          {
-            src: '/docs-images/notifications/push-device-limit-reached.png',
-            alt: 'Browser push device limit reached state',
-          },
-          {
-            src: '/docs-images/notifications/push-device-remove-button.png',
-            alt: 'Browser push device remove button',
-          },
-        ],
       },
     ],
   },
@@ -883,9 +844,9 @@ export const docsEntries: DocsEntry[] = [
           'Use the profile card for account identity details and the plan card for your enabled capabilities.',
       },
       {
-        title: 'Connect or reconnect billing',
+        title: 'Connect or reconnect to Patreon',
         description:
-          'Use the Billing card to connect your Patreon account and confirm plan sync status.',
+          'Use the Billing card to connect your Patreon account and confirm your tier.',
       },
       {
         title: 'Manage active sessions',
@@ -896,29 +857,6 @@ export const docsEntries: DocsEntry[] = [
         title: 'Sign out safely',
         description:
           'Sign out from the Account page when you are done, especially on shared devices.',
-      },
-      {
-        title: 'Screenshot checklist',
-        description:
-          'Capture: profile card; plan card feature list; billing card connection state; active sessions card with disconnect action.',
-        images: [
-          {
-            src: '/docs-images/account-page/account-profile-card.png',
-            alt: 'Account page profile card',
-          },
-          {
-            src: '/docs-images/account-page/account-plan-feature-list.png',
-            alt: 'Account page plan feature list',
-          },
-          {
-            src: '/docs-images/account-page/account-billing-connection-state.png',
-            alt: 'Account page billing connection state',
-          },
-          {
-            src: '/docs-images/account-page/account-active-sessions-card.png',
-            alt: 'Account page active sessions card',
-          },
-        ],
       },
     ],
   },
