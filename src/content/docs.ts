@@ -719,63 +719,33 @@ export const docsEntries: DocsEntry[] = [
     summary: 'Configure channels, RFY/Search/Reviews/Account rules, daily digests, and recent delivery activity.',
     readTime: '9 min read',
     body: [
-      {
-        title: 'Use Notifications subtabs',
+              {
+        title: 'Set global preferences',
         description:
-          'Work through Channels, Feeds, and Recent Activity in order so setup and validation stay simple.',
+          'Set timezone and global enable/disable. Title and category exclusion filters.',
       },
       {
         title: 'Configure channels by plan',
         description:
           'Telegram is available on Plus and Pro. Email and browser push are available on Pro.',
       },
-      {
-        title: 'Set global preferences',
-        description:
-          'Set timezone and global enable/disable. Title and category exclusion filters are available on Pro.',
-      },
+
       {
         title: 'Set feed and account/review rules',
         description:
           'Control RFY/Search/Reviews/Account alert toggles, plus daily digest schedule, review time limit, and not-approved alerts.',
+      },
+        {
+        title: 'Account alerts',
+        description:
+          'Alerts for review-to-order ratio, insightfulness score changes ',
       },
       {
         title: 'Validate with Recent Activity',
         description:
           'The Recent Activity tab shows a full delivery history for all notification events. Filter by channel (email, push, Telegram) and by status (sent, skipped, failed) to confirm your setup is working after any configuration change. Each row shows the event type, channel used, delivery status, and timestamp — use this to diagnose missing or unexpected notifications.',
       },
-      {
-        title: 'Notification replay (Beta)',
-        description:
-          'Failed notifications can be replayed from Recent Activity. This feature is currently in beta and still in active development and testing — availability may vary and behaviour may change in future releases.',
-      },
-      {
-        title: 'Screenshot checklist',
-        description:
-          'Capture: channels cards; global preferences with exclusion chips; feed toggles; daily digest schedule fields; recent activity table with filters.',
-        images: [
-          {
-            src: '/docs-images/notifications/notifications-channels-cards.png',
-            alt: 'Notifications channels cards',
-          },
-          {
-            src: '/docs-images/notifications/notifications-global-preferences-exclusions.png',
-            alt: 'Notifications global preferences with exclusions',
-          },
-          {
-            src: '/docs-images/notifications/notifications-feed-toggles.png',
-            alt: 'Notifications feed toggles',
-          },
-          {
-            src: '/docs-images/notifications/notifications-digest-schedule-fields.png',
-            alt: 'Notifications daily digest schedule fields',
-          },
-          {
-            src: '/docs-images/notifications/notifications-recent-activity-table.png',
-            alt: 'Notifications recent activity table',
-          },
-        ],
-      },
+
     ],
   },
   {
@@ -799,6 +769,20 @@ export const docsEntries: DocsEntry[] = [
         title: 'Category exclude filters',
         description:
           'Similar to title filters, except the match is on category or sub-categories. ',
+      },
+      {
+        title: 'Notification filter screenshots',
+        description:
+          'Excluded keyword filters configured in the Notifications settings.',
+        hideTextWhenImages: true,
+        images: [
+          {
+            src: '/docs-images/extension/notification-exclude-keywords.png',
+            alt: 'Notification filters page showing excluded title keywords',
+            caption: 'Excluded title keywords',
+            className: 'docs-step-media--half',
+          },
+        ],
       },
     ],
   },

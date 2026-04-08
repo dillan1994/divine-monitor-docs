@@ -2687,6 +2687,11 @@ ol, ul {
   object-fit: contain;
 }
 
+.docs-step-media--half {
+  width: min(100%, 520px);
+  justify-self: center;
+}
+
 .docs-image-lightbox {
   position: fixed;
   inset: 0;
