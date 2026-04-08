@@ -631,25 +631,18 @@ export const docsEntries: DocsEntry[] = [
           'Compare periods side by side to spot improvement or risk early.',
       },
       {
-        title: 'Screenshot checklist',
+        title: 'Account analytics in action',
         description:
-          'Capture: KPI row; one expanded trend chart; eval period comparison table; coming-soon state (if available in staging).',
+          'Use these paired screenshots to anchor the walkthrough across light and slate themes.',
+        hideTextWhenImages: true,
         images: [
           {
-            src: '/docs-images/account-monitoring/account-kpi-row.png',
-            alt: 'Account monitoring KPI row',
+            src: '/docs-images/account-monitoring/account-analytics-full-light.png',
+            alt: 'Account analytics in light theme',
           },
           {
-            src: '/docs-images/account-monitoring/account-expanded-trend-chart.png',
-            alt: 'Account monitoring expanded trend chart',
-          },
-          {
-            src: '/docs-images/account-monitoring/account-eval-period-comparison.png',
-            alt: 'Account monitoring eval period comparison table',
-          },
-          {
-            src: '/docs-images/account-monitoring/account-coming-soon-state.png',
-            alt: 'Account monitoring coming soon message',
+            src: '/docs-images/account-monitoring/account-analytics-full-slate.png',
+            alt: 'Account analytics in slate theme',
           },
         ],
       },
