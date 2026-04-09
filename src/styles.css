@@ -2687,6 +2687,12 @@ ol, ul {
   object-fit: contain;
 }
 
+.docs-step-media--notification-screen .docs-step-media-image {
+  height: 280px;
+  width: 100%;
+  object-fit: contain;
+}
+
 .docs-step-media--half {
   width: min(100%, 520px);
   justify-self: center;

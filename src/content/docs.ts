@@ -716,36 +716,116 @@ export const docsEntries: DocsEntry[] = [
     slug: 'notifications-configuration',
     title: 'Notifications Configuration',
     section: 'settings',
-    summary: 'Configure channels, RFY/Search/Reviews/Account rules, daily digests, and recent delivery activity.',
+    summary: 'Configure active notification channels and feeds.',
     readTime: '9 min read',
     body: [
               {
         title: 'Set global preferences',
         description:
-          'Set timezone and global enable/disable. Title and category exclusion filters.',
+          'Set timezone (which will be used for scheduled alerts) and global enable/disable.',
+      },
+    {
+        title: 'Define notification exclusions',
+        description:
+          'Suppresses alerts for matching title phrases or categories/subcategories while still showing those products in the Console.',
       },
       {
-        title: 'Configure channels by plan',
+        title: 'Telegram',
         description:
-          'Telegram is available on Plus and Pro. Email and browser push are available on Pro.',
-      },
-
-      {
-        title: 'Set feed and account/review rules',
-        description:
-          'Control RFY/Search/Reviews/Account alert toggles, plus daily digest schedule, review time limit, and not-approved alerts.',
+          'Links your Telegram account, lets you enable/disable the channel, and supports test sends for instant mobile delivery.',
       },
         {
-        title: 'Account alerts',
+        title: 'Email',
         description:
-          'Alerts for review-to-order ratio, insightfulness score changes ',
+          'Sends notifications to your supplied email address for enabled feeds',
+      },
+        {
+        title: 'Browser Notifications',
+        description:
+          'Registers this browser/device for real-time push alerts, with per-device management and test sends.',
+      },
+      {
+        title: 'Product Alerts',
+        description:
+          'Controls whether RFY and Search product sources can trigger notifications on enabled channels.',
+      },
+      {
+        title: 'Review Alerts',
+        description:
+          'Master toggle for the Reviews feed, including digest and rejected-review notifications.',
+      },
+      {
+        title: 'Review Digest',
+        description:
+          'Schedules recurring summaries of outstanding reviews at various points in the future (eg overdue, due today, due tomorrow etc) with configurable frequency and review window.',
+      },
+      {
+        title: 'Review Alerts',
+        description:
+          'Sends notifications when a review is marked as not approved so you can respond quickly.',
+      },
+      {
+        title: 'Account Alerts',
+        description:
+          'Master toggle for account-monitoring notifications and related account event alerts.',
+      },
+      {
+        title: 'Evaluation period monitoring',
+        description:
+          'Sets how many weeks before your evaluation date account-alert monitoring should become active.',
+      },
+      {
+        title: 'Evaluation period reminders',
+        description:
+          'Sends reminders as your evaluation date approaches, with daily or weekly cadence. Useful as a reminder if you want to get all reviews cleared.',
+      },
+      {
+        title: 'Ratio warning alerts',
+        description:
+          'Notifies when your review-to-order ratio drops below warning thresholds during the configured monitoring window. Critical if you\'re trying to maintain Gold and your evaluation date is approaching',
+      },
+      {
+        title: 'Other account alerts',
+        description:
+          'Controls additional account notifications such as insightfulness changes and anniversary reminders.',
       },
       {
         title: 'Validate with Recent Activity',
         description:
           'The Recent Activity tab shows a full delivery history for all notification events. Filter by channel (email, push, Telegram) and by status (sent, skipped, failed) to confirm your setup is working after any configuration change. Each row shows the event type, channel used, delivery status, and timestamp — use this to diagnose missing or unexpected notifications.',
       },
-
+      {
+        title: 'Notifications configuration screenshots',
+        description:
+          'Channel and feed configuration views in both light and slate themes.',
+        hideTextWhenImages: true,
+        images: [
+          {
+            src: '/docs-images/extension/notifications-channels-light.png',
+            alt: 'Notifications configuration channels view in light theme',
+            caption: 'Channels light',
+            className: 'docs-step-media--notification-screen',
+          },
+          {
+            src: '/docs-images/extension/notifications-feeds-slate.png',
+            alt: 'Notifications configuration feeds view in slate theme',
+            caption: 'Feeds slate',
+            className: 'docs-step-media--notification-screen',
+          },
+          {
+            src: '/docs-images/extension/review-digest-email.png',
+            alt: 'Review digest notification shown in email',
+            caption: 'Review digest email',
+            className: 'docs-step-media--notification-screen',
+          },
+          {
+            src: '/docs-images/extension/review-digest-telegram.jpeg',
+            alt: 'Review digest notification shown in Telegram',
+            caption: 'Review digest Telegram',
+            className: 'docs-step-media--notification-screen',
+          },
+        ],
+      },
     ],
   },
   {
