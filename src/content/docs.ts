@@ -29,6 +29,7 @@ export const PLAN_TIER_GROUPS: TierGroup[] = [
       { label: 'Global Console', free: true, plus: true, pro: true },
       { label: 'Concurrent Console sessions (active browser connections)', free: '2 browser sessions', plus: '4 browser sessions', pro: '6 browser sessions' },
       { label: 'Products tab: grid/table views, sorting, and filtering', free: true, plus: true, pro: true },
+      { label: 'Products tab privacy filter (blur or hide by title keyword)', free: true, plus: true, pro: true },
       { label: 'RFY analytics layouts (resizable grid)', free: true, plus: true, pro: true },
       { label: 'Saved analytics layout preferences', free: true, plus: true, pro: true },
       { label: 'Theme options (Slate default)', free: 'Slate', plus: 'Slate + Light + Dark', pro: 'Slate + Light + Dark' },
@@ -195,6 +196,11 @@ export const docsEntries: DocsEntry[] = [
         title: 'Use grid and table modes',
         description:
           'Grid is best for browsing products quickly/at a glance. Table is best for sorting and filtering by title, seller, price etc.',
+      },
+      {
+        title: 'Use the privacy filter for sensitive product titles',
+        description:
+          'If you share your screen or stream while using the Console, enable the privacy filter in the Products tab to blur or fully hide products when their titles match your chosen keywords. Matching is case-insensitive. This feature is available on Free, Plus, and Pro.',
       },
       {
         title: 'Resize product tiles and inspect info icons',
