@@ -724,11 +724,6 @@ export const docsEntries: DocsEntry[] = [
         description:
           'Set timezone (which will be used for scheduled alerts) and global enable/disable.',
       },
-    {
-        title: 'Define notification exclusions',
-        description:
-          'Suppresses alerts for matching title phrases or categories/subcategories while still showing those products in the Console.',
-      },
       {
         title: 'Telegram',
         description:
@@ -739,10 +734,13 @@ export const docsEntries: DocsEntry[] = [
         description:
           'Sends notifications to your supplied email address for enabled feeds',
       },
-        {
+      {
         title: 'Browser Notifications',
-        description:
-          'Registers this browser/device for real-time push alerts, with per-device management and test sends.',
+        description: React.createElement(React.Fragment, null,
+          'Registers this browser/device for real-time push alerts, with per-device management and test sends. See ',
+          React.createElement('a', { href: '/docs/notification-devices' }, 'Browser Push & Device Management'),
+          ' for the full setup guide.'
+        ),
       },
       {
         title: 'Product Alerts',
@@ -910,7 +908,7 @@ export const docsEntries: DocsEntry[] = [
       {
         title: 'Connect or reconnect to Patreon',
         description:
-          'Use the Billing card to connect your Patreon account and confirm your tier.',
+          'Use the Billing card to connect your Patreon account and confirm your tier. Ensure you\'re logged into your Patreon account already on the same browser, subscribe to tier of your choice, then you can connect your Divine Monitor account via the Connect button. ',
       },
       {
         title: 'Manage active sessions',
