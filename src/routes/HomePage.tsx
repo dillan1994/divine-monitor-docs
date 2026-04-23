@@ -6,9 +6,9 @@ import type { DocStepImage } from '@/types/docs'
 
 const STATS: Array<{ value: string; sup?: string; label: string }> = [
   { value: 'RFY', label: 'Monitoring on all tiers' },
-  { value: '2/4/6', label: 'Console sessions (Free/Plus/Pro)' },
+  { value: '2/4', label: 'Console sessions (Free/Plus)' },
   { value: '3', label: 'Notification channels supported' },
-  { value: '3', sup: 'mo', label: 'Max analytics history (Pro)' },
+  { value: '180', sup: 'd', label: 'Max analytics history (Plus)' },
 ]
 
 const HOME_SCREENSHOTS: DocStepImage[] = [
@@ -49,20 +49,20 @@ export function HomePage() {
   return (
     <>
       <section className="hero">
-        <div className="hero-eyebrow">Real-time Amazon Vine monitoring</div>
+        <div className="hero-eyebrow">The smarter way to track Vine</div>
         <h1 className="hero-headline">
-          <span className="hero-hl-white">Your Vine data,</span>
-          <em className="hero-hl-italic">historic to real-time,</em>
-          <span className="hero-hl-muted">wherever you are.</span>
+          <span className="hero-hl-white">Vine, without the guesswork.</span>
+          <em className="hero-hl-italic">The right alerts, at the right time.</em>
+          <span className="hero-hl-muted">With insight behind every signal.</span>
         </h1>
         <div className="hero-rule">
           <div className="hero-rule-line" />
           <div className="hero-rule-diamond" />
         </div>
         <p className="hero-body">
-          Divine Monitor gives you a globally accessible Console for real-time updates,
-          long-term trends, and rich analytics, with simple but powerful notification controls
-          across email, push, and Telegram, configured in minutes.
+          Track Vine with full history and analytics in a web console you can access from
+          anywhere, then turn that data into actionable alerts across Telegram, email, and
+          browser push to help you catch the products you actually want.
         </p>
         <div className="hero-actions">
           <Link to="/docs/quickstart" className="hero-cta-primary">

@@ -444,12 +444,12 @@ ol, ul {
 
 .hero-headline {
   font-family: var(--font-serif);
-  font-size: clamp(2.6rem, 4.2vw, 4.4rem);
+  font-size: clamp(2.25rem, 3.6vw, 3.7rem);
   font-weight: 400;
   letter-spacing: -0.01em;
   line-height: 1.08;
   margin: 0 0 20px;
-  max-width: 16ch;
+  max-width: none;
   opacity: 0;
   animation: hero-up 0.8s ease 0.18s forwards;
 }
@@ -457,6 +457,7 @@ ol, ul {
 .hero-hl-white {
   display: block;
   color: var(--text);
+  white-space: nowrap;
 }
 
 .hero-hl-italic {
@@ -464,11 +465,13 @@ ol, ul {
   font-style: italic;
   font-weight: 400;
   color: var(--teal);
+  white-space: nowrap;
 }
 
 .hero-hl-muted {
   display: block;
   color: var(--t2);
+  white-space: nowrap;
 }
 
 .hero-rule {
@@ -1214,7 +1217,7 @@ ol, ul {
 
 .plans-header {
   display: grid;
-  grid-template-columns: 1fr repeat(3, 148px);
+  grid-template-columns: 1fr repeat(2, 148px);
   background: var(--s3);
   border-bottom: 1px solid var(--b2);
 }
@@ -1277,7 +1280,7 @@ ol, ul {
 
 .plans-row {
   display: grid;
-  grid-template-columns: 1fr repeat(3, 148px);
+  grid-template-columns: 1fr repeat(2, 148px);
   border-top: 1px solid var(--b1);
   transition: background 0.15s;
 }
@@ -2000,6 +2003,12 @@ ol, ul {
     font-size: clamp(34px, 10vw, 52px);
     letter-spacing: -1.2px;
     line-height: 1.03;
+  }
+
+  .hero-hl-white,
+  .hero-hl-italic,
+  .hero-hl-muted {
+    white-space: normal;
   }
 
   .hero-headline {

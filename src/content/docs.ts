@@ -4,67 +4,69 @@ import type { DocSection, DocsEntry, PlanTier, TierGroup } from '@/types/docs'
 export const PLAN_TIERS: PlanTier[] = [
   { name: 'Free', price: 'Free', sub: '' },
   { name: 'Plus', price: 'GBP 4.99', sub: '+ VAT / month', highlight: true },
-  { name: 'Pro', price: 'GBP 9.99', sub: '+ VAT / month' },
 ]
 
 export const PLAN_TIER_GROUPS: TierGroup[] = [
   {
-    label: 'Extension',
+    label: 'Notifications',
     features: [
-      { label: 'RFY monitoring', free: true, plus: true, pro: true },
-      { label: 'Search terms monitoring', free: false, plus: '5 terms (spread mode)', pro: '10 terms (burst mode)' },
-      { label: 'Account monitoring', free: false, plus: true, pro: true },
-      { label: 'Review monitoring', free: false, plus: false, pro: true },
-      { label: 'Disable Vine opt-out button', free: true, plus: true, pro: true },
-      { label: 'Amazon review multi-photo upload button', free: true, plus: true, pro: true },
-      { label: 'Custom RFY refresh interval', free: false, plus: true, pro: true },
-      { label: 'Quiet windows (reduced monitoring cadence during set hours)', free: true, plus: true, pro: true },
-      { label: 'Space saving mode (hide lower-page ads/history, side order flyer, and RFY/AFA categories)', free: true, plus: true, pro: true },
-      { label: 'Space saving mode plus (hide deals header, trim vertical space, compact product tiles)', free: true, plus: true, pro: true },
-    ],
-  },
-  {
-    label: 'Console & Sessions',
-    features: [
-      { label: 'Global Console', free: true, plus: true, pro: true },
-      { label: 'Concurrent Console sessions (active browser connections)', free: '2 browser sessions', plus: '4 browser sessions', pro: '6 browser sessions' },
-      { label: 'Products tab: grid/table views, sorting, and filtering', free: true, plus: true, pro: true },
-      { label: 'Products tab privacy filter (blur or hide by title keyword)', free: true, plus: true, pro: true },
-      { label: 'RFY analytics layouts (resizable grid)', free: true, plus: true, pro: true },
-      { label: 'Saved analytics layout preferences', free: true, plus: true, pro: true },
-      { label: 'Theme options (Slate default)', free: 'Slate', plus: 'Slate + Light + Dark', pro: 'Slate + Light + Dark' },
-    ],
-  },
-  {
-    label: 'Monitoring Modules',
-    features: [
-      { label: 'RFY monitoring', free: true, plus: true, pro: true },
-      { label: 'Search monitoring', free: false, plus: true, pro: true },
-      { label: 'Account monitoring', free: false, plus: true, pro: true },
-      { label: 'All Items monitoring', free: false, plus: true, pro: true },
-      { label: 'Review monitoring', free: false, plus: false, pro: true },
+      { label: 'Telegram notifications', free: 'Setup + test', plus: 'Live delivery' },
+      { label: 'Email notifications', free: 'Setup + test', plus: 'Live delivery' },
+      { label: 'Browser push notifications', free: 'Setup + test (1 device)', plus: 'Live delivery (up to 3 devices)' },
+      { label: 'Review digest (daily review summary)', free: false, plus: true },
+      { label: 'Rejected review alerts', free: false, plus: true },
+      { label: 'Account alerts (tier changes, evaluation reminders, ratio warnings)', free: false, plus: true },
     ],
   },
   {
     label: 'History & Lookbacks',
     features: [
-      { label: 'Product history', free: '1 week', plus: '1 month', pro: '3 months' },
-      { label: 'Product multi-day lookback window', free: '1 day', plus: '3 days', pro: '7 days' },
-      { label: 'Analytics history', free: '1 week', plus: '1 month', pro: '3 months' },
+      { label: 'Product history', free: '30 days', plus: '180 days' },
+      { label: 'Core analytics history', free: '30 days', plus: '180 days' },
+      { label: 'AI Drops analytics history', free: '1 day', plus: '90 days' },
     ],
   },
   {
-    label: 'Notifications',
+    label: 'Chrome Extension',
     features: [
-      { label: 'RFY', free: false, plus: true, pro: true },
-      { label: 'Search (keyword feed)', free: false, plus: true, pro: true },
-      { label: 'Account alerts (status + ratios)', free: false, plus: true, pro: true },
-      { label: 'Exclude title/category filters (noise control)', free: false, plus: true, pro: true },
-      { label: 'Telegram alerts (delivery channel)', free: false, plus: true, pro: true },
-      { label: 'Reviews alerts (daily digest + not-approved)', free: false, plus: false, pro: true },
-      { label: 'Email alerts (delivery channel)', free: false, plus: false, pro: true },
-      { label: 'Browser push alerts (delivery channel)', free: false, plus: false, pro: true },
-
+      { label: 'Core monitoring modules (RFY, Search, Reviews, Account, Orders)', free: true, plus: true },
+      {
+        label: 'Search monitoring',
+        free: React.createElement(
+          React.Fragment,
+          null,
+          'Up to 5 terms ',
+          React.createElement('a', { href: '/docs/search-monitoring' }, '(Spread)'),
+        ),
+        plus: React.createElement(
+          React.Fragment,
+          null,
+          'Up to 10 terms ',
+          React.createElement('a', { href: '/docs/search-monitoring' }, '(Spread + Burst)'),
+        ),
+      },
+      { label: 'Custom RFY refresh interval', free: 'Configurable (30-60s baseline)', plus: 'Configurable (30-60s baseline)' },
+      { label: 'Quiet windows (reduced monitoring cadence during set hours)', free: true, plus: true },
+      { label: 'Disable Vine opt-out button', free: true, plus: true },
+      { label: 'Amazon review multi-photo upload button', free: true, plus: true },
+      {
+        label:
+          'Space saving mode (hides lower-page ads/history, the side order flyer, RFY/AFA categories, the deals header, extra vertical spacing, and compacts product tiles)',
+        free: true,
+        plus: true,
+      },
+    ],
+  },
+  {
+    label: 'Console & Sessions',
+    features: [
+      { label: 'Concurrent Console sessions (active browser connections)', free: '2 browser sessions', plus: '4 browser sessions' },
+      { label: 'Theme options', free: 'Slate', plus: 'Slate + Light + Dark' },
+      { label: 'Web-based Global Console (access your Vine history, analytics, and data from anywhere)', free: true, plus: true },
+      { label: 'Products tab: grid/table views, sorting, and filtering', free: true, plus: true },
+      { label: 'Products tab privacy filter (blur or hide by title keyword)', free: true, plus: true },
+      { label: 'RFY analytics layouts (resizable grid)', free: true, plus: true },
+      { label: 'Saved analytics layout preferences', free: true, plus: true },
     ],
   },
 ]
@@ -161,7 +163,7 @@ export const docsEntries: DocsEntry[] = [
       {
         title: 'Check your plan features via the Console',
         description:
-          'Open Account to confirm your current tier and unlocked features (some features such as Search, Reviews and Account monitoring are limited to paid tiers).',
+          'Open Account to confirm your current tier. Free already includes the core monitoring, history, analytics, and Global Console experience. Plus adds actionable notifications, including live product alerts, review digests, rejected-review alerts, tier-change alerts, evaluation reminders, and ratio warnings.',
       },
     ],
   },
@@ -175,12 +177,12 @@ export const docsEntries: DocsEntry[] = [
       {
         title: 'Switch between single-day and multi-day views',
         description:
-          'Use the Date picker to view your products for a single day. Open Multi-day lookback to see multiple days worth of data at once (particularly useful in the tabular view). The options available will vary with tier.',
+          'Use the Date picker to view your products for a single day. Open Multi-day lookback to see multiple days worth of data at once, particularly in table view. Free includes shorter history windows, while Plus gives you longer lookbacks across product history and analytics.',
       },
       {
         title: 'Filter the Products by type (RFY or Search)',
         description:
-          'Pick any day and then filter by feed using All, RFY, or Search. Search feed access is tier-gated.',
+          'Pick any day and then filter by feed using All, RFY, or Search. Search data is available on both tiers, with larger search capacity on Plus.',
       },
         {
         title: 'Explore captured product metadata',
@@ -200,7 +202,7 @@ export const docsEntries: DocsEntry[] = [
       {
         title: 'Use the privacy filter for sensitive product titles',
         description:
-          'If you share your screen or stream while using the Console, enable the privacy filter in the Products tab to blur or fully hide products when their titles match your chosen keywords. Matching is case-insensitive. This feature is available on Free, Plus, and Pro.',
+          'If you share your screen or stream while using the Console, enable the privacy filter in the Products tab to blur or fully hide products when their titles match your chosen keywords. Matching is case-insensitive. This feature is available on both Free and Plus.',
       },
       {
         title: 'Resize product tiles and inspect info icons',
@@ -251,17 +253,17 @@ export const docsEntries: DocsEntry[] = [
       {
         title: 'Per-feed status indicators',
         description:
-          'Below the global toggle, each feed — RFY, Search, Reviews, Account, and All Items — shows its current status. A green indicator means the feed is actively polling. A quiet-mode indicator means the feed is running at reduced cadence inside a quiet window. A grey indicator means the feed is paused or unavailable on your tier.',
+          'Below the global toggle, each feed — RFY, Search, Reviews, and Account — shows its current status. A green indicator means the feed is actively polling. A quiet-mode indicator means the feed is running at reduced cadence inside a quiet window. A grey indicator means the feed is paused.',
       },
       {
         title: 'RFY and Search feed sections',
         description:
-          'Expand the RFY or Search section to access deeper controls. For RFY, configure refresh intervals (tiered feature) and quiet windows (free tier). For Search (plus tier), swap between "Spread" and "Burst" (pro tier) mode, toggle quiet window, and add/remove search terms.',
+          'Expand the RFY or Search section to access deeper controls. For RFY, configure refresh intervals and quiet windows on both tiers. For Search, add or remove search terms, toggle the quiet window, track up to 5 terms on Free or 10 on Plus, and use Burst mode on Plus for faster checks.',
       },
       {
         title: 'Managing Search terms',
         description:
-          'Expand the Search section to add or remove search terms. Plus supports up to 5 terms and Pro supports up to 10. Choose Spread or Burst mode per the Search Monitoring doc.',
+          'Expand the Search section to add or remove search terms. Free supports up to 5 terms, while Plus supports up to 10 and also unlocks Burst mode.',
       },
     ],
   },
@@ -337,12 +339,12 @@ export const docsEntries: DocsEntry[] = [
       {
         title: 'Notifications',
         description:
-          'On Plus tier and above, RFY notifications can be configured so new matches are delivered in real time. Telegram notifications are supported on Plus and Pro, and Pro also adds email and browser push channels. Exclusions can be specified to reduce noise from unwanted categories/subcategories or keyword matches in titles.',
+          'On Free, you can still connect Telegram, email, and browser push channels and send test notifications. Plus is required for live RFY delivery and for advanced exclusion filters that reduce noise from unwanted keywords or categories.',
       },
       {
         title: 'Randomized refresh intervals',
         description:
-          'Polling intervals are deliberately randomized within a range rather than fixed to a single value, avoiding predictable request patterns. On Free the range is system-managed and locked. On Plus and Pro you can adjust the interval target via the extension popup — the popup shows your active range so you always know the current cadence.',
+          'Polling intervals are deliberately randomized within a range rather than fixed to a single value, avoiding predictable request patterns. Free now uses a 30-60 second baseline by default, and RFY timing can be adjusted from the extension settings on both tiers.',
       },
       {
         title: 'Visible Vine tab refresh',
@@ -385,17 +387,17 @@ export const docsEntries: DocsEntry[] = [
       {
         title: 'What is Search monitoring?',
         description: React.createElement(React.Fragment, null,
-          'Search monitoring tracks custom search terms via the native Vine search mechanism. You define the search terms you care about in the extension popup, and the extension handles the rest via two modes, \'Spread\' and \'Burst\' (more info below). New matching products appear in Divine Monitor Console alongside RFY items. Search monitoring is available on Plus and Pro.',
+          'Search monitoring tracks custom search terms via the native Vine search mechanism. You define the search terms you care about in the extension popup, and the extension handles the rest via two modes, \'Spread\' and \'Burst\' (more info below). New matching products appear in Divine Monitor Console alongside RFY items. Search monitoring is available on both Free and Plus.',
           React.createElement('div', { className: 'docs-inline-notice' },
             React.createElement('strong', null, 'Important: '),
-            'Search monitoring adds extra requests because each saved term needs checking. \'Spread\' and \'Burst\' both exist so you can choose how that activity is paced: Spread keeps it slower, smoother and safer, while Burst is faster but busier for short periods. The two modes exist to give you as much control as possible.'
+            'Search monitoring adds extra requests because each saved term needs checking. Spread is available on all tiers and keeps activity slower, smoother and safer. Burst is available on Plus and increases short-term activity to detect matches faster.'
           )
         ),
       },
       {
         title: 'Notifications',
         description:
-          'Search monitoring is a Plus tier feature, so notifications can be configured to alert you when your saved search terms find new matches. Telegram notifications are available on Plus tier, and Pro also supports email and browser push notifications.',
+          'On Free, you can still link channels and send test notifications. Plus is required for live Search delivery when your saved terms find new matches.',
       },
       {
         title: 'Spread mode',
@@ -411,7 +413,7 @@ export const docsEntries: DocsEntry[] = [
       {
         title: 'Burst mode',
         description:
-          '\'Burst\' checks multiple search terms per round. A short random pause is added between each term. After all terms have been searched, a random delay between 30-60s begins before the next burst starts. This approach allows for faster detection, but creates higher short-term activity. There are several safety mechanisms built in to address this.',
+          '\'Burst\' is available on Plus. It checks multiple search terms per round. A short random pause is added between each term. After all terms have been searched, a random delay between 30-60s begins before the next burst starts. This approach allows for faster detection, but creates higher short-term activity. There are several safety mechanisms built in to address this.',
         images: [
           {
             src: '/docs-images/extension/search-mode-burst-diagram.svg',
@@ -492,7 +494,7 @@ export const docsEntries: DocsEntry[] = [
       {
         title: 'Choose how much historic analytics you see',
         description:
-          'You can choose how much history you want to see via the day selectors.',
+          'You can choose how much history you want to see via the day selectors. Core analytics windows now follow your plan limits: up to 30 days on Free and up to 180 days on Plus. AI analytics has a separate limit of 1 day on Free and 90 days on Plus.',
       },
       {
         title: 'Use RFY preset views for focused analysis',
@@ -545,54 +547,6 @@ export const docsEntries: DocsEntry[] = [
       },
     ],
   },
-//   {
-//     slug: 'search-analytics',
-//     title: 'Search Analytics',
-//     section: 'monitoring',
-//     summary: 'How to use the Search analytics tab to understand your keyword feed — time windows, the widget grid, and saving layouts.',
-//     readTime: '6 min read',
-//     body: [
-//       {
-//         title: 'Open Analytics → Search',
-//         description:
-//           'The Search analytics tab is available on Plus and Pro. It provides the same draggable, resizable widget grid as RFY analytics, scoped to data from your Search monitoring feed. If you have no search terms configured yet, see the Search Monitoring doc first.',
-//       },
-//       {
-//         title: 'Pick a time window',
-//         description:
-//           'Use the time window selector to set the lookback period for all widgets on the tab. Available windows follow your plan limits: 1 week on Free, 1 month on Plus, and up to 1 year on Pro.',
-//       },
-//       {
-//         title: 'Read the widget grid',
-//         description:
-//           'Search analytics widgets include per-term breakdowns, daily and hourly product counts, category and brand distributions, and price analysis — mirroring the RFY analytics structure but filtered to your Search feed data. Widgets only show data for the terms that were active during the selected window.',
-//       },
-//       {
-//         title: 'Customise and save your layout',
-//         description:
-//           'Enter layout edit mode to drag and resize widgets. Save the layout to persist your arrangement. The Search analytics layout is saved independently from your RFY layout so changes to one do not affect the other.',
-//       },
-//       {
-//         title: 'Screenshot checklist',
-//         description:
-//           'Capture: Search analytics tab selected; time window selector open; widget grid with at least two widgets visible; layout edit mode active.',
-//         images: [
-//           {
-//             src: '/docs-images/analytics/search-analytics-tab.png',
-//             alt: 'Search analytics tab selected',
-//           },
-//           {
-//             src: '/docs-images/analytics/search-analytics-widget-grid.png',
-//             alt: 'Search analytics widget grid',
-//           },
-//           {
-//             src: '/docs-images/analytics/search-analytics-layout-edit.png',
-//             alt: 'Search analytics layout edit mode',
-//           },
-//         ],
-//       },
-//     ],
-//   },
   {
     slug: 'account-monitoring',
     title: 'Account Monitoring',
@@ -733,17 +687,17 @@ export const docsEntries: DocsEntry[] = [
       {
         title: 'Telegram',
         description:
-          'Links your Telegram account, lets you enable/disable the channel, and supports test sends for instant mobile delivery.',
+          'Links your Telegram account, lets you send test notifications, and becomes a live delivery channel once you are on Plus.',
       },
         {
         title: 'Email',
         description:
-          'Sends notifications to your supplied email address for enabled feeds',
+          'Lets you send test notifications to your account email on Free, with live and scheduled delivery unlocked on Plus.',
       },
       {
         title: 'Browser Notifications',
         description: React.createElement(React.Fragment, null,
-          'Registers this browser/device for real-time push alerts, with per-device management and test sends. See ',
+          'Registers this browser/device for push setup, per-device management, and test sends. Live delivery is a Plus feature. See ',
           React.createElement('a', { href: '/docs/notification-devices' }, 'Browser Push & Device Management'),
           ' for the full setup guide.'
         ),
@@ -751,27 +705,27 @@ export const docsEntries: DocsEntry[] = [
       {
         title: 'Product Alerts',
         description:
-          'Controls whether RFY and Search product sources can trigger notifications on enabled channels.',
+          'Controls whether RFY and Search product sources can trigger live notifications on enabled channels. Live product delivery requires Plus.',
       },
       {
         title: 'Review Alerts',
         description:
-          'Master toggle for the Reviews feed, including digest and rejected-review notifications.',
+          'Master toggle for the Reviews feed, including digest and rejected-review notifications. Review delivery requires Plus.',
       },
       {
         title: 'Review Digest',
         description:
-          'Schedules recurring summaries of outstanding reviews at various points in the future (eg overdue, due today, due tomorrow etc) with configurable frequency and review window.',
+          'Schedules recurring summaries of outstanding reviews at various points in the future (eg overdue, due today, due tomorrow etc) with configurable frequency and review window. Scheduled delivery requires Plus.',
       },
       {
         title: 'Review Alerts',
         description:
-          'Sends notifications when a review is marked as not approved so you can respond quickly.',
+          'Sends notifications when a review is marked as not approved so you can respond quickly. Live delivery requires Plus.',
       },
       {
         title: 'Account Alerts',
         description:
-          'Master toggle for account-monitoring notifications and related account event alerts.',
+          'Master toggle for account-monitoring notifications and related account event alerts. Scheduled account delivery requires Plus.',
       },
       {
         title: 'Evaluation period monitoring',
@@ -836,13 +790,13 @@ export const docsEntries: DocsEntry[] = [
     slug: 'notification-filters',
     title: 'Notification Filters',
     section: 'settings',
-    summary: 'Define keyword and category exclusions to reduce notification noise and focus alerts on items you actually care about.',
+    summary: 'Define keyword and category exclusions to reduce notification noise and focus alerts on items you actually care about. Available on Plus.',
     readTime: '5 min read',
     body: [
       {
         title: 'What notification filters do',
         description:
-          'Instead of receiving a notification for every new RFY or Search item, filters let you skip items whose titles contain certain keywords or whose categories you are not interested in. Filters apply to notifications only, products still appear in the Divine Monitor Console feed.',
+          'Instead of receiving a notification for every new RFY or Search item, filters let you skip items whose titles contain certain keywords or whose categories you are not interested in. Filters apply to notifications only, products still appear in the Divine Monitor Console feed. This is a Plus feature.',
       },
       {
         title: 'Title exclude filters',
@@ -874,13 +828,13 @@ export const docsEntries: DocsEntry[] = [
     slug: 'notification-devices',
     title: 'Browser Push & Device Management',
     section: 'settings',
-    summary: 'How to set up browser push notifications, register devices, and manage your device list on Pro.',
+    summary: 'How to set up browser push notifications, register devices, and manage your device list across Free and Plus.',
     readTime: '4 min read',
     body: [
       {
         title: 'What browser push notifications require',
         description:
-          'Browser push notifications are available on Pro. They deliver alerts directly to your browser on any registered device, even when the Divine Monitor Console tab is not open, as long as the browser is running. These notifications are heavily dependent on browser and machine level notification settings.',
+          'Browser push can be set up and tested on both Free and Plus. Live push delivery is a Plus feature. When enabled, alerts are delivered directly to your browser on any registered device, even when the Divine Monitor Console tab is not open, as long as the browser is running. These notifications are heavily dependent on browser and machine level notification settings.',
       },
       {
         title: 'Registering a device',
@@ -890,7 +844,7 @@ export const docsEntries: DocsEntry[] = [
       {
         title: 'Device limit',
         description:
-          'If you reach the limit of registered devices, you must remove an existing device before adding a new one. The device list shows each registered device with the browser and approximate registration time.',
+          'If you reach the limit of registered devices, you must remove an existing device before adding a new one. Free supports 1 registered browser device and Plus supports 3. The device list shows each registered device with the browser and approximate registration time.',
       },
       {
         title: 'Removing a device',
@@ -919,7 +873,7 @@ export const docsEntries: DocsEntry[] = [
       {
         title: 'Manage active sessions',
         description:
-          'Use Active sessions to refresh session state and disconnect devices you no longer want connected. Session limits are Free: 2, Plus: 4, Pro: 6 concurrent web sessions.',
+          'Use Active sessions to refresh session state and disconnect devices you no longer want connected. Session limits are Free: 2 and Plus: 4 concurrent web sessions.',
       },
       {
         title: 'Sign out safely',

@@ -9,7 +9,6 @@ const NAV_ITEMS: Array<{ to: string; label: string; end?: boolean }> = [
   { to: '/plans', label: 'Tiers' },
   { to: '/about', label: 'About' },
   { to: '/faqs', label: 'FAQs' },
-  { to: '/changelog', label: 'Changelog' },
 ]
 
 const MOBILE_UA_RE = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i

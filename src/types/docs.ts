@@ -24,9 +24,8 @@ export type DocBodyStep = {
 
 export type TierFeatureRow = {
   label: string
-  free: boolean | string
-  plus: boolean | string
-  pro: boolean | string
+  free: boolean | React.ReactNode
+  plus: boolean | React.ReactNode
 }
 
 export type TierGroup = {

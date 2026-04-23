@@ -1,7 +1,8 @@
 import { PLAN_TIERS, PLAN_TIER_GROUPS } from '@/content/docs'
+import type React from 'react'
 import type { PlanTier, TierFeatureRow, TierGroup } from '@/types/docs'
 
-function TierCell({ value, highlight }: { value: boolean | string; highlight?: boolean }) {
+function TierCell({ value, highlight }: { value: boolean | React.ReactNode; highlight?: boolean }) {
   const cls = `plans-row-cell${highlight ? ' plans-row-cell--highlight' : ''}`
   const CHECKMARK = '\u2713'
   const DASH = '\u2014'
@@ -33,7 +34,6 @@ function PlansTable({ tiers, tierGroups }: { tiers: PlanTier[]; tierGroups: Tier
                 <div className="plans-row-label">{feature.label}</div>
                 <TierCell value={feature.free} />
                 <TierCell value={feature.plus} highlight />
-                <TierCell value={feature.pro} />
               </div>
             ))}
           </div>
@@ -49,7 +49,9 @@ export function PlansPage() {
       <div className="plans-page-header">
         <h1 className="plans-page-title">Tiers &amp; Features</h1>
         <div className="plans-page-lede-row">
-          <p className="plans-page-lede">A simple comparison of what Free, Plus, and Pro include in the current rollout.</p>
+          <p className="plans-page-lede">
+            Free gives you the full Divine Monitor data experience, including the extension, history and analytics, and full Global Console access. Plus is effectively the notifications tier, turning that data into actionable alerts across configurable channels like Telegram, email, and browser push, with extras like daily outstanding review digests, rejected review alerts, tier-change alerts, evaluation reminders, review-ratio warnings and more.
+          </p>
           <a
             href="https://www.patreon.com/c/DivineMonitor/membership"
             target="_blank"
