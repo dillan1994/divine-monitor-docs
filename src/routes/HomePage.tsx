@@ -51,9 +51,9 @@ export function HomePage() {
       <section className="hero">
         <div className="hero-eyebrow">The smarter way to track Vine</div>
         <h1 className="hero-headline">
-          <span className="hero-hl-white">Vine, without the guesswork.</span>
-          <em className="hero-hl-italic">The right alerts, at the right time.</em>
-          <span className="hero-hl-muted">With insight behind every signal.</span>
+          <span className="hero-hl-white">Know what you missed.</span>
+          <em className="hero-hl-italic">Turn history into insight.</em>
+          <span className="hero-hl-muted">Get actionable alerts when they matter.</span>
         </h1>
         <div className="hero-rule">
           <div className="hero-rule-line" />
